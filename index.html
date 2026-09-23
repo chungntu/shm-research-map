@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHM Research Map &amp; Journal Publication Progress (18/09/2026)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --bg:#eef1f5;
+    --surface:#ffffff;
+    --surface-2:#f6f8fa;
+    --ink:#16212c;
+    --ink-soft:#57646f;
+    --line:#ccd4dc;
+    --line-strong:#a9b4bd;
+    --accent-a:#0c726d;   
+    --accent-b:#a84f1c;   
+    --accent-c:#6a4fb0;   
+    --accent-d:#b23a4a;   
+    --status-submitted:#1d783a; --status-submitted-bg:#e3f4e8;
+    --status-unsub:#b45309;     --status-unsub-bg:#fef3c7; --status-unsub-border:#d97706;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#10161d;
+      --surface:#161e26;
+      --surface-2:#1a232c;
+      --ink:#e7ecf0;
+      --ink-soft:#96a4b0;
+      --line:#2a343d;
+      --line-strong:#3c4a55;
+      --accent-a:#3fc9bf;   
+      --accent-b:#e08a4f;   
+      --accent-c:#a58ce0;   
+      --accent-d:#ef8b98;   
+      --status-submitted:#48bb78; --status-submitted-bg:rgba(72,187,120,.18);
+      --status-unsub:#fbbf24;     --status-unsub-bg:rgba(251,191,36,.18); --status-unsub-border:#f59e0b;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      linear-gradient(var(--line) 1px, transparent 1px) 0 0/32px 32px,
+      linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0/32px 32px,
+      var(--bg);
+    background-blend-mode:normal;
+    color:var(--ink);
+    font-family:'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+  }
+  .page{
+    max-width:1480px;
+    margin:0 auto;
+    padding:clamp(20px,4vw,48px) clamp(16px,4vw,40px) 60px;
+  }
+  header{
+    max-width:1200px;
+    margin-bottom:24px;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent-a);
+    margin:0 0 10px;
+  }
+  /* Legend */
+  .badge-tag{
+    display:inline-flex;
+    align-items:center;
+    padding:2px 8px;
+    border-radius:6px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    font-weight:700;
+    line-height:1.4;
+  }/* Legend */
+  .badge-tag.submitted{background:var(--status-submitted-bg); color:var(--status-submitted); border:1px solid var(--status-submitted);}/* Legend */
+  .badge-tag.revision{background:var(--status-submitted-bg); color:var(--status-submitted); border:1px solid var(--status-submitted);}/* Legend */
+  .badge-tag.unsub-badge{background:var(--status-unsub-bg); color:var(--status-unsub); border:1.5px solid var(--status-unsub-border);}
+  /* ---- 4-Track Summary (replaces SVG diagram) ---- */
+  .tracks-summary{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:14px 18px;
+    margin-bottom:20px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    box-shadow:0 4px 20px rgba(0,0,0,.04);
+  }/* ---- 4-Track Summary (replaces SVG diagram) ---- */
+  .track-line{
+    font-size:13.5px;
+    line-height:1.55;
+    border-left:6px solid var(--line-strong);
+    padding:4px 0 4px 12px;
+  }/* ---- 4-Track Summary (replaces SVG diagram) ---- */
+  .track-line--a{border-color:var(--accent-a);}/* ---- 4-Track Summary (replaces SVG diagram) ---- */
+  .track-line--b{border-color:var(--accent-b);}/* ---- 4-Track Summary (replaces SVG diagram) ---- */
+  .track-line--c{border-color:var(--accent-c);}/* ---- 4-Track Summary (replaces SVG diagram) ---- */
+  .track-line--d{border-color:var(--accent-d);}
+  /* ---- Table Section ---- */
+  .audit-section{
+    margin-top:24px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px 18px;
+    box-shadow:0 4px 20px rgba(0,0,0,.04);
+  }/* ---- Table Section ---- */
+  .audit-section h2{
+    margin:0 0 8px;
+    font-size:20px;
+    font-weight:700;
+  }/* ---- Table Section ---- */
+  .audit-section p{
+    color:var(--ink-soft);
+    font-size:13.5px;
+    margin:0 0 20px;
+  }/* ---- Table Section ---- */
+  .table-responsive{
+    overflow-x:auto;
+  }/* ---- Table Section ---- */
+  table.audit-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+    text-align:left;
+  }/* ---- Table Section ---- */
+  table.audit-table th{
+    background:var(--surface-2);
+    color:var(--ink);
+    font-weight:700;
+    padding:12px 14px;
+    border-bottom:2px solid var(--line);
+    white-space:nowrap;
+    font-family:'Be Vietnam Pro', sans-serif;
+  }/* ---- Table Section ---- */
+  table.audit-table td{
+    padding:12px 14px;
+    border-bottom:1px solid var(--line);
+    vertical-align:middle;
+  }/* ---- Table Section ---- */
+  table.audit-table tr:hover td{
+    background:rgba(0,0,0,.015);
+  }/* ---- Table Section ---- */
+  table.audit-table tr.is-unsub-row td{
+    border-left:none;
+  }/* ---- Table Section ---- */
+  table.audit-table tr.is-unsub-row td:first-child{
+    border-left:4px solid var(--status-unsub-border);
+  }/* ---- Table Section ---- */
+  table.audit-table tr.is-sub-row td:first-child{
+    border-left:4px solid var(--status-submitted);
+  }/* ---- Table Section ---- */
+  .col-num{font-family:'IBM Plex Mono', monospace; font-weight:700; width:40px; text-align:center;}/* ---- Table Section ---- */
+  .col-track{font-family:'IBM Plex Mono', monospace; font-weight:700; font-size:12px; white-space:nowrap;}/* ---- Table Section ---- */
+  .col-track--a{color:var(--accent-a);}/* ---- Table Section ---- */
+  .col-track--b{color:var(--accent-b);}/* ---- Table Section ---- */
+  .col-track--c{color:var(--accent-c);}/* ---- Table Section ---- */
+  .col-track--d{color:var(--accent-d);}/* ---- Table Section ---- */
+  .col-title{font-weight:600;}/* ---- Table Section ---- */
+  .col-title small{display:block; font-weight:400; color:var(--ink-soft); font-size:11.5px; font-family:'IBM Plex Mono', monospace;}/* ---- Table Section ---- */
+  .col-journal{font-weight:600;}/* ---- Table Section ---- */
+  .col-journal small{display:block; font-weight:400; color:var(--ink-soft); font-size:11px;}/* ---- Table Section ---- */
+  .badge-sub-journal{display:inline-block; font-size:10px; font-family:'IBM Plex Mono', monospace; font-weight:700; color:var(--status-submitted); margin-right:4px;}/* ---- Table Section ---- */
+  .badge-unsub-journal{display:inline-block; font-size:10px; font-family:'IBM Plex Mono', monospace; font-weight:700; color:var(--status-unsub); margin-right:4px;}/* ---- Table Section ---- */
+  .col-path{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-soft); word-break:break-all;}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <p class="eyebrow">Research Programme Map &amp; Publication Progress · SHM</p>
+  </header>
+  <section class="tracks-summary">
+    <div class="track-line track-line--c"><b>VS</b> — Virtual sensing: build (KW51) · recoverability limit under sensor loss, CS framing (Hardanger · Route 345 · HBTA · LUMO · KW51) · operational durability (KW51).</div>
+    <div class="track-line track-line--d"><b>FT</b> — Integration &amp; extreme fault tolerance (Hardanger suspension bridge).</div>
+    <div class="track-line track-line--b"><b>TL</b> — Topology, sensor localisation &amp; restoration (HBTA · Route 345 · LUMO Tower).</div>
+    <div class="track-line track-line--a"><b>OC</b> — Robust one-class detection against EOV (Z24 · AQUINAS · Sonkyo wind blade).</div>
+  </section>
+  <section class="audit-section">
+    <h2>Progress Tracker &amp; Target Journals for 14 Papers</h2>
+    <p>Detailed overview of submission status, classified by Research Track and submitted / target journal.</p>
+    <div class="table-responsive">
+      <table class="audit-table">
+        <thead>
+          <tr>
+            <th class="col-num">#</th>
+            <th>Bài</th>
+            <th>Paper Title</th>
+            <th>Journal / Publisher</th>
+            <th>Publication Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="is-sub-row" data-paper="07" data-track="c" data-status="unsubmitted">
+            <td class="col-num">01</td>
+            <td class="col-track col-track--c">VS1</td>
+            <td class="col-title">Physics-Guided Residual Learning for Quasi-Static Stress Virtual Sensing on Railway Bridge KW51</td>
+            <td class="col-journal">
+              <span class="badge-unsub-journal">⚡ TARGET:</span>
+              Top Q1 (MSSP / SHM / CACIE)
+              <small>Elsevier / SAGE / Wiley</small>
+            </td>
+            <td><span class="badge-tag submitted">✓ SENT TO SUPERVISOR</span></td>
+          </tr>
+          <tr class="is-unsub-row" data-paper="11" data-track="c" data-status="unsubmitted">
+            <td class="col-num">02</td>
+            <td class="col-track col-track--c">VS2</td>
+            <td class="col-title">Physics Guidance Substitutes for Sensors: Deck-Girder Stress Virtual Sensing Without Bearing Measurements</td>
+            <td class="col-journal">
+              <span class="badge-unsub-journal">⚡ TARGET:</span>
+              Top Q1 / Q2 Bridge Engineering
+              <small>Elsevier / Springer / SAGE</small>
+            </td>
+            <td><span class="badge-tag unsub-badge">⚡ NOT YET SUBMITTED</span></td>
+          </tr>
+          <tr class="is-unsub-row" data-paper="14" data-track="c" data-status="unsubmitted">
+            <td class="col-num">03</td>
+            <td class="col-track col-track--c">VS3</td>
+            <td class="col-title">Compressive Sensing of Structural Vibration under Sensor Loss: Recoverability Is Set by Correlation, Not Sparsity</td>
+            <td class="col-journal">
+              <span class="badge-unsub-journal">⚡ TARGET:</span>
+              MSSP / SHM / Engineering Structures
+              <small>Elsevier / SAGE</small>
+            </td>
+            <td><span class="badge-tag unsub-badge">⚡ RESULTS DONE · OUTLINE READY</span></td>
+          </tr>
+          <tr class="is-unsub-row" data-paper="09" data-track="d" data-status="unsubmitted">
+            <td class="col-num">04</td>
+            <td class="col-track col-track--d">FT1</td>
+            <td class="col-title">Physics-Guided Spatio-Temporal Graph Neural Network for One-Class Damage Detection</td>
+            <td class="col-journal">
+              <span class="badge-unsub-journal">⚡ TARGET:</span>
+              Engineering Structures
+               <small>Elsevier (Scopus / WoS Q1)</small>
+            </td>
+            <td><span class="badge-tag unsub-badge">⚡ NOT YET SUBMITTED</span></td>
+          </tr>
+          <tr class="is-unsub-row" data-paper="12" data-track="d" data-status="unsubmitted">
+            <td class="col-num">05</td>
+            <td class="col-track col-track--d">FT2</td>
+            <td class="col-title">Partitioned Dirichlet Boundary-Value Virtual Sensing Under Extreme Sensor Outages</td>
+            <td class="col-journal">
+              <span class="badge-unsub-journal">⚡ TARGET:</span>
+              Struct. Control Health Monit. / MSSP
+              <small>40% fault tolerance under major storm Nina</small>
+              <small>Wiley / Elsevier</small>
+            </td>
+            <td><span class="badge-tag unsub-badge">⚡ NOT YET SUBMITTED</span></td>
+          </tr>
+          <tr class="is-sub-row" data-paper="04" data-track="b" data-status="submitted">
+            <td class="col-num">06</td>
+            <td class="col-track col-track--b">TL1</td>
+            <td class="col-title">Topology-Guided Edge-Transfer Analysis for One-Class Structural Damage Detection</td>
+            <td class="col-journal">
+              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+              Structures
+              <small>Elsevier / IStructE (Q2)</small>
+            </td>
+            <td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
+          </tr>
+          <tr class="is-sub-row" data-paper="05" data-track="b" data-status="submitted">
+            <td class="col-num">07</td>
+            <td class="col-track col-track--b">TL2</td>
+            <td class="col-title">Topology-Informed Sensor Restoration after Sensor Loss in Structural Health Monitoring</td>
+            <td class="col-journal">
+              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+              Structural Health Monitoring
+              <small>SAGE Publications (Top Q1, IF ~5.7)</small>
+            </td>
+            <td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
+          </tr>
+          <tr class="is-sub-row" data-paper="06" data-track="b" data-status="submitted">
+            <td class="col-num">08</td>
+            <td class="col-track col-track--b">TL3</td>
+            <td class="col-title">Graph-Based Structural Damage Localization through Modal Relative Motion</td>
+            <td class="col-journal">
+              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+              Structural Durability &amp; Health Monitoring (SDHM)
+              <small>Tech Science Press / Scopus</small>
+            </td>
+            <td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
+          </tr>
+          <tr class="is-unsub-row" data-paper="10" data-track="b" data-status="unsubmitted">
+            <td class="col-num">09</td>
+            <td class="col-track col-track--b">TL4</td>
+            <td class="col-title">What a mode can sense: first-principles selection of the modal channel for localising diaphragm bolt damage</td>
+            <td class="col-journal">
+              <span class="badge-unsub-journal">⚡ TARGET:</span>
+              Structural Monitoring and Maintenance (SMM)
+               <small>Techno-Press / Scopus</small>
+            </td>
+            <td><span class="badge-tag unsub-badge">⚡ NOT YET SUBMITTED</span></td>
+          </tr>
+          <tr class="is-unsub-row" data-paper="13" data-track="b" data-status="unsubmitted">
+            <td class="col-num">10</td>
+            <td class="col-track col-track--b">TL5</td>
+            <td class="col-title">Physics-Informed Damage Localisation under Environmental Variability</td>
+            <td class="col-journal">
+              <span class="badge-unsub-journal">⚡ TARGET:</span>
+              SHM Q1 Journal (detection version)
+              <small>Detection paper (15 pp.) compiled; localisation version under revision</small>
+            </td>
+            <td><span class="badge-tag unsub-badge">⚡ NOT YET SUBMITTED</span></td>
+          </tr>
+          <tr class="is-sub-row" data-paper="01" data-track="a" data-status="submitted">
+            <td class="col-num">11</td>
+            <td class="col-track col-track--a">OC1</td>
+            <td class="col-title">Physics-Informed Autoencoders with Unsupervised Feature Attention for Label-Free Structural Damage Detection</td>
+            <td class="col-journal">
+              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+              Matéria (Rio de Janeiro)
+              <small>SciELO / Scopus / WoS</small>
+            </td>
+            <td><span class="badge-tag revision">✓ ROUND 1 REVISION</span></td>
+          </tr>
+          <tr class="is-sub-row" data-paper="02" data-track="a" data-status="submitted">
+            <td class="col-num">12</td>
+            <td class="col-track col-track--a">OC2</td>
+            <td class="col-title">Decoupling Health Scores from Environmental and Operational Variability with Unsupervised Feature Attention</td>
+            <td class="col-journal">
+              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+              Advances in Structural Engineering (ASE)
+              <small>SAGE / Scopus / WoS Q2</small>
+            </td>
+            <td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
+          </tr>
+          <tr class="is-sub-row" data-paper="03" data-track="a" data-status="submitted">
+            <td class="col-num">13</td>
+            <td class="col-track col-track--a">OC3</td>
+            <td class="col-title">Vector-Quantised Physics-Informed Autoencoders for Label-Free Structural Damage Detection</td>
+            <td class="col-journal">
+              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+              Structural Monitoring and Maintenance (SMM)
+              <small>Companion to PIAE-A · Techno-Press / Scopus</small>
+            </td>
+            <td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
+          </tr>
+          <tr class="is-unsub-row" data-paper="08" data-track="a" data-status="unsubmitted">
+            <td class="col-num">14</td>
+            <td class="col-track col-track--a">OC4</td>
+            <td class="col-title">Temperature Variability and Multi-Channel Damage Sensitivity in the Sonkyo Wind Turbine Blade</td>
+            <td class="col-journal">
+              <span class="badge-unsub-journal">⚡ TARGET:</span>
+              Wind Energy / MSSP
+              <small>ETH Zürich climatic chamber data</small>
+              <small>Wiley / Elsevier</small>
+            </td>
+            <td><span class="badge-tag unsub-badge">⚡ NOT YET SUBMITTED</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+</body>
+</html>

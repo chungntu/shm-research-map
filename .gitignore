@@ -1,0 +1,6 @@
+# Publish only the sanitized page; the local source keeps private details.
+*
+!.gitignore
+!index.html
+!build_public.py
+!README.md
