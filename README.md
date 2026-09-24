@@ -6,6 +6,7 @@ Research programme map and journal publication progress for a set of structural 
 - **FT**: Integration and extreme fault tolerance
 - **TL**: Topology, sensor localisation and restoration
 - **OC**: Robust one-class detection against EOV
+- **HP**: Hyperparameter transferability for supervised damage classification
 
 View the page: https://chungntu.github.io/shm-research-map/
 
