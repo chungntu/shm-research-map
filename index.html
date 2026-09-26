@@ -19,6 +19,10 @@
     --accent-c:#6a4fb0;   
     --accent-d:#b23a4a;   
     --accent-e:#4a6078;   
+    --accent-f:#0284c7;   
+    --accent-g:#059669;   
+    --accent-h:#9333ea;   
+
     --status-submitted:#1d783a; --status-submitted-bg:#e3f4e8;
     --status-unsub:#b45309;     --status-unsub-bg:#fef3c7; --status-unsub-border:#d97706;
   }
@@ -36,6 +40,10 @@
       --accent-c:#a58ce0;   
       --accent-d:#ef8b98;   
       --accent-e:#9fb3c8;   
+      --accent-f:#38bdf8;   
+      --accent-g:#34d399;   
+      --accent-h:#c084fc;   
+
       --status-submitted:#48bb78; --status-submitted-bg:rgba(72,187,120,.18);
       --status-unsub:#fbbf24;     --status-unsub-bg:rgba(251,191,36,.18); --status-unsub-border:#f59e0b;
     }
@@ -108,6 +116,13 @@
   .track-line--c{border-color:var(--accent-c);}/* ---- 4-Track Summary (replaces SVG diagram) ---- */
   .track-line--d{border-color:var(--accent-d);}
   .track-line--e{border-color:var(--accent-e);}
+  .track-line--f{border-color:var(--accent-f);}
+  .track-line--g{border-color:var(--accent-g);}
+  .track-line--h{border-color:var(--accent-h);}
+  .col-track--f{color:var(--accent-f);}
+  .col-track--g{color:var(--accent-g);}
+  .col-track--h{color:var(--accent-h);}
+
   /* ---- Table Section ---- */
   .audit-section{
     margin-top:24px;
@@ -196,7 +211,7 @@
   </section>
   <!-- ===== Detailed Submission Audit Table ===== -->
   <section class="audit-section">
-    <h2>Progress Tracker &amp; Target Journals for 15 Papers + 4 Ideas</h2>
+    <h2>Progress Tracker &amp; Target Journals for 23 Papers &amp; Research Studies</h2>
     <p>Detailed overview of submission status, classified by Research Track, submitted / target journal, manuscript ID, and project folder location.</p>
     <div class="table-responsive">
       <table class="audit-table">
@@ -464,6 +479,62 @@
             </td>
             <td><span class="badge-tag revision">✓ MAJOR REVISION · DUE 02/11/2026</span></td>
             <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\19_HP1_ga_hyperparameter_transferability_across_datasets\</td>
+          </tr>
+          <!-- Paper 20 · WT1 -->
+          <tr class="is-unsub-row" data-paper="20" data-track="f" data-status="unsubmitted">
+            <td class="col-num">20</td>
+            <td class="col-track col-track--f">WT1</td>
+            <td class="col-title">Which Peaks Belong to the Structure? Setup Consistency as a Test for Global Modes, Applied to an Offshore Wind Turbine Foundation Before and After Tower Installation</td>
+            <td class="col-journal">
+              <span class="badge-unsub-journal">⚡ TARGET:</span>
+              Marine Structures / Ocean Engineering
+              <small>Co-author: Dr. Thi Cam Nhung Nguyen, Prof. Bui Tien Thanh</small>
+              <small>Elsevier (WoS Q1)</small>
+            </td>
+            <td><span class="badge-tag unsub-badge">⚡ MANUSCRIPT DRAFT</span></td>
+            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\20_WT1_offshore_wind_turbine_foundation_setup_consistency\de tai co Nhung\</td>
+          </tr>
+          <!-- Paper 21 · CV1 -->
+          <tr class="is-unsub-row" data-paper="21" data-track="h" data-status="unsubmitted">
+            <td class="col-num">21</td>
+            <td class="col-track col-track--h">CV1</td>
+            <td class="col-title">Zero-Shot Bridge Surface Damage Detection and Segmentation Using a Hierarchical GroundingDINO--SAM Framework</td>
+            <td class="col-journal">
+              <span class="badge-unsub-journal">⚡ TARGET:</span>
+              Automation in Construction / CACIE / SHM
+              <small>Co-author: Nguyen Quang Vinh, Prof. Bui Tien Thanh</small>
+              <small>Elsevier / Wiley / SAGE (Top Q1)</small>
+            </td>
+            <td><span class="badge-tag unsub-badge">⚡ COMPLETED DRAFT v5</span></td>
+            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\21_CV1_bridge_surface_damage_detection_groundingdino_sam\paper\</td>
+          </tr>
+          <!-- Paper 22 · CV2 -->
+          <tr class="is-unsub-row" data-paper="22" data-track="h" data-status="unsubmitted">
+            <td class="col-num">22</td>
+            <td class="col-track col-track--h">CV2</td>
+            <td class="col-title">Semi-Labeling with Stable-DINO and SAM for Multi-Class Structural Surface Damage Assessment</td>
+            <td class="col-journal">
+              <span class="badge-unsub-journal">⚡ TARGET:</span>
+              IEEE Transactions / Automation in Construction
+              <small>Co-author: Nguyen Quang Vinh</small>
+              <small>IEEE / Elsevier (Top Q1)</small>
+            </td>
+            <td><span class="badge-tag unsub-badge">⚡ IN PREPARATION</span></td>
+            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\22_CV2_semi_labeling_stabledino_sam_multiclass_surface_damage\semi-labeling-paper\</td>
+          </tr>
+          <!-- Paper 23 · CW1 -->
+          <tr class="is-sub-row" data-paper="23" data-track="g" data-status="submitted">
+            <td class="col-num">23</td>
+            <td class="col-track col-track--g">CW1</td>
+            <td class="col-title">Conditional WaveNet Deep Learning Model for Robust Structural Damage Detection Under Varying Temperatures</td>
+            <td class="col-journal">
+              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+              Transport and Communications Science Journal (TCSJ)
+              <small>Co-author: Tran Thanh Tri, Nguyen Thang Tin, Prof. Bui Tien Thanh</small>
+              <small>UTC / VJOL</small>
+            </td>
+            <td><span class="badge-tag submitted">✓ SUBMITTED / READY</span></td>
+            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\23_CW1_conditional_wavenet_damage_detection_varying_temperature\11_conditional-wavenet-shm\manuscript\</td>
           </tr>
         </tbody>
       </table>
