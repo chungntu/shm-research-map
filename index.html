@@ -25,6 +25,7 @@
 
     --status-submitted:#1d783a; --status-submitted-bg:#e3f4e8;
     --status-unsub:#b45309;     --status-unsub-bg:#fef3c7; --status-unsub-border:#d97706;
+    --status-notyet:#b91c1c;    --status-notyet-bg:#fee2e2;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
@@ -46,6 +47,7 @@
 
       --status-submitted:#48bb78; --status-submitted-bg:rgba(72,187,120,.18);
       --status-unsub:#fbbf24;     --status-unsub-bg:rgba(251,191,36,.18); --status-unsub-border:#f59e0b;
+      --status-notyet:#f87171;    --status-notyet-bg:rgba(248,113,113,.18);
     }
   }
   *{box-sizing:border-box;}
@@ -93,6 +95,7 @@
   .badge-tag.idea-badge{background:transparent; color:var(--ink-soft); border:1.5px dashed var(--line-strong);}
   .badge-idea-journal{display:inline-block; font-size:10px; font-family:'IBM Plex Mono', monospace; font-weight:700; color:var(--ink-soft); margin-right:4px;}
   .badge-tag.unsub-badge{background:var(--status-unsub-bg); color:var(--status-unsub); border:1.5px solid var(--status-unsub-border);}
+  .badge-tag.notyet-badge{background:var(--status-notyet-bg); color:var(--status-notyet); border:1.5px solid var(--status-notyet);}
   /* ---- 4-Track Summary (replaces SVG diagram) ---- */
   .tracks-summary{
     background:var(--surface);
@@ -255,7 +258,7 @@
               <small>Co-author: Prof. Guido De Roeck</small>
               <small>Elsevier / Springer / SAGE</small>
             </td>
-            <td><span class="badge-tag unsub-badge">⚡ NOT YET SUBMITTED</span></td>
+            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
             <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS2_kw51_deck_girder_strain_virtual_sensing_without_bearing\kw51-deck-girder-virtual-sensing-master\manuscript\</td>
           </tr>
           <!-- Paper 14 · VS3 -->
@@ -350,7 +353,7 @@
                <small>Elsevier (Scopus / WoS Q1)</small>
               <small>SJR 2025: Q1</small>
             </td>
-            <td><span class="badge-tag unsub-badge">⚡ NOT YET SUBMITTED</span></td>
+            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
             <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\FT1_hardanger_pgstgnn_physics_guided_one_class_detection\paper\</td>
           </tr>
           <!-- Paper 12 · FT2 -->
@@ -365,7 +368,7 @@
               <small>Wiley / Elsevier</small>
               <small>SJR 2025: SCHM Q1 · MSSP Q1</small>
             </td>
-            <td><span class="badge-tag unsub-badge">⚡ NOT YET SUBMITTED</span></td>
+            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
             <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\FT2_hardanger_dirichlet_boundary_virtual_sensing_storm_outages\</td>
           </tr>
           <!-- Paper 04 · TL1 -->
@@ -423,7 +426,7 @@
                <small>Techno-Press / Scopus</small>
               <small>SJR 2025: Q3 (Q4 in Civil &amp; Structural Eng.)</small>
             </td>
-            <td><span class="badge-tag unsub-badge">⚡ NOT YET SUBMITTED</span></td>
+            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
             <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL4_route345_transverse_mode_diaphragm_bolt_damage_localization\manuscript\</td>
           </tr>
           <!-- Paper 13 · TL5 -->
@@ -436,7 +439,7 @@
               SHM Q1 Journal (detection version)
               <small>Detection paper (15 pp.) compiled; localisation version under revision</small>
             </td>
-            <td><span class="badge-tag unsub-badge">⚡ NOT YET SUBMITTED</span></td>
+            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
             <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL5_lumo_tower_physics_detection_stacking_localization\</td>
           </tr>
           <!-- Paper 01 · OC1 -->
@@ -495,7 +498,7 @@
               <small>Wiley / Elsevier</small>
               <small>SJR 2025: Wind Energy Q2 · MSSP Q1</small>
             </td>
-            <td><span class="badge-tag unsub-badge">⚡ NOT YET SUBMITTED</span></td>
+            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
             <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC4_sonkyo_blade_temperature_damage_sensitivity_tradeoff\</td>
           </tr>
           <!-- Paper 19 · HP1 -->
