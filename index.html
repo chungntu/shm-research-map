@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>SHM Research Map &amp; Journal Publication Progress (03/10/2026)</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root{
     --bg:#eef1f5;
@@ -22,6 +23,7 @@
     --accent-f:#0284c7;   
     --accent-g:#059669;   
     --accent-h:#9333ea;   
+    --accent-i:#c2410c;   
 
     --status-submitted:#1d783a; --status-submitted-bg:#e3f4e8;
     --status-unsub:#b45309;     --status-unsub-bg:#fef3c7; --status-unsub-border:#d97706;
@@ -43,7 +45,8 @@
       --accent-e:#9fb3c8;   
       --accent-f:#38bdf8;   
       --accent-g:#34d399;   
-      --accent-h:#c084fc;   
+      --accent-h:#c084fc;
+      --accent-i:#fb923c;   
 
       --status-submitted:#48bb78; --status-submitted-bg:rgba(72,187,120,.18);
       --status-unsub:#fbbf24;     --status-unsub-bg:rgba(251,191,36,.18); --status-unsub-border:#f59e0b;
@@ -122,9 +125,43 @@
   .track-line--f{border-color:var(--accent-f);}
   .track-line--g{border-color:var(--accent-g);}
   .track-line--h{border-color:var(--accent-h);}
+  .track-line--i{border-color:var(--accent-i);}
   .col-track--f{color:var(--accent-f);}
   .col-track--g{color:var(--accent-g);}
   .col-track--h{color:var(--accent-h);}
+  .col-track--i{color:var(--accent-i);}
+
+  
+  /* ---- GitHub Column ---- */
+  .col-github{white-space:nowrap; vertical-align:middle;}
+  .github-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    padding:4px 9px;
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    border-radius:6px;
+    color:var(--ink);
+    text-decoration:none;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    font-weight:600;
+    transition:all .15s ease;
+  }
+  .github-badge:hover{
+    background:var(--surface);
+    border-color:var(--accent-a);
+    color:var(--accent-a);
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    transform:translateY(-1px);
+  }
+  .github-icon{
+    width:13px;
+    height:13px;
+    fill:currentColor;
+    flex-shrink:0;
+  }
 
   /* ---- Table Section ---- */
   .audit-section{
@@ -201,377 +238,418 @@
 </head>
 <body>
 <div class="page">
-  <header>
-    <p class="eyebrow">Research Programme Map &amp; Publication Progress · SHM</p>
-  </header>
-  <!-- 8 Research Tracks Summary -->
-  <section class="tracks-summary">
-    <div class="track-line track-line--c"><b>VS</b> — Virtual sensing: build (KW51) · recoverability limit under sensor loss, CS framing (Hardanger · Route 345 · HBTA · LUMO · KW51) · sensor budget from spectral rank (Route 345 · HBTA · LUMO · Bergsøysund) · idea: part-time sampling.</div>
-    <div class="track-line track-line--d"><b>FT</b> — Integration &amp; extreme fault tolerance (Hardanger suspension bridge) · persistent sensor quarantine &amp; reconfiguration for one-class detection (HBTA).</div>
-    <div class="track-line track-line--b"><b>TL</b> — Topology, sensor localisation &amp; restoration (HBTA · Route 345 · LUMO Tower).</div>
-    <div class="track-line track-line--a"><b>OC</b> — Robust one-class detection against EOV (Z24 · AQUINAS · Sonkyo wind blade).</div>
-    <div class="track-line track-line--e"><b>HP</b> — Hyperparameter transferability for supervised damage classification (Z24 · QUGS grandstand).</div>
-    <div class="track-line track-line--f"><b>WT</b> — Offshore wind turbine foundation OMA: setup consistency to separate global modes from setup artefacts (Dong Hai 1 · Foundation T18, before &amp; after tower installation).</div>
-    <div class="track-line track-line--g"><b>CW</b> — Temperature-conditioned deep learning on raw vibration for damage detection under thermal variability (Conditional WaveNet · C-shaped steel beam).</div>
-    <div class="track-line track-line--h"><b>CV</b> — Vision foundation models for structural surface damage: zero-shot detection &amp; segmentation (GroundingDINO–SAM) · semi-automatic multi-class labelling (Stable-DINO–SAM) · concrete bridge surfaces · camera-based non-contact vibration measurement with deep learning (InfaTrackVision).</div>
-  </section>
-  <!-- ===== Detailed Submission Audit Table ===== -->
-  <section class="audit-section">
-    <h2>Progress Tracker &amp; Target Journals for 23 Papers &amp; Research Studies</h2>
-    <p>Detailed overview of submission status, classified by Research Track, submitted / target journal, manuscript ID, and project folder location.</p>
-    <div class="table-responsive">
-      <table class="audit-table">
-        <thead>
-          <tr>
-            <th class="col-num">#</th>
-            <th>Bài</th>
-            <th>Paper Title</th>
-            <th>Journal / Publisher</th>
-            <th>Publication Status</th>
-            <th>Project Folder on Drive</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Paper 07 · VS1 -->
-          <tr class="is-sub-row" data-paper="07" data-track="c" data-status="submitted">
-            <td class="col-num">01</td>
-            <td class="col-track col-track--c">VS1</td>
-            <td class="col-title">Physics-Guided Residual Learning for Quasi-Static Stress Virtual Sensing on Railway Bridge KW51</td>
-            <td class="col-journal">
-              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+<header>
+<p class="eyebrow">Research Programme Map &amp; Publication Progress · SHM</p>
+</header>
+<!-- 10 Research Tracks Summary -->
+<section class="tracks-summary">
+<div class="track-line track-line--c"><b>VS</b> — Virtual sensing: build (KW51) · recoverability limit under sensor loss, CS framing (Hardanger · Route 345 · HBTA · LUMO · KW51) · sensor budget from spectral rank (Route 345 · HBTA · LUMO · Bergsøysund) · idea: part-time sampling.</div>
+<div class="track-line track-line--d"><b>FT</b> — Integration &amp; extreme fault tolerance (Hardanger suspension bridge) · persistent sensor quarantine &amp; reconfiguration for one-class detection (HBTA).</div>
+<div class="track-line track-line--b"><b>TL</b> — Topology, sensor localisation &amp; restoration (HBTA · Route 345 · LUMO Tower).</div>
+<div class="track-line track-line--a"><b>OC</b> — Robust one-class detection against EOV (Z24 · AQUINAS · Sonkyo wind blade).</div>
+<div class="track-line track-line--e"><b>HP</b> — Hyperparameter transferability for supervised damage classification (Z24 · QUGS grandstand).</div>
+<div class="track-line track-line--f"><b>WT</b> — Offshore wind turbine foundation OMA: setup consistency to separate global modes from setup artefacts (Dong Hai 1 · Foundation T18, before &amp; after tower installation).</div>
+<div class="track-line track-line--g"><b>CW</b> — Temperature-conditioned deep learning on raw vibration for damage detection under thermal variability (Conditional WaveNet · C-shaped steel beam).</div>
+<div class="track-line track-line--h"><b>CV</b> — Vision foundation models for structural surface damage: zero-shot detection &amp; segmentation (GroundingDINO–SAM) · semi-automatic multi-class labelling (Stable-DINO–SAM) · concrete bridge surfaces · camera-based non-contact vibration measurement with deep learning (InfaTrackVision).</div>
+<div class="track-line track-line--i"><b>EL</b> — Equivalent linearization of nonlinear random vibration checked on measured data: dual criterion (Nguyen Dong Anh) versus the classical criterion beyond FPK/Monte Carlo benchmarks (Duffing oscillator · Silverbox electronic Duffing benchmark).</div>
+<div class="track-line track-line--b"><b>ST</b> — Structural stability &amp; out-of-plane buckling of through-arch bridges: unbraced portal end bottleneck · bracing saturation paradox · Eurocode EN 1993-2 Annex D revision (Nam Ô 75 m railway through-truss · KW51 115 m network arch · 38-axle D19E train).</div>
+</section>
+<!-- ===== Detailed Submission Audit Table ===== -->
+<section class="audit-section">
+<h2>Progress Tracker &amp; Target Journals for 25 Papers &amp; Research Studies</h2>
+<p>Detailed overview of submission status, classified by Research Track, submitted / target journal, manuscript ID, and project folder location.</p>
+<div class="table-responsive">
+<table class="audit-table">
+<thead>
+<tr>
+<th class="col-num">#</th>
+<th>Bài</th>
+<th>Paper Title</th>
+<th>Journal / Publisher</th>
+<th>Publication Status</th>
+<th class="col-github">GitHub Repository</th>
+<th>Project Folder on Drive</th>
+</tr>
+</thead>
+<tbody>
+<!-- Paper 07 · VS1 -->
+<tr class="is-sub-row" data-paper="07" data-status="submitted" data-track="c">
+<td class="col-num">01</td>
+<td class="col-track col-track--c">VS1</td>
+<td class="col-title">Physics-Guided Residual Learning for Quasi-Static Stress Virtual Sensing on Railway Bridge KW51</td>
+<td class="col-journal">
+<span class="badge-sub-journal">✓ SUBMITTED:</span>
               Mechanical Systems and Signal Processing (MSSP)
               <small>Co-author: Prof. Guido De Roeck</small>
-              <small>Elsevier</small>
-              <small>SJR 2025: Q1</small>
-            </td>
-            <td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS1_kw51_piml_quasi_static_stress_virtual_sensing\manuscript_kw51\</td>
-          </tr>
-          <!-- Paper 11 · VS2 -->
-          <tr class="is-unsub-row" data-paper="11" data-track="c" data-status="unsubmitted">
-            <td class="col-num">02</td>
-            <td class="col-track col-track--c">VS2</td>
-            <td class="col-title">Physics-Guided Virtual Sensing of Deck-Girder Strain on Railway Bridge KW51 without Bearing Displacement Sensors</td>
-            <td class="col-journal">
-              <span class="badge-unsub-journal">⚡ TARGET:</span>
+<small>Elsevier</small>
+<small>SJR 2025: Q1</small>
+</td>
+<td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/kw51-piml-virtual-sensing" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>kw51-piml-virtual-sensing</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS1_kw51_piml_quasi_static_stress_virtual_sensing\manuscript_kw51\</td>
+</tr>
+<!-- Paper 11 · VS2 -->
+<tr class="is-unsub-row" data-paper="11" data-status="unsubmitted" data-track="c">
+<td class="col-num">02</td>
+<td class="col-track col-track--c">VS2</td>
+<td class="col-title">Physics-Guided Virtual Sensing of Deck-Girder Strain on Railway Bridge KW51 without Bearing Displacement Sensors</td>
+<td class="col-journal">
+<span class="badge-unsub-journal">⚡ TARGET:</span>
               Top Q1 / Q2 Bridge Engineering
               <small>Co-author: Prof. Guido De Roeck</small>
-              <small>Elsevier / Springer / SAGE</small>
-            </td>
-            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS2_kw51_deck_girder_strain_virtual_sensing_without_bearing\kw51-deck-girder-virtual-sensing-master\manuscript\</td>
-          </tr>
-          <!-- Paper 14 · VS3 -->
-          <tr class="is-unsub-row" data-paper="14" data-track="c" data-status="unsubmitted">
-            <td class="col-num">03</td>
-            <td class="col-track col-track--c">VS3</td>
-            <td class="col-title">Correlation-Based Compressive Sensing for Virtual Sensing under Sensor Loss: Knowing in Advance Which Lost Sensors Can Be Reconstructed</td>
-            <td class="col-journal">
-              <span class="badge-unsub-journal">⚡ TARGET:</span>
+<small>Elsevier / Springer / SAGE</small>
+</td>
+<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/kw51-deck-girder-virtual-sensing" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>kw51-deck-girder-virtual-sensing</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS2_kw51_deck_girder_strain_virtual_sensing_without_bearing\kw51-deck-girder-virtual-sensing-master\manuscript\</td>
+</tr>
+<!-- Paper 14 · VS3 -->
+<tr class="is-unsub-row" data-paper="14" data-status="unsubmitted" data-track="c">
+<td class="col-num">03</td>
+<td class="col-track col-track--c">VS3</td>
+<td class="col-title">Correlation-Based Compressive Sensing for Virtual Sensing under Sensor Loss: Knowing in Advance Which Lost Sensors Can Be Reconstructed</td>
+<td class="col-journal">
+<span class="badge-unsub-journal">⚡ TARGET:</span>
               MSSP / SHM / Engineering Structures
               <small>Elsevier / SAGE</small>
-              <small>SJR 2025: MSSP Q1 · SHM Q1 · Eng. Struct. Q1</small>
-            </td>
-            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS3_hardanger_recoverability_limit_compressive_virtual_sensing\ (PAPER_OUTLINE_CS.md · PAPER_SKELETON_EN.md)</td>
-          </tr>
-          <!-- Paper 16 · VS4 (idea) -->
-          <tr class="is-idea-row" data-paper="16" data-track="c" data-status="idea">
-            <td class="col-num">04</td>
-            <td class="col-track col-track--c">VS4</td>
-            <td class="col-title">Compressive Virtual Sensing When Surviving Sensors Record Only Part of the Time: Correlation versus Frequency Sparsity</td>
-            <td class="col-journal">
-              <span class="badge-idea-journal">💡 TBD:</span>
-              Companion to VS3
-              <small>Data: Hardanger · HBTA (+ Route 345 or LUMO planned)</small>
-            </td>
-            <td><span class="badge-tag idea-badge">💡 IDEA · RESULTS FOR FIRST DRAFT</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS4_hardanger_part_time_compressive_virtual_sensing_sparsity\ (PAPER_CONCEPT.md)</td>
-          </tr>
-          <!-- Paper 24 · VS8 (concept) -->
-          <tr class="is-idea-row" data-paper="24" data-track="c" data-status="idea">
-            <td class="col-num">05</td>
-            <td class="col-track col-track--c">VS8</td>
-            <td class="col-title">How Many Sensors? A Measurable Lower Bound on the Sensor Budget for Virtual Sensing</td>
-            <td class="col-journal">
-              <span class="badge-unsub-journal">⚡ TARGET:</span>
-              MSSP (backup: JSV / SHM)
-              <small>Data: Route 345 · HBTA · LUMO · Bergsøysund (4 structures, 11 cases)</small>
-              <small>Elsevier / SAGE</small>
-              <small>SJR 2025: MSSP Q1 (backup: JSV Q1 · SHM Q1)</small>
-            </td>
-            <td><span class="badge-tag idea-badge">💡 CONCEPT · RESULTS READY FOR DRAFTING</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS8_multistructure_sensor_budget_spectral_rank_virtual_sensing\ (PAPER_CONCEPT.md)</td>
-          </tr>
-          <!-- Paper 09 · FT1 -->
-          <tr class="is-unsub-row" data-paper="09" data-track="d" data-status="unsubmitted">
-            <td class="col-num">06</td>
-            <td class="col-track col-track--d">FT1</td>
-            <td class="col-title">Physics-Guided Spatio-Temporal Graph Neural Network for One-Class Damage Detection</td>
-            <td class="col-journal">
-              <span class="badge-unsub-journal">⚡ TARGET:</span>
+<small>SJR 2025: MSSP Q1 · SHM Q1 · Eng. Struct. Q1</small>
+</td>
+<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hardanger-recoverability-compressive-sensing" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hardanger-recoverability-compressive-sensing</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS3_hardanger_recoverability_limit_compressive_virtual_sensing\ (PAPER_OUTLINE_CS.md · PAPER_SKELETON_EN.md)</td>
+</tr>
+<!-- Paper 16 · VS4 -->
+<tr class="is-unsub-row" data-paper="16" data-status="unsubmitted" data-track="c">
+<td class="col-num">04</td>
+<td class="col-track col-track--c">VS4</td>
+<td class="col-title">Energy-Aware Space–Time Sampling Schedules for Virtual Sensing with Failed and Battery-Limited Wireless Sensors</td>
+<td class="col-journal">
+<span class="badge-unsub-journal">⚡ TARGET:</span>
+              Structural Control and Health Monitoring (SCHM)
+              <small>Wiley · WoS SCIE, JCR Q1 · fully open access: APC up to USD 2,740, automatic 50% discount for a corresponding author in Viet Nam (≈ USD 1,370)</small>
+<small>Chosen 05/10/2026; no other programme paper at SCHM (FT2 must use another journal)</small>
+<small>Data: Hardanger · HBTA (damaged NM/SM records)</small>
+</td>
+<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · FULL MANUSCRIPT (04/10/2026)</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/energy-aware-virtual-sensing-schedules" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>energy-aware-virtual-sensing-schedules</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS4_hardanger_part_time_compressive_virtual_sensing_sparsity\manuscript\latex\ (vs4.tex · vs4.pdf)</td>
+</tr>
+<!-- Paper 24 · VS8 -->
+<tr class="is-unsub-row" data-paper="24" data-status="unsubmitted" data-track="c">
+<td class="col-num">05</td>
+<td class="col-track col-track--c">VS8</td>
+<td class="col-title">Spectral Rank and the Number of Sensors for Structural Virtual Sensing</td>
+<td class="col-journal">
+<span class="badge-unsub-journal">⚡ TARGET:</span>
+              Journal of Sound and Vibration (JSV) — chosen 04/10/2026, subscription route (no APC)
+              <small>Backup (free routes only): Measurement / J. Civil Struct. Health Monit. / J. Vibration and Control</small>
+<small>Data: Route 345 · HBTA · LUMO · Bergsøysund (4 structures, 11 cases)</small>
+<small>Authors: Chung Truong Thanh (corresponding), Thanh Bui Tien</small>
+<small>Draft v2 complete: 7 sections + Appendix A, 7 + 3 tables, 9 figures + S1, 61 references; LaTeX (VS1 style) 30 pp.; stands alone (does not cite VS3)</small>
+<small>Submission package complete (04/10/2026): manuscript, highlights, cover letter, declarations (no funding, AI-use, CRediT), 5 suggested reviewers</small>
+<small>Elsevier</small>
+<small>SJR 2025: JSV Q1</small>
+</td>
+<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · PACKAGE READY</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/spectral-rank-sensor-count-virtual-sensing" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>spectral-rank-sensor-count-virtual-sensing</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS8_multistructure_sensor_budget_spectral_rank_virtual_sensing\manuscript\nop_bai_JSV\</td>
+</tr>
+<!-- Paper 09 · FT1 -->
+<tr class="is-unsub-row" data-paper="09" data-status="unsubmitted" data-track="d">
+<td class="col-num">06</td>
+<td class="col-track col-track--d">FT1</td>
+<td class="col-title">Physics-Guided Spatio-Temporal Graph Neural Network for One-Class Damage Detection</td>
+<td class="col-journal">
+<span class="badge-unsub-journal">⚡ TARGET:</span>
               Engineering Structures
                <small>Elsevier (Scopus / WoS Q1)</small>
-              <small>SJR 2025: Q1</small>
-            </td>
-            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\FT1_hardanger_pgstgnn_physics_guided_one_class_detection\paper\</td>
-          </tr>
-          <!-- Paper 12 · FT2 -->
-          <tr class="is-unsub-row" data-paper="12" data-track="d" data-status="unsubmitted">
-            <td class="col-num">07</td>
-            <td class="col-track col-track--d">FT2</td>
-            <td class="col-title">Partitioned Dirichlet Boundary-Value Virtual Sensing Under Extreme Sensor Outages</td>
-            <td class="col-journal">
-              <span class="badge-unsub-journal">⚡ TARGET:</span>
+<small>SJR 2025: Q1</small>
+</td>
+<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hardanger-pgstgnn-one-class" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hardanger-pgstgnn-one-class</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\FT1_hardanger_pgstgnn_physics_guided_one_class_detection\paper\</td>
+</tr>
+<!-- Paper 12 · FT2 -->
+<tr class="is-unsub-row" data-paper="12" data-status="unsubmitted" data-track="d">
+<td class="col-num">07</td>
+<td class="col-track col-track--d">FT2</td>
+<td class="col-title">Partitioned Dirichlet Boundary-Value Virtual Sensing Under Extreme Sensor Outages</td>
+<td class="col-journal">
+<span class="badge-unsub-journal">⚡ TARGET:</span>
               Struct. Control Health Monit. / MSSP
               <small>40% fault tolerance under major storm Nina</small>
-              <small>Wiley / Elsevier</small>
-              <small>SJR 2025: SCHM Q1 · MSSP Q1</small>
-            </td>
-            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\FT2_hardanger_dirichlet_boundary_virtual_sensing_storm_outages\</td>
-          </tr>
-          <!-- Paper 26 · FT3 -->
-          <tr class="is-unsub-row" data-paper="26" data-track="d" data-status="unsubmitted">
-            <td class="col-num">08</td>
-            <td class="col-track col-track--d">FT3</td>
-            <td class="col-title">Persistent Sensor Quarantine and Reconfiguration in One-Class Structural Health Monitoring</td>
-            <td class="col-journal">
-              <span class="badge-unsub-journal">⚡ TARGET:</span>
+<small>Wiley / Elsevier</small>
+<small>SJR 2025: SCHM Q1 · MSSP Q1</small>
+<small>Note 05/10/2026: SCHM is now taken by VS4 — choose another journal for FT2 or wait for the VS4 decision</small>
+</td>
+<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hardanger-dirichlet-virtual-sensing-storm" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hardanger-dirichlet-virtual-sensing-storm</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\FT2_hardanger_dirichlet_boundary_virtual_sensing_storm_outages\</td>
+</tr>
+<!-- Paper 26 · FT3 -->
+<tr class="is-unsub-row" data-paper="26" data-status="unsubmitted" data-track="d">
+<td class="col-num">08</td>
+<td class="col-track col-track--d">FT3</td>
+<td class="col-title">Persistent Sensor Quarantine and Reconfiguration in One-Class Structural Health Monitoring</td>
+<td class="col-journal">
+<span class="badge-unsub-journal">⚡ TARGET:</span>
               To be decided
               <small>Manuscript complete (28 pp. incl. supplement) · HBTA, 121 fault-injection scenarios</small>
-            </td>
-            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\FT3_hbta_persistent_sensor_quarantine_one_class_reconfiguration\6_persistent_sensor_quarantine\manuscript\</td>
-          </tr>
-          <!-- Paper 04 · TL1 -->
-          <tr class="is-sub-row" data-paper="04" data-track="b" data-status="submitted">
-            <td class="col-num">09</td>
-            <td class="col-track col-track--b">TL1</td>
-            <td class="col-title">Topology-Guided Edge-Transfer Analysis for One-Class Structural Damage Detection</td>
-            <td class="col-journal">
-              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+</td>
+<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hbta-sensor-quarantine-reconfiguration" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hbta-sensor-quarantine-reconfiguration</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\FT3_hbta_persistent_sensor_quarantine_one_class_reconfiguration\6_persistent_sensor_quarantine\manuscript\</td>
+</tr>
+<!-- Paper 04 · TL1 -->
+<tr class="is-sub-row" data-paper="04" data-status="submitted" data-track="b">
+<td class="col-num">09</td>
+<td class="col-track col-track--b">TL1</td>
+<td class="col-title">Topology-Guided Edge-Transfer Analysis for One-Class Structural Damage Detection</td>
+<td class="col-journal">
+<span class="badge-sub-journal">✓ SUBMITTED:</span>
               Structures
               <small>HE: Prof. Leroy Gardner</small>
-              <small>Elsevier / IStructE</small>
-              <small>SJR 2025: Q1</small>
-            </td>
-            <td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL1_hbta_topology_edge_transfer_one_class_detection\submission_structures\</td>
-          </tr>
-          <!-- Paper 05 · TL2 -->
-          <tr class="is-sub-row" data-paper="05" data-track="b" data-status="submitted">
-            <td class="col-num">10</td>
-            <td class="col-track col-track--b">TL2</td>
-            <td class="col-title">Topology-Informed Sensor Restoration after Sensor Loss in Structural Health Monitoring</td>
-            <td class="col-journal">
-              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+<small>Elsevier / IStructE</small>
+<small>SJR 2025: Q1</small>
+</td>
+<td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hbta-topology-guided-edge-transfer" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hbta-topology-guided-edge-transfer</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL1_hbta_topology_edge_transfer_one_class_detection\submission_structures\</td>
+</tr>
+<!-- Paper 05 · TL2 -->
+<tr class="is-sub-row" data-paper="05" data-status="submitted" data-track="b">
+<td class="col-num">10</td>
+<td class="col-track col-track--b">TL2</td>
+<td class="col-title">Topology-Informed Sensor Restoration after Sensor Loss in Structural Health Monitoring</td>
+<td class="col-journal">
+<span class="badge-sub-journal">✓ SUBMITTED:</span>
               Structural Health Monitoring
               <small>SAGE Publications (Top Q1, IF ~5.7)</small>
-              <small>SJR 2025: Q1</small>
-            </td>
-            <td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL2_hbta_topology_sensor_restoration_ranking_loss\SHM_Submission_Package\</td>
-          </tr>
-          <!-- Paper 06 · TL3 -->
-          <tr class="is-sub-row" data-paper="06" data-track="b" data-status="submitted">
-            <td class="col-num">11</td>
-            <td class="col-track col-track--b">TL3</td>
-            <td class="col-title">Graph-Based Structural Damage Localization through Modal Relative Motion</td>
-            <td class="col-journal">
-              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+<small>SJR 2025: Q1</small>
+</td>
+<td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hbta-topology-informed-sensor-restoration" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hbta-topology-informed-sensor-restoration</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL2_hbta_topology_sensor_restoration_ranking_loss\SHM_Submission_Package\</td>
+</tr>
+<!-- Paper 06 · TL3 -->
+<tr class="is-sub-row" data-paper="06" data-status="submitted" data-track="b">
+<td class="col-num">11</td>
+<td class="col-track col-track--b">TL3</td>
+<td class="col-title">Graph-Based Structural Damage Localization through Modal Relative Motion</td>
+<td class="col-journal">
+<span class="badge-sub-journal">✓ SUBMITTED:</span>
               Structural Durability &amp; Health Monitoring (SDHM)
               <small>Tech Science Press / Scopus</small>
-              <small>SJR 2025: Q3</small>
-              <small>R1 revision submitted 30/09/2026 (2 reviewers + editor; with supplementary code)</small>
-            </td>
-            <td><span class="badge-tag revision">✓ R1 REVISION SUBMITTED · 30/09/2026</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL3_hbta_graph_damage_localization_modal_relative_motion\latex\sdhm_revision_R1\</td>
-          </tr>
-          <!-- Paper 10 · TL4 -->
-          <tr class="is-unsub-row" data-paper="10" data-track="b" data-status="unsubmitted">
-            <td class="col-num">12</td>
-            <td class="col-track col-track--b">TL4</td>
-            <td class="col-title">What a mode can sense: first-principles selection of the modal channel for localising diaphragm bolt damage</td>
-            <td class="col-journal">
-              <span class="badge-unsub-journal">⚡ TARGET:</span>
+<small>SJR 2025: Q3</small>
+<small>R1 revision submitted 30/09/2026 (2 reviewers + editor; with supplementary code)</small>
+</td>
+<td><span class="badge-tag revision">✓ R1 REVISION SUBMITTED · 30/09/2026</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/graph-structural-damage-localization" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>graph-structural-damage-localization</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL3_hbta_graph_damage_localization_modal_relative_motion\latex\sdhm_revision_R1\</td>
+</tr>
+<!-- Paper 10 · TL4 -->
+<tr class="is-unsub-row" data-paper="10" data-status="unsubmitted" data-track="b">
+<td class="col-num">12</td>
+<td class="col-track col-track--b">TL4</td>
+<td class="col-title">What a mode can sense: first-principles selection of the modal channel for localising diaphragm bolt damage</td>
+<td class="col-journal">
+<span class="badge-unsub-journal">⚡ TARGET:</span>
               Structural Monitoring and Maintenance (SMM)
                <small>Techno-Press / Scopus</small>
-              <small>SJR 2025: Q3 (Q4 in Civil &amp; Structural Eng.)</small>
-            </td>
-            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL4_route345_transverse_mode_diaphragm_bolt_damage_localization\manuscript\</td>
-          </tr>
-          <!-- Paper 13 · TL5 -->
-          <tr class="is-unsub-row" data-paper="13" data-track="b" data-status="unsubmitted">
-            <td class="col-num">13</td>
-            <td class="col-track col-track--b">TL5</td>
-            <td class="col-title">Physics-Informed Damage Localisation under Environmental Variability</td>
-            <td class="col-journal">
-              <span class="badge-unsub-journal">⚡ TARGET:</span>
+<small>SJR 2025: Q3 (Q4 in Civil &amp; Structural Eng.)</small>
+</td>
+<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/route345-transverse-mode-bolt-localization" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>route345-transverse-mode-bolt-localization</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL4_route345_transverse_mode_diaphragm_bolt_damage_localization\manuscript\</td>
+</tr>
+<!-- Paper 13 · TL5 -->
+<tr class="is-unsub-row" data-paper="13" data-status="unsubmitted" data-track="b">
+<td class="col-num">13</td>
+<td class="col-track col-track--b">TL5</td>
+<td class="col-title">Physics-Informed Damage Localisation under Environmental Variability</td>
+<td class="col-journal">
+<span class="badge-unsub-journal">⚡ TARGET:</span>
               SHM Q1 Journal (detection version)
               <small>Detection paper (15 pp.) compiled; localisation version under revision</small>
-            </td>
-            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL5_lumo_tower_physics_detection_stacking_localization\</td>
-          </tr>
-          <!-- Paper 01 · OC1 -->
-          <tr class="is-sub-row" data-paper="01" data-track="a" data-status="submitted">
-            <td class="col-num">14</td>
-            <td class="col-track col-track--a">OC1</td>
-            <td class="col-title">Physics-Informed Autoencoders with Unsupervised Feature Attention for Label-Free Structural Damage Detection</td>
-            <td class="col-journal">
-              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+</td>
+<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/lumo-tower-physics-detection-stacking-localization" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>lumo-tower-physics-detection-stacking-localization</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL5_lumo_tower_physics_detection_stacking_localization\</td>
+</tr>
+<!-- Paper 01 · OC1 -->
+<tr class="is-sub-row" data-paper="01" data-status="submitted" data-track="a">
+<td class="col-num">14</td>
+<td class="col-track col-track--a">OC1</td>
+<td class="col-title">Physics-Informed Autoencoders with Unsupervised Feature Attention for Label-Free Structural Damage Detection</td>
+<td class="col-journal">
+<span class="badge-sub-journal">✓ SUBMITTED:</span>
               Matéria (Rio de Janeiro)
               <small>MS ID: RMAT-2026-0601</small>
-              <small>SciELO / Scopus / WoS</small>
-              <small>SJR 2025: Q3</small>
-            </td>
-            <td><span class="badge-tag revision">✓ ROUND 1 REVISION</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC1_z24_piae_unsupervised_feature_attention_detection\</td>
-          </tr>
-          <!-- Paper 02 · OC2 -->
-          <tr class="is-sub-row" data-paper="02" data-track="a" data-status="submitted">
-            <td class="col-num">15</td>
-            <td class="col-track col-track--a">OC2</td>
-            <td class="col-title">Decoupling Health Scores from Environmental and Operational Variability with Unsupervised Feature Attention</td>
-            <td class="col-journal">
-              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+<small>SciELO / Scopus / WoS</small>
+<small>SJR 2025: Q3</small>
+</td>
+<td><span class="badge-tag revision">✓ ROUND 1 REVISION</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/PGAE-A" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>PGAE-A</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC1_z24_piae_unsupervised_feature_attention_detection\</td>
+</tr>
+<!-- Paper 02 · OC2 -->
+<tr class="is-sub-row" data-paper="02" data-status="submitted" data-track="a">
+<td class="col-num">15</td>
+<td class="col-track col-track--a">OC2</td>
+<td class="col-title">Decoupling Health Scores from Environmental and Operational Variability with Unsupervised Feature Attention</td>
+<td class="col-journal">
+<span class="badge-sub-journal">✓ SUBMITTED:</span>
               Smart Structures and Systems (SSS)
               <small>Techno-Press / Scopus / WoS Q2</small>
-              <small>SJR 2025: Q2</small>
-              <small style="color:var(--status-unsub); margin-top:3px; opacity:0.9;">✗ REJECTED: Advances in Structural Engineering (ASE) · SAGE Q2 (desk rejected 2026-09-26)</small>
-            </td>
-            <td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC2_paper_PIAE_AQUINAS\github\paper\</td>
-          </tr>
-          <!-- Paper 03 · OC3 -->
-          <tr class="is-sub-row" data-paper="03" data-track="a" data-status="submitted">
-            <td class="col-num">16</td>
-            <td class="col-track col-track--a">OC3</td>
-            <td class="col-title">Vector-Quantised Physics-Informed Autoencoders for Label-Free Structural Damage Detection</td>
-            <td class="col-journal">
-              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+<small>SJR 2025: Q2</small>
+<small style="color:var(--status-unsub); margin-top:3px; opacity:0.9;">✗ REJECTED: Advances in Structural Engineering (ASE) · SAGE Q2 (desk rejected 2026-09-26)</small>
+</td>
+<td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/PIAE-AQUINAS" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>PIAE-AQUINAS</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC2_paper_PIAE_AQUINAS\github\paper\</td>
+</tr>
+<!-- Paper 03 · OC3 -->
+<tr class="is-sub-row" data-paper="03" data-status="submitted" data-track="a">
+<td class="col-num">16</td>
+<td class="col-track col-track--a">OC3</td>
+<td class="col-title">Vector-Quantised Physics-Informed Autoencoders for Label-Free Structural Damage Detection</td>
+<td class="col-journal">
+<span class="badge-sub-journal">✓ SUBMITTED:</span>
               Structural Monitoring and Maintenance (SMM)
               <small>Companion to PIAE-A · Techno-Press / Scopus</small>
-              <small>SJR 2025: Q3 (Q4 in Civil &amp; Structural Eng.)</small>
-            </td>
-            <td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC3_z24_aquinas_vq_piae_vector_quantized_detection\VQ-PIAE-A\paper\</td>
-          </tr>
-          <!-- Paper 08 · OC4 -->
-          <tr class="is-unsub-row" data-paper="08" data-track="a" data-status="unsubmitted">
-            <td class="col-num">17</td>
-            <td class="col-track col-track--a">OC4</td>
-            <td class="col-title">Temperature Variability and Multi-Channel Damage Sensitivity in the Sonkyo Wind Turbine Blade</td>
-            <td class="col-journal">
-              <span class="badge-unsub-journal">⚡ TARGET:</span>
+<small>SJR 2025: Q3 (Q4 in Civil &amp; Structural Eng.)</small>
+</td>
+<td><span class="badge-tag submitted">✓ SUBMITTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/VQ-PIAE-A" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>VQ-PIAE-A</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC3_z24_aquinas_vq_piae_vector_quantized_detection\VQ-PIAE-A\paper\</td>
+</tr>
+<!-- Paper 08 · OC4 -->
+<tr class="is-unsub-row" data-paper="08" data-status="unsubmitted" data-track="a">
+<td class="col-num">17</td>
+<td class="col-track col-track--a">OC4</td>
+<td class="col-title">Temperature Variability and Multi-Channel Damage Sensitivity in the Sonkyo Wind Turbine Blade</td>
+<td class="col-journal">
+<span class="badge-unsub-journal">⚡ TARGET:</span>
               Wind Energy / MSSP
               <small>ETH Zürich climatic chamber data</small>
-              <small>Wiley / Elsevier</small>
-              <small>SJR 2025: Wind Energy Q2 · MSSP Q1</small>
-            </td>
-            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC4_sonkyo_blade_temperature_damage_sensitivity_tradeoff\</td>
-          </tr>
-          <!-- Paper 19 · HP1 -->
-          <tr class="is-sub-row" data-paper="19" data-track="e" data-status="submitted">
-            <td class="col-num">18</td>
-            <td class="col-track col-track--e">HP1</td>
-            <td class="col-title">Transferability of GA-Tuned Hyperparameters Across Datasets in SHM</td>
-            <td class="col-journal">
-              <span class="badge-sub-journal">✓ SUBMITTED:</span>
+<small>Wiley / Elsevier</small>
+<small>SJR 2025: Wind Energy Q2 · MSSP Q1</small>
+</td>
+<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/sonkyo-temperature-damage-sensitivity" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>sonkyo-temperature-damage-sensitivity</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC4_sonkyo_blade_temperature_damage_sensitivity_tradeoff\</td>
+</tr>
+<!-- Paper 19 · HP1 -->
+<tr class="is-sub-row" data-paper="19" data-status="submitted" data-track="e">
+<td class="col-num">18</td>
+<td class="col-track col-track--e">HP1</td>
+<td class="col-title">Transferability of GA-Tuned Hyperparameters Across Datasets in SHM</td>
+<td class="col-journal">
+<span class="badge-sub-journal">✓ SUBMITTED:</span>
               Engineering Computations
               <small>MS ID: EC-01-2026-0057</small>
-              <small>Emerald / Scopus / WoS</small>
-              <small>SJR 2025: Q2</small>
-            </td>
-            <td><span class="badge-tag revision">✓ MAJOR REVISION · DUE 02/11/2026</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\HP1_ga_hyperparameter_transferability_across_datasets\</td>
-          </tr>
-          <!-- Paper 20 · WT1 -->
-          <tr class="is-unsub-row" data-paper="20" data-track="f" data-status="unsubmitted">
-            <td class="col-num">19</td>
-            <td class="col-track col-track--f">WT1</td>
-            <td class="col-title">Which Peaks Belong to the Structure? Setup Consistency as a Test for Global Modes, Applied to an Offshore Wind Turbine Foundation Before and After Tower Installation</td>
-            <td class="col-journal">
-              <span class="badge-unsub-journal">⚡ TARGET:</span>
+<small>Emerald / Scopus / WoS</small>
+<small>SJR 2025: Q2</small>
+</td>
+<td><span class="badge-tag revision">✓ MAJOR REVISION · DUE 02/11/2026</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/ga-hpo-transferability-shm" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>ga-hpo-transferability-shm</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\HP1_ga_hyperparameter_transferability_across_datasets\</td>
+</tr>
+<!-- Paper 20 · WT1 -->
+<tr class="is-unsub-row" data-paper="20" data-status="unsubmitted" data-track="f">
+<td class="col-num">19</td>
+<td class="col-track col-track--f">WT1</td>
+<td class="col-title">Which Peaks Belong to the Structure? Setup Consistency as a Test for Global Modes, Applied to an Offshore Wind Turbine Foundation Before and After Tower Installation</td>
+<td class="col-journal">
+<span class="badge-unsub-journal">⚡ TARGET:</span>
               Marine Structures / Ocean Engineering
               <small>Co-author: Dr. Thi Cam Nhung Nguyen, Prof. Bui Tien Thanh</small>
-              <small>Elsevier (WoS Q1)</small>
-              <small>SJR 2025: Marine Structures Q1 · Ocean Engineering Q1</small>
-            </td>
-            <td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\WT1_offshore_wind_turbine_foundation_setup_consistency\de tai co Nhung\</td>
-          </tr>
-          <!-- Paper 21 · CV1 -->
-          <tr class="is-sub-row" data-paper="21" data-track="h" data-status="submitted">
-            <td class="col-num">20</td>
-            <td class="col-track col-track--h">CV1</td>
-            <td class="col-title">Zero-Shot Bridge Surface Damage Detection and Segmentation Using a Hierarchical GroundingDINO–Segment Anything Model Framework</td>
-            <td class="col-journal">
-              <span class="badge-sub-journal">✓ UNDER REVIEW:</span>
+<small>Elsevier (WoS Q1)</small>
+<small>SJR 2025: Marine Structures Q1 · Ocean Engineering Q1</small>
+</td>
+<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/t18-foundation-oma" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>t18-foundation-oma</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\WT1_offshore_wind_turbine_foundation_setup_consistency\de tai co Nhung\</td>
+</tr>
+<!-- Paper 21 · CV1 -->
+<tr class="is-sub-row" data-paper="21" data-status="submitted" data-track="h">
+<td class="col-num">20</td>
+<td class="col-track col-track--h">CV1</td>
+<td class="col-title">Zero-Shot Bridge Surface Damage Detection and Segmentation Using a Hierarchical GroundingDINO–Segment Anything Model Framework</td>
+<td class="col-journal">
+<span class="badge-sub-journal">✓ UNDER REVIEW:</span>
               Journal of Science, Technology and Engineering, Mien Tay Construction University (JSTE-MTU)
               <small>Submitted 02/10/2026; passed initial screening, sent to peer review (02/10/2026)</small>
-              <small>Co-author: Nguyen Quang Vinh, Ho Chi Han, Dang Quoc My, Tran Quang Huy, Prof. Bui Tien Thanh</small>
-              <small>p-ISSN 3030-4806 · HĐGS list 2025, Civil Engineering – Architecture (No. 62)</small>
-              <small>Not indexed in Scopus (no SJR quartile)</small>
-              <small style="color:var(--status-unsub); margin-top:3px; opacity:0.9;">✗ REJECTED: Transport and Communications Science Journal (TCSJ) · UTC / VJOL (not Scopus-indexed)</small>
-            </td>
-            <td><span class="badge-tag submitted">✓ UNDER REVIEW</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CV1_bridge_surface_damage_detection_groundingdino_sam\paper\MTU_submission\</td>
-          </tr>
-          <!-- Paper 22 · CV2 -->
-          <tr class="is-unsub-row" data-paper="22" data-track="h" data-status="rejected">
-            <td class="col-num">21</td>
-            <td class="col-track col-track--h">CV2</td>
-            <td class="col-title">Semi-Labeling with Stable-DINO and SAM for Multi-Class Structural Surface Damage Assessment</td>
-            <td class="col-journal">
-              <span class="badge-unsub-journal">⚡ NEXT TARGET:</span>
+<small>Co-author: Nguyen Quang Vinh, Ho Chi Han, Dang Quoc My, Tran Quang Huy, Prof. Bui Tien Thanh</small>
+<small>p-ISSN 3030-4806 · HĐGS list 2025, Civil Engineering – Architecture (No. 62)</small>
+<small>Not indexed in Scopus (no SJR quartile)</small>
+<small style="color:var(--status-unsub); margin-top:3px; opacity:0.9;">✗ REJECTED: Transport and Communications Science Journal (TCSJ) · UTC / VJOL (not Scopus-indexed)</small>
+</td>
+<td><span class="badge-tag submitted">✓ UNDER REVIEW</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/surface-damage-groundingdino-sam" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>surface-damage-groundingdino-sam</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CV1_bridge_surface_damage_detection_groundingdino_sam\paper\MTU_submission\</td>
+</tr>
+<!-- Paper 22 · CV2 -->
+<tr class="is-unsub-row" data-paper="22" data-status="rejected" data-track="h">
+<td class="col-num">21</td>
+<td class="col-track col-track--h">CV2</td>
+<td class="col-title">Semi-Labeling with Stable-DINO and SAM for Multi-Class Structural Surface Damage Assessment</td>
+<td class="col-journal">
+<span class="badge-unsub-journal">⚡ NEXT TARGET:</span>
               To be decided
               <small>Co-author: Nguyen Quang Vinh</small>
-              <small style="color:var(--status-unsub); margin-top:3px; opacity:0.9;">✗ REJECTED (previous submission)</small>
-            </td>
-            <td><span class="badge-tag unsub-badge">✗ REJECTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CV2_semi_labeling_stabledino_sam_multiclass_surface_damage\semi-labeling-paper\</td>
-          </tr>
-          <!-- Paper 25 · CV3 -->
-          <tr class="is-sub-row" data-paper="25" data-track="h" data-status="accepted">
-            <td class="col-num">22</td>
-            <td class="col-track col-track--h">CV3</td>
-            <td class="col-title">InfaTrackVision: A Non-Contact Vibration Measurement System Using Computer Vision Combined with Deep Learning for Structural Health Monitoring</td>
-            <td class="col-journal">
-              <span class="badge-sub-journal">✓ ACCEPTED:</span>
+<small style="color:var(--status-unsub); margin-top:3px; opacity:0.9;">✗ REJECTED (previous submission)</small>
+</td>
+<td><span class="badge-tag unsub-badge">✗ REJECTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/vinhveer/semi-labeling-paper" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>semi-labeling-paper</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CV2_semi_labeling_stabledino_sam_multiclass_surface_damage\semi-labeling-paper\</td>
+</tr>
+<!-- Paper 25 · CV3 -->
+<tr class="is-sub-row" data-paper="25" data-status="accepted" data-track="h">
+<td class="col-num">22</td>
+<td class="col-track col-track--h">CV3</td>
+<td class="col-title">InfaTrackVision: A Non-Contact Vibration Measurement System Using Computer Vision Combined with Deep Learning for Structural Health Monitoring</td>
+<td class="col-journal">
+<span class="badge-sub-journal">✓ ACCEPTED:</span>
               Transport and Communications Science Journal (TCSJ)
               <small>MS ID: 3057</small>
-              <small>UTC / VJOL</small>
-              <small>Not indexed in Scopus (no SJR quartile)</small>
-            </td>
-            <td><span class="badge-tag submitted">✓ ACCEPTED</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CV3_infatrackvision_noncontact_vibration_measurement_vision_deep_learning\</td>
-          </tr>
-          <!-- Paper 23 · CW1 -->
-          <tr class="is-sub-row" data-paper="23" data-track="g" data-status="submitted">
-            <td class="col-num">23</td>
-            <td class="col-track col-track--g">CW1</td>
-            <td class="col-title">Conditional WaveNet Deep Learning Model for Robust Structural Damage Detection Under Varying Temperatures</td>
-            <td class="col-journal">
-              <span class="badge-sub-journal">✓ UNDER REVIEW:</span>
+<small>UTC / VJOL</small>
+<small>Not indexed in Scopus (no SJR quartile)</small>
+</td>
+<td><span class="badge-tag submitted">✓ ACCEPTED</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/InfaTrackVision" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>InfaTrackVision</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CV3_infatrackvision_noncontact_vibration_measurement_vision_deep_learning\</td>
+</tr>
+<!-- Paper 23 · CW1 -->
+<tr class="is-sub-row" data-paper="23" data-status="submitted" data-track="g">
+<td class="col-num">23</td>
+<td class="col-track col-track--g">CW1</td>
+<td class="col-title">Conditional WaveNet Deep Learning Model for Robust Structural Damage Detection Under Varying Temperatures</td>
+<td class="col-journal">
+<span class="badge-sub-journal">✓ UNDER REVIEW:</span>
               HCMCOU Journal of Science – Advances in Computational Structures (HCMCOUJS-ACS)
               <small>Ho Chi Minh City Open University · Diamond OA (no APC) · ISSN 2815-6218</small>
-              <small>Submitted 02/10/2026 · Original Research Article · double-blind review</small>
-              <small>Passed technical check; sent to peer review (02/10/2026)</small>
-              <small>Co-author: Tran Thanh Tri, Nguyen Thang Tin, Prof. Bui Tien Thanh</small>
-              <small style="color:var(--status-unsub); margin-top:3px; opacity:0.9;">✗ REJECTED: Transport and Communications Science Journal (TCSJ) · UTC / VJOL (not Scopus-indexed)</small>
-            </td>
-            <td><span class="badge-tag submitted">✓ UNDER REVIEW</span></td>
-            <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CW1_conditional_wavenet_damage_detection_varying_temperature\11_conditional-wavenet-shm\manuscript\hcmcoujs\</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+<small>Submitted 02/10/2026 · Original Research Article · double-blind review</small>
+<small>Passed technical check; sent to peer review (02/10/2026)</small>
+<small>Co-author: Tran Thanh Tri, Nguyen Thang Tin, Prof. Bui Tien Thanh</small>
+<small style="color:var(--status-unsub); margin-top:3px; opacity:0.9;">✗ REJECTED: Transport and Communications Science Journal (TCSJ) · UTC / VJOL (not Scopus-indexed)</small>
+</td>
+<td><span class="badge-tag submitted">✓ UNDER REVIEW</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/conditional-wavenet-shm" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>conditional-wavenet-shm</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CW1_conditional_wavenet_damage_detection_varying_temperature\11_conditional-wavenet-shm\manuscript\hcmcoujs\</td>
+</tr>
+<!-- Paper 27 · EL1 -->
+<tr class="is-unsub-row" data-paper="27" data-status="unsubmitted" data-track="i">
+<td class="col-num">24</td>
+<td class="col-track col-track--i">EL1</td>
+<td class="col-title">Dual-Criterion Equivalent Linearization Tested on Measured Vibration Data (working title)</td>
+<td class="col-journal">
+<span class="badge-unsub-journal">⚡ TARGET:</span>
+              To be decided
+              <small>Started 05/10/2026: basic note (Duffing, classical vs dual criteria, checked against FPK) and Silverbox pilot</small>
+<small>Pilot: one weak amplitude level cannot separate the criteria (≈1% differences); next: Silverbox "arrow" test segment or stronger nonlinearity</small>
+<small>Data: Silverbox (nonlinear system-identification benchmark)</small>
+</td>
+<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · FEASIBILITY STAGE</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/two-sided-bounds-equivalent-linearization" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>two-sided-bounds-equivalent-linearization</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\EL1_dual_criterion_equivalent_linearization_measured_data\</td>
+</tr>
+<!-- Paper 28 · ST1 -->
+<tr class="is-unsub-row" data-paper="28" data-status="unsubmitted" data-track="j">
+<td class="col-num">25</td>
+<td class="col-track col-track--b">ST1</td>
+<td class="col-title">Out-of-Plane Stability and Portal Buckling Mechanics in Steel Through-Arch Bridges: The Bracing Saturation Paradox and Design Formulations for Eurocode EN 1993-2</td>
+<td class="col-journal">
+<span class="badge-unsub-journal">⚡ TARGET:</span>
+              Journal of Constructional Steel Research (JCSR)
+              <small>Elsevier · WoS SCIE · JCR Q1 · Impact Factor ~4.3</small>
+<small>Status: Advanced stage · 86-case 3D FEA parametric matrix complete, 9 publication figures (300 DPI), 6 verified tables</small>
+<small>Focus: Proving Eurocode EN 1993-2 Annex D unconservative error (&gt;200%) &amp; proposed closed-form effective length β<sub>prop</sub></small>
+<small>Data/Benchmarks: Nam Ô (75 m through-truss arch) with 38-axle D19E train &amp; KW51 (115 m network arch)</small>
+</td>
+<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · MANUSCRIPT DRAFTING</span></td>
+<td class="col-github"><a class="github-badge" href="https://github.com/chungntu/through-arch-portal-stability" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>through-arch-portal-stability</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\ST1_kw51_namo_arch_portal_out_of_plane_stability_parametric\</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </div>
 </body>
 </html>

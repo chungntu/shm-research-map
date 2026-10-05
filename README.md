@@ -10,6 +10,8 @@ Research programme map and journal publication progress for a set of structural 
 - **WT**: Offshore wind turbine foundation OMA (setup consistency)
 - **CW**: Temperature-conditioned deep learning for damage detection
 - **CV**: Vision foundation models for structural surface damage
+- **EL**: Equivalent linearization of nonlinear random vibration checked on measured data
+- **ST**: Structural stability and out-of-plane buckling of through-arch bridges
 
 View the page: https://chungntu.github.io/shm-research-map/
 
