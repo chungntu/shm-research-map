@@ -12,6 +12,7 @@ Research programme map and journal publication progress for a set of structural 
 - **CV**: Vision foundation models for structural surface damage
 - **EL**: Equivalent linearization of nonlinear random vibration checked on measured data
 - **ST**: Structural stability and out-of-plane buckling of through-arch bridges
+- **PS**: Population-based SHM and cross-structure knowledge transfer
 
 View the page: https://chungntu.github.io/shm-research-map/
 

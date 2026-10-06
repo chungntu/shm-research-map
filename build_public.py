@@ -9,5 +9,9 @@ HERE = Path(__file__).parent
 SRC = HERE / "ban_do_nghien_cuu_SHM_2026-09-04.html"
 OUT = HERE / "index.html"
 
-OUT.write_text(SRC.read_text(encoding="utf-8"), encoding="utf-8")
-print(f"Wrote {OUT.name}")
+if SRC.exists():
+    OUT.write_text(SRC.read_text(encoding="utf-8"), encoding="utf-8")
+    print(f"Updated {OUT.name} from {SRC.name}")
+else:
+    print(f"{OUT.name} is the direct source of truth ({SRC.name} not present). No overwrite performed.")
+
