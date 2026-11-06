@@ -249,10 +249,11 @@
 <div class="page">
 <header>
 <p class="eyebrow">Research Programme Map &amp; Publication Progress · SHM</p>
+<p><a href="#research-directions">Explore the research directions</a></p>
 </header>
 <!-- 11 Research Tracks Summary -->
 <section class="tracks-summary">
-<div class="track-line track-line--c"><b>VS</b> — Virtual sensing: build (KW51) · recoverability limit under sensor loss, CS framing (Hardanger · Route 345 · HBTA · LUMO · KW51) · sensor budget from spectral rank (Route 345 · HBTA · LUMO · Bergsøysund) · energy-aware space–time sampling schedules · dynamic structural condensation for offline sensors (Hardanger, Storm Nina).</div>
+<div class="track-line track-line--c"><b>VS</b> — Virtual sensing: build (KW51) · recoverability limit under sensor loss, CS framing (Hardanger · Route 345 · HBTA · LUMO · KW51) · sensor budget from spectral rank (Route 345 · HBTA · LUMO · Bergsøysund) · energy-aware space–time sampling schedules · dynamic structural condensation and block-Hankel recovery under outages (Hardanger) · modal graph sampling · conformal coverage across retrofit (KW51) · bending-moment sensing (HDPE fish cages).</div>
 <div class="track-line track-line--d"><b>FT</b> — Integration &amp; fault tolerance (Hardanger suspension bridge) · persistent sensor quarantine &amp; reconfiguration for one-class detection (HBTA).</div>
 <div class="track-line track-line--b"><b>TL</b> — Topology, sensor localisation &amp; restoration (HBTA · Route 345 · LUMO Tower).</div>
 <div class="track-line track-line--a"><b>OC</b> — Robust one-class detection against EOV (Z24 · AQUINAS · Sonkyo wind blade).</div>
@@ -265,7 +266,7 @@
 <div class="track-line track-line--k"><b>PS</b> — Population-based SHM &amp; cross-structure knowledge transfer: empirical transferability landscape across 10 diverse measured structures (Z24 · Aquinas OLD/NEW · Bautzen · Hell · KW51 · Route 345 · LUMO · QUGS · Sonkyo) · irreducible element (IE) graph kernel distance vs data distribution shift (MMD/Wasserstein) · mapping the boundaries of negative transfer.</div>
 </section>
 <!-- ===== Detailed Submission Audit Table ===== -->
-<section class="audit-section">
+<section class="audit-section" id="publication-progress">
 <h2>Progress Tracker &amp; Target Journals for 32 Papers &amp; Research Studies</h2>
 <p>Detailed overview of submission status, classified by Research Track, submitted / target journal, manuscript ID, and project folder location.</p>
 <div class="table-responsive">
@@ -574,6 +575,38 @@
 </tbody>
 </table>
 </div>
+</section>
+<section class="audit-section" id="research-directions" aria-labelledby="research-directions-title">
+<h2 id="research-directions-title">Research Directions</h2>
+<p>Programme synthesis · 6 November 2026 · 32 projects across 11 research tracks</p>
+<p>The programme asks how structural health monitoring can recover unmeasured responses, detect and localize damage, and keep operating when sensors fail or operating conditions shift. The directions below group the projects by the engineering questions they address.</p>
+<div class="track-line track-line--c">
+<b>1. Virtual sensing with limited measurements · VS1–VS4, VS8–VS13</b><br>
+VS1 and VS2 estimate quasi-static stress and deck strain on KW51. VS3 asks which lost signals remain recoverable, VS4 studies when sensors should sample under energy constraints, and VS8 relates sensor budget to spectral rank. On Hardanger, VS9 uses dynamic structural condensation and VS11 studies block-Hankel completion and recovery certificates for fixed outage patterns. VS10 develops modal graph sampling in space and time. VS12 tests conformal coverage across retrofit and operational shifts on KW51. VS13 investigates whether a few sensors can recover bending moments along an HDPE fish-cage collar.
+</div>
+<div class="track-line track-line--b">
+<b>2. Damage detection, localization and sensor faults · OC1–OC4, TL1–TL5, FT1, FT3, CW1</b><br>
+OC1–OC3 develop one-class representations on Z24 and AQUINAS. OC4 examines the trade-off between temperature robustness and damage sensitivity on the Sonkyo blade, while CW1 conditions a WaveNet detector on temperature. TL1–TL3 use HBTA topology for edge transfer, sensor restoration and connection localization. TL4 uses transverse modes on Route 345, and TL5 studies physics-informed detection and ensemble localization on LUMO Tower. FT1 combines physics guidance and graph learning on Hardanger, while FT3 studies persistent sensor quarantine and detector reconfiguration on HBTA.
+</div>
+<div class="track-line track-line--k">
+<b>3. Transfer across structures and datasets · HP1, PS1</b><br>
+HP1 compares the contribution of input formulation and hyperparameter optimization in supervised damage classification. PS1 studies when knowledge transfer helps across monitored structures and when differences in topology or measurement distributions lead to negative transfer.
+</div>
+<div class="track-line track-line--j">
+<b>4. Structural dynamics, stability and field identification · WT1, EL1–EL2, ST1–ST2</b><br>
+WT1 tests consistency across measurement setups in offshore wind foundation modal identification. EL1 studies two-sided bounds for equivalent linearization, and EL2 examines dissipation and dephasing in measured damping. ST1 investigates when the end portal governs out-of-plane stability on KW51 and Nam Ô. ST2 studies how hanger tension changes lateral restraint and what that means for updating the KW51 model.
+</div>
+<div class="track-line track-line--h">
+<b>5. Vision-based inspection and measurement · CV1–CV3</b><br>
+CV1 uses vision foundation models to detect and segment bridge surface damage. CV2 develops a semi-automatic workflow for labeling multiple damage classes. CV3 uses camera-based, non-contact vibration measurement to extend vision from surface inspection to structural response.
+</div>
+<h3>Connections between studies</h3>
+<ul>
+<li><b>KW51:</b> VS1 and VS2 estimate structural responses. VS12 asks how well prediction intervals hold after retrofit and under changing operating conditions.</li>
+<li><b>Hardanger:</b> VS3, VS9 and VS11 examine recoverability and reconstruction under sensor loss. FT1 addresses the downstream task of damage detection.</li>
+<li><b>HBTA:</b> TL2 ranks sensors for restoration, FT3 studies how the detector should operate during persistent faults, and TL3 uses the remaining modal information to localize connection damage.</li>
+</ul>
+<p><a href="#publication-progress">Back to the publication tracker</a></p>
 </section>
 </div>
 </body>
