@@ -649,52 +649,81 @@
     margin-top: 4px;
     max-width: 280px;
   }
+
+  /* ---- Combined Journal & Status Column ---- */
+  .col-journal-status {
+    min-width: 250px;
+    max-width: 360px;
+    line-height: 1.45;
+  }
+  .status-badge-wrap {
+    margin-bottom: 6px;
+  }
+  .journal-name {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 2px;
+  }
+  .journal-name.journal-tbd {
+    color: var(--ink-soft);
+    font-weight: 400;
+  }
+  .journal-meta {
+    display: block;
+    font-weight: 400;
+    color: var(--ink-soft);
+    font-size: 11.5px;
+    line-height: 1.4;
+    margin-bottom: 3px;
+  }
+
 </style>
 </head>
 <body>
 <div class="page">
 <header>
 <div class="header-top">
-  <div>
-    <p class="eyebrow">Research Programme Map &amp; Publication Progress · SHM</p>
-    <h1 class="page-title">SHM Research Map &amp; Publication Progress</h1>
-  </div>
-  <div class="header-actions">
-    <a href="#research-directions" class="nav-jump-btn">↓ Khám phá các hướng nghiên cứu</a>
-    <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Day/Night Mode" aria-label="Toggle Theme">
-      <span class="theme-icon">🌙</span> <span class="theme-text">Night</span>
-    </button>
-  </div>
+<div>
+<p class="eyebrow">Research Programme Map &amp; Publication Progress · SHM</p>
+<h1 class="page-title">SHM Research Map &amp; Publication Progress</h1>
+</div>
+<div class="header-actions">
+<a class="nav-jump-btn" href="#research-directions">↓ Khám phá các hướng nghiên cứu</a>
+<button aria-label="Toggle Theme" class="theme-toggle-btn" id="theme-toggle" title="Toggle Day/Night Mode">
+<span class="theme-icon">🌙</span> <span class="theme-text">Night</span>
+</button>
+</div>
 </div>
 </header>
 <!-- Immediate Action Pipeline Banner -->
 <section class="action-pipeline-card">
-  <div class="action-pipeline-header">
-    <span class="action-badge">🔥 Kế hoạch nộp tiếp theo · 08/11/2026</span>
-    <span class="action-title">Chỉ đạo hành động: Cần làm dứt điểm rồi nộp luôn!</span>
-  </div>
-  <div class="action-pipeline-body">
-    <div class="action-item action-item--priority1">
-      <div class="action-item-title">
-        <span class="action-item-rank">Ưu tiên số 1</span>
-        <a href="#paper-ft1" class="action-item-link action-item-link--amber">FT1 · Hardanger PG-STGNN ↗</a>
-      </div>
-      <div class="action-item-desc">
+<div class="action-pipeline-header">
+<span class="action-badge">🔥 Kế hoạch nộp tiếp theo · 08/11/2026</span>
+<span class="action-title">Chỉ đạo hành động: Cần làm dứt điểm rồi nộp luôn!</span>
+</div>
+<div class="action-pipeline-body">
+<div class="action-item action-item--priority1">
+<div class="action-item-title">
+<span class="action-item-rank">Ưu tiên số 1</span>
+<a class="action-item-link action-item-link--amber" href="#paper-ft1">FT1 · Hardanger PG-STGNN ↗</a>
+</div>
+<div class="action-item-desc">
         Làm dứt điểm bản thảo và kiểm chứng bán tổng hợp để nộp trực tiếp lên <strong>Engineering Structures</strong> (Elsevier WoS Q1 · Lộ trình miễn phí Subscription 0 APC).
       </div>
-    </div>
-    <div class="action-item action-item--priority2">
-      <div class="action-item-title">
-        <span class="action-item-rank action-item-rank--sky">Ưu tiên số 2</span>
-        <a href="#paper-vs3" class="action-item-link action-item-link--sky">VS3 · Hardanger Recoverability Limit ↗</a>
+</div>
+<div class="action-item action-item--priority2">
+<div class="action-item-title">
+<span class="action-item-rank action-item-rank--sky">Ưu tiên số 2</span>
+<a class="action-item-link action-item-link--sky" href="#paper-vs3">VS3 · Hardanger Recoverability Limit ↗</a>
+</div>
+<div class="action-item-desc">
+        Trọn bộ hồ sơ nộp bài đã hoàn tất 100% (bài chính 26 trang ≤ 30 trang, phụ lục 17 trang, biên dịch sạch 0 lỗi), sẵn sàng nộp ngay sau FT1 lên <strong>Engineering Structures</strong>!
       </div>
-      <div class="action-item-desc">
-        Trọn bộ hồ sơ nộp bài đã hoàn tất 100% (bài chính 26 trang &le; 30 trang, phụ lục 17 trang, biên dịch sạch 0 lỗi), sẵn sàng nộp ngay sau FT1 lên <strong>Engineering Structures</strong>!
-      </div>
-    </div>
-  </div>
+</div>
+</div>
 </section>
-
 <!-- 11 Research Tracks Summary -->
 <section class="tracks-summary">
 <div class="track-line track-line--c"><b>VS</b> — Virtual sensing: build (KW51) · recoverability limit under sensor loss, CS framing (Hardanger · Route 345 · HBTA · LUMO · KW51) · sensor budget from spectral rank (Route 345 · HBTA · LUMO · Bergsøysund) · energy-aware space–time sampling schedules · dynamic structural condensation and block-Hankel recovery under outages (Hardanger) · modal graph sampling · conformal coverage across retrofit (KW51) · bending-moment sensing (HDPE fish cages).</div>
@@ -720,8 +749,8 @@
 <th class="col-num">#</th>
 <th>Bài</th>
 <th>Paper Title</th>
-<th>Journal / Publisher</th>
-<th>Publication Status</th>
+<th>Journal &amp; Publication Status</th>
+
 <th class="col-portal" title="Journal submission system; login required">Check Status</th>
 <th class="col-github">GitHub Repository</th>
 <th>Project Folder on Drive</th>
@@ -733,8 +762,13 @@
 <td class="col-num">01</td>
 <td class="col-track col-track--c">VS1</td>
 <td class="col-title">Physics-Guided Residual Learning for Quasi-Static Stress Virtual Sensing on Railway Bridge KW51</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ SUBMITTED:</span> Mechanical Systems and Signal Processing (MSSP)<small>Elsevier · WoS Q1 · Co-author: Prof. Guido De Roeck</small></td>
-<td><span class="badge-tag submitted">✓ SUBMITTED</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted ≈24/09/2026 → returned to author queue 25/09/2026 (author list update) → resubmitted 30/09/2026 → under review</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag submitted">✓ SUBMITTED</span></div>
+<div class="journal-name">Mechanical Systems and Signal Processing (MSSP)</div>
+<small class="journal-meta">Elsevier · WoS Q1 · Co-author: Prof. Guido De Roeck</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted ≈24/09/2026 → returned to author queue 25/09/2026 (author list update) → resubmitted 30/09/2026 → under review</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://www.editorialmanager.com/ymssp/default.aspx" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ Editorial Manager</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/kw51-piml-virtual-sensing" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>kw51-piml-virtual-sensing</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS1_kw51_piml_quasi_static_stress_virtual_sensing</td>
 </tr>
@@ -743,8 +777,13 @@
 <td class="col-num">02</td>
 <td class="col-track col-track--c">VS2</td>
 <td class="col-title">Physics-Guided Virtual Sensing of Railway Bridge Deck Strains Under Uncertain Boundary Conditions</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ SUBMITTED:</span> Journal of Civil Structural Health Monitoring (JCSHM)<small>Springer · WoS SCIE / JCR Q1 · EiC: Prof. Farhad Ansari · Subscription route · Co-authors: Prof. Bui Tien Thanh, Prof. Guido De Roeck</small></td>
-<td><span class="badge-tag submitted">✓ SUBMITTED</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Engineering Structures package prepared, dropped for its 30-page limit → full-length version submitted to JCSHM 06/11/2026 → under review</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag submitted">✓ SUBMITTED</span></div>
+<div class="journal-name">Journal of Civil Structural Health Monitoring (JCSHM)</div>
+<small class="journal-meta">Springer · WoS SCIE / JCR Q1 · EiC: Prof. Farhad Ansari · Subscription route · Co-authors: Prof. Bui Tien Thanh, Prof. Guido De Roeck</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Engineering Structures package prepared, dropped for its 30-page limit → full-length version submitted to JCSHM 06/11/2026 → under review</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://www.editorialmanager.com/cshm/default.aspx" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ Editorial Manager</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/kw51-deck-girder-virtual-sensing" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>kw51-deck-girder-virtual-sensing</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS2_kw51_deck_girder_strain_virtual_sensing_without_bearing</td>
 </tr>
@@ -753,8 +792,13 @@
 <td class="col-num">03</td>
 <td class="col-track col-track--c">VS3</td>
 <td class="col-title">A Priori Error of Virtual Channels under Sensor Loss: A Data-Only Linear MMSE Index Validated Blind on Five Monitored Structures</td>
-<td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> Engineering Structures<small>Elsevier · WoS Q1 · Subscription route (0 APC)</small></td>
-<td><span class="badge-tag badge-next-2">⚡ READY TO SUBMIT · NEXT #2</span><small class="timeline" title="Package status">📅 Trọn bộ hồ sơ 100% hoàn tất (26 trang main + 17 trang supp), biên dịch 0 lỗi, sẵn sàng nộp ngay sau FT1!</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag badge-next-2">⚡ READY TO SUBMIT · NEXT #2</span></div>
+<div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Engineering Structures</div>
+<small class="journal-meta">Elsevier · WoS Q1 · Subscription route (0 APC)</small>
+<small class="timeline" title="Package status">📅 Trọn bộ hồ sơ 100% hoàn tất (26 trang main + 17 trang supp), biên dịch 0 lỗi, sẵn sàng nộp ngay sau FT1!</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://www.editorialmanager.com/engstruct/default.aspx" rel="noopener noreferrer" target="_blank" title="Engineering Structures Editorial Manager">↗ Editorial Manager</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hardanger-recoverability-compressive-sensing" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hardanger-recoverability-compressive-sensing</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS3_hardanger_recoverability_limit_compressive_virtual_sensing</td>
 </tr>
@@ -763,8 +807,13 @@
 <td class="col-num">04</td>
 <td class="col-track col-track--c">VS4</td>
 <td class="col-title">Energy-Aware Space–Time Sampling Schedules for Virtual Sensing with Failed and Battery-Limited Wireless Sensors</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ SUBMITTED:</span> Structural Control and Health Monitoring (SCHM)<small>Wiley · WoS Q1 (OA) · submitted 07/10/2026</small></td>
-<td><span class="badge-tag submitted">✓ SUBMITTED</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted 07/10/2026 → under review</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag submitted">✓ SUBMITTED</span></div>
+<div class="journal-name">Structural Control and Health Monitoring (SCHM)</div>
+<small class="journal-meta">Wiley · WoS Q1 (OA) · submitted 07/10/2026</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted 07/10/2026 → under review</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://authors.wiley.com/dashboard/journal?groupCode=STC" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ Wiley Research Exchange</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/energy-aware-virtual-sensing-schedules" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>energy-aware-virtual-sensing-schedules</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS4_hardanger_part_time_compressive_virtual_sensing_sparsity</td>
 </tr>
@@ -773,8 +822,13 @@
 <td class="col-num">05</td>
 <td class="col-track col-track--c">VS8</td>
 <td class="col-title">Spectral Rank for Spatial Compression in Structural Virtual Sensing</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ SUBMITTED:</span> Sensors (MDPI)<small>MDPI · WoS SCIE / JCR Q2 · Section: Intelligent Sensors · OA, APC 2600 CHF · Manuscript ID sensors-4717019 · Co-author: Prof. Bui Tien Thanh</small></td>
-<td><span class="badge-tag submitted">✓ SUBMITTED</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 JSV package ready 04/10/2026, not submitted → shortened version submitted to Sensors 06/11/2026 (sensors-4717019) → under review</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag submitted">✓ SUBMITTED</span></div>
+<div class="journal-name">Sensors (MDPI)</div>
+<small class="journal-meta">MDPI · WoS SCIE / JCR Q2 · Section: Intelligent Sensors · OA, APC 2600 CHF · Manuscript ID sensors-4717019 · Co-author: Prof. Bui Tien Thanh</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 JSV package ready 04/10/2026, not submitted → shortened version submitted to Sensors 06/11/2026 (sensors-4717019) → under review</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://susy.mdpi.com/user/manuscripts/status" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ MDPI SuSy</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/spectral-rank-sensor-count-virtual-sensing" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>spectral-rank-sensor-count-virtual-sensing</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS8_multistructure_sensor_budget_spectral_rank_virtual_sensing</td>
 </tr>
@@ -783,8 +837,12 @@
 <td class="col-num">06</td>
 <td class="col-track col-track--c">VS9</td>
 <td class="col-title">Virtual Sensing of Offline Bridge Sensors by Dynamic Structural Condensation</td>
-<td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> To be decided<small>SCHM is taken by VS4; avoid the journal chosen for VS3</small></td>
-<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
+<div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> To be decided</div>
+<small class="journal-meta">SCHM is taken by VS4; avoid the journal chosen for VS3</small>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hardanger-dirichlet-virtual-sensing-storm" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hardanger-dirichlet-virtual-sensing-storm</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\FT2_hardanger_dirichlet_boundary_virtual_sensing_storm_outages</td>
 </tr>
@@ -793,8 +851,11 @@
 <td class="col-num">07</td>
 <td class="col-track col-track--c">VS10</td>
 <td class="col-title">Modal Graph Sampling for Space–Time Virtual Sensing</td>
-<td class="col-journal">—</td>
-<td><span class="badge-tag notyet-badge">PILOT · MANUSCRIPT DRAFT</span></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">PILOT · MANUSCRIPT DRAFT</span></div>
+<div class="journal-name journal-tbd">—</div>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github">—</td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS10_modal_graph_sampling_theorem_space_time_virtual_sensing</td>
 </tr>
@@ -803,8 +864,11 @@
 <td class="col-num">08</td>
 <td class="col-track col-track--c">VS11</td>
 <td class="col-title">Block-Hankel Completion and Deterministic Outage Certificates for Virtual Sensing on the Hardanger Bridge</td>
-<td class="col-journal">—</td>
-<td><span class="badge-tag notyet-badge">PILOT · PRELIMINARY P0–P1 RESULTS</span></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">PILOT · PRELIMINARY P0–P1 RESULTS</span></div>
+<div class="journal-name journal-tbd">—</div>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github">—</td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS11_hardanger_block_hankel_completion_deterministic_outage_certificate</td>
 </tr>
@@ -813,8 +877,11 @@
 <td class="col-num">09</td>
 <td class="col-track col-track--c">VS12</td>
 <td class="col-title">Conformal Coverage for KW51 Virtual Sensing Under Retrofit and Operational Shifts</td>
-<td class="col-journal">—</td>
-<td><span class="badge-tag notyet-badge">PILOT · MANUSCRIPT DRAFT</span></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">PILOT · MANUSCRIPT DRAFT</span></div>
+<div class="journal-name journal-tbd">—</div>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github">—</td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS12_kw51_conformal_coverage_virtual_sensing_retrofit_shift</td>
 </tr>
@@ -823,8 +890,11 @@
 <td class="col-num">10</td>
 <td class="col-track col-track--c">VS13</td>
 <td class="col-title">Observability and Estimation of Bending Moments Along the HDPE Floating Collar of a Gravity Fish Cage from a Few On-Collar Sensors</td>
-<td class="col-journal">—</td>
-<td><span class="badge-tag notyet-badge">OUTLINE · MODEL DEVELOPMENT</span></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">OUTLINE · MODEL DEVELOPMENT</span></div>
+<div class="journal-name journal-tbd">—</div>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github">—</td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS13_hdpe_cage_floater_bending_moment_virtual_sensing</td>
 </tr>
@@ -833,8 +903,13 @@
 <td class="col-num">11</td>
 <td class="col-track col-track--d">FT1</td>
 <td class="col-title">Physics-Guided Spatio-Temporal Graph Neural Network for One-Class Damage Detection</td>
-<td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> Engineering Structures<small>Elsevier · WoS Q1 · Subscription route (0 APC)</small></td>
-<td><span class="badge-tag badge-next-1">🔥 NEXT SUBMISSION #1</span><small class="timeline" title="Action plan">⚡ Ưu tiên số 1: Cần làm dứt điểm rồi nộp luôn! Đang hoàn thiện bản thảo và benchmark bán tổng hợp.</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag badge-next-1">🔥 NEXT SUBMISSION #1</span></div>
+<div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Engineering Structures</div>
+<small class="journal-meta">Elsevier · WoS Q1 · Subscription route (0 APC)</small>
+<small class="timeline" title="Action plan">⚡ Ưu tiên số 1: Cần làm dứt điểm rồi nộp luôn! Đang hoàn thiện bản thảo và benchmark bán tổng hợp.</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://www.editorialmanager.com/engstruct/default.aspx" rel="noopener noreferrer" target="_blank" title="Engineering Structures Editorial Manager">↗ Editorial Manager</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hardanger-pgstgnn-one-class" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hardanger-pgstgnn-one-class</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\FT1_hardanger_pgstgnn_physics_guided_one_class_detection</td>
 </tr>
@@ -843,8 +918,12 @@
 <td class="col-num">12</td>
 <td class="col-track col-track--d">FT3</td>
 <td class="col-title">Persistent Sensor Quarantine and Reconfiguration in One-Class Structural Health Monitoring</td>
-<td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> To be decided<small>Target: Top SHM / Struct. Control</small></td>
-<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
+<div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> To be decided</div>
+<small class="journal-meta">Target: Top SHM / Struct. Control</small>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hbta-sensor-quarantine-reconfiguration" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hbta-sensor-quarantine-reconfiguration</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\FT3_hbta_persistent_sensor_quarantine_one_class_reconfiguration</td>
 </tr>
@@ -853,8 +932,13 @@
 <td class="col-num">13</td>
 <td class="col-track col-track--b">TL1</td>
 <td class="col-title">Topology-Guided Edge-Transfer Analysis for One-Class Structural Damage Detection</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ SUBMITTED:</span> Structures<small>Elsevier / IStructE · WoS Q1 (HE: Prof. Leroy Gardner)</small></td>
-<td><span class="badge-tag submitted">✓ SUBMITTED</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted ≈12/09/2026 → under review</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag submitted">✓ SUBMITTED</span></div>
+<div class="journal-name">Structures</div>
+<small class="journal-meta">Elsevier / IStructE · WoS Q1 (HE: Prof. Leroy Gardner)</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted ≈12/09/2026 → under review</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://www.editorialmanager.com/structures/default.aspx" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ Editorial Manager</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hbta-topology-guided-edge-transfer" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hbta-topology-guided-edge-transfer</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL1_hbta_topology_edge_transfer_one_class_detection</td>
 </tr>
@@ -863,8 +947,13 @@
 <td class="col-num">14</td>
 <td class="col-track col-track--b">TL2</td>
 <td class="col-title">Topology-Informed Sensor Restoration after Sensor Loss in Structural Health Monitoring</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ SUBMITTED:</span> Structural Health Monitoring<small>SAGE Publications · WoS Q1 (IF ~5.7) (MS: SHM-26-1527.R1)</small></td>
-<td><span class="badge-tag revision">✓ R1 REVISION SUBMITTED · 05/11/2026</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted 12/09/2026 (ScholarOne, SHM-26-1527) → major revision 04/11/2026 (two reviewers) → R1 revision submitted 05/11/2026 (deadline ≈02/12/2026); code and data made public on GitHub</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag revision">✓ R1 REVISION SUBMITTED · 05/11/2026</span></div>
+<div class="journal-name">Structural Health Monitoring</div>
+<small class="journal-meta">SAGE Publications · WoS Q1 (IF ~5.7) (MS: SHM-26-1527.R1)</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted 12/09/2026 (ScholarOne, SHM-26-1527) → major revision 04/11/2026 (two reviewers) → R1 revision submitted 05/11/2026 (deadline ≈02/12/2026); code and data made public on GitHub</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://mc.manuscriptcentral.com/shm" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ ScholarOne</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hbta-topology-informed-sensor-restoration" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hbta-topology-informed-sensor-restoration</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL2_hbta_topology_sensor_restoration_ranking_loss</td>
 </tr>
@@ -873,8 +962,13 @@
 <td class="col-num">15</td>
 <td class="col-track col-track--b">TL3</td>
 <td class="col-title">Graph-Based Structural Damage Localization through Modal Relative Motion</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ SUBMITTED:</span> Structural Durability &amp; Health Monitoring (SDHM)<small>Tech Science Press · Scopus Q3 (MS: SDHM-92616) · R2 Submitted</small></td>
-<td><span class="badge-tag revision">✓ R2 REVISION SUBMITTED · 30/10/2026</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted ≈08/09/2026 → round-1 reviews (2 reviewers + editor) → R1 revision submitted 30/09/2026 → round-2 comments (Reviewer 2 + editor) → R2 revision submitted 30/10/2026 → supplementary-materials statement added at editor request 05/11/2026</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag revision">✓ R2 REVISION SUBMITTED · 30/10/2026</span></div>
+<div class="journal-name">Structural Durability &amp; Health Monitoring (SDHM)</div>
+<small class="journal-meta">Tech Science Press · Scopus Q3 (MS: SDHM-92616) · R2 Submitted</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted ≈08/09/2026 → round-1 reviews (2 reviewers + editor) → R1 revision submitted 30/09/2026 → round-2 comments (Reviewer 2 + editor) → R2 revision submitted 30/10/2026 → supplementary-materials statement added at editor request 05/11/2026</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://ijs.tspsubmission.com/homepage" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ Tech Science Press IJS</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/graph-structural-damage-localization" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>graph-structural-damage-localization</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL3_hbta_graph_damage_localization_modal_relative_motion</td>
 </tr>
@@ -883,8 +977,13 @@
 <td class="col-num">16</td>
 <td class="col-track col-track--b">TL4</td>
 <td class="col-title">Load-path basis for localising diaphragm bolt removal from transverse vibration</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ SUBMITTED:</span> The Baltic Journal of Road and Bridge Engineering (BJRBE)<small>RTU Press · OA CC BY 4.0, APC 900 EUR · Double-blind review · Submission ID 1050 · Co-author: Prof. Bui Tien Thanh</small></td>
-<td><span class="badge-tag submitted">✓ SUBMITTED</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 SMM considered, not submitted (OC3 already under review there) → submitted to BJRBE 08/11/2026 (ID 1050) → under review</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag submitted">✓ SUBMITTED</span></div>
+<div class="journal-name">The Baltic Journal of Road and Bridge Engineering (BJRBE)</div>
+<small class="journal-meta">RTU Press · OA CC BY 4.0, APC 900 EUR · Double-blind review · Submission ID 1050 · Co-author: Prof. Bui Tien Thanh</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 SMM considered, not submitted (OC3 already under review there) → submitted to BJRBE 08/11/2026 (ID 1050) → under review</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://bjrbe-journals.rtu.lv/bjrbe/login" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ Journal site (OJS)</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/route345-transverse-mode-localisation" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>route345-transverse-mode-localisation</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL4_route345_transverse_mode_diaphragm_bolt_damage_localization</td>
 </tr>
@@ -893,8 +992,12 @@
 <td class="col-num">17</td>
 <td class="col-track col-track--b">TL5</td>
 <td class="col-title">Physics-Informed Damage Localisation under Environmental Variability</td>
-<td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> SHM Q1 Journal<small>Target: Top SHM Journal (Detection paper ready)</small></td>
-<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
+<div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> SHM Q1 Journal</div>
+<small class="journal-meta">Target: Top SHM Journal (Detection paper ready)</small>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/lumo-tower-physics-detection-stacking-localization" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>lumo-tower-physics-detection-stacking-localization</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL5_lumo_tower_physics_detection_stacking_localization</td>
 </tr>
@@ -903,8 +1006,13 @@
 <td class="col-num">18</td>
 <td class="col-track col-track--a">OC1</td>
 <td class="col-title">Physics-Informed Autoencoders with Unsupervised Feature Attention for Label-Free Structural Damage Detection</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ SUBMITTED:</span> Matéria (Rio de Janeiro)<small>SciELO / Scopus / WoS Q3 (MS: RMAT-2026-0601)</small></td>
-<td><span class="badge-tag revision">✓ ROUND 1 REVISION</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted (date not recorded) → major revision 04/09/2026 → revision due 14/10/2026</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag revision">✓ ROUND 1 REVISION</span></div>
+<div class="journal-name">Matéria (Rio de Janeiro)</div>
+<small class="journal-meta">SciELO / Scopus / WoS Q3 (MS: RMAT-2026-0601)</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted (date not recorded) → major revision 04/09/2026 → revision due 14/10/2026</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://mc04.manuscriptcentral.com/rmat-scielo" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ ScholarOne</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/PGAE-A" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>PGAE-A</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC1_z24_piae_unsupervised_feature_attention_detection</td>
 </tr>
@@ -913,8 +1021,13 @@
 <td class="col-num">19</td>
 <td class="col-track col-track--a">OC2</td>
 <td class="col-title">Decoupling Health Scores from Environmental and Operational Variability with Unsupervised Feature Attention</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ SUBMITTED:</span> Smart Structures and Systems (SSS)<small>Techno-Press · WoS Q2</small></td>
-<td><span class="badge-tag submitted">✓ SUBMITTED</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 ASE submitted ≈12/09/2026 → desk reject 26/09/2026 → SSS submitted 26/09/2026 → under review</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag submitted">✓ SUBMITTED</span></div>
+<div class="journal-name">Smart Structures and Systems (SSS)</div>
+<small class="journal-meta">Techno-Press · WoS Q2</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 ASE submitted ≈12/09/2026 → desk reject 26/09/2026 → SSS submitted 26/09/2026 → under review</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://www.techno-press.com/login" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ Techno-Press</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/PIAE-AQUINAS" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>PIAE-AQUINAS</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC2_paper_PIAE_AQUINAS</td>
 </tr>
@@ -923,8 +1036,13 @@
 <td class="col-num">20</td>
 <td class="col-track col-track--a">OC3</td>
 <td class="col-title">Vector-Quantised Physics-Informed Autoencoders for Label-Free Structural Damage Detection</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ SUBMITTED:</span> Structural Monitoring and Maintenance (SMM)<small>Techno-Press · Scopus Q3</small></td>
-<td><span class="badge-tag submitted">✓ SUBMITTED</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted ≈19/09/2026 → under review</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag submitted">✓ SUBMITTED</span></div>
+<div class="journal-name">Structural Monitoring and Maintenance (SMM)</div>
+<small class="journal-meta">Techno-Press · Scopus Q3</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted ≈19/09/2026 → under review</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://www.techno-press.com/login" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ Techno-Press</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/VQ-PIAE-A" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>VQ-PIAE-A</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC3_z24_aquinas_vq_piae_vector_quantized_detection</td>
 </tr>
@@ -933,8 +1051,12 @@
 <td class="col-num">21</td>
 <td class="col-track col-track--a">OC4</td>
 <td class="col-title">Temperature Variability and Multi-Channel Damage Sensitivity in the Sonkyo Wind Turbine Blade</td>
-<td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> Wind Energy / MSSP<small>Wiley / Elsevier · WoS Q1/Q2</small></td>
-<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
+<div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Wind Energy / MSSP</div>
+<small class="journal-meta">Wiley / Elsevier · WoS Q1/Q2</small>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/sonkyo-temperature-damage-sensitivity" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>sonkyo-temperature-damage-sensitivity</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC4_sonkyo_blade_temperature_damage_sensitivity_tradeoff</td>
 </tr>
@@ -943,8 +1065,13 @@
 <td class="col-num">22</td>
 <td class="col-track col-track--e">HP1</td>
 <td class="col-title">Relative Importance of Input Formulation and Hyperparameter Optimisation in Vibration-Based Structural Health Monitoring</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ SUBMITTED:</span> Engineering Computations<small>Emerald · WoS Q2 (MS: EC-01-2026-0057.R1)</small></td>
-<td><span class="badge-tag revision">✓ R1 REVISION SUBMITTED · 08/10/2026</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted ≈08/01/2026 (EC-01-2026-0057, as “Transferability of GA-Tuned Hyperparameters Across Datasets in SHM”) → major revision 21/09/2026 (one referee) → R1 revision submitted 08/10/2026, study redone and retitled (deadline was 02/11/2026)</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag revision">✓ R1 REVISION SUBMITTED · 08/10/2026</span></div>
+<div class="journal-name">Engineering Computations</div>
+<small class="journal-meta">Emerald · WoS Q2 (MS: EC-01-2026-0057.R1)</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted ≈08/01/2026 (EC-01-2026-0057, as “Transferability of GA-Tuned Hyperparameters Across Datasets in SHM”) → major revision 21/09/2026 (one referee) → R1 revision submitted 08/10/2026, study redone and retitled (deadline was 02/11/2026)</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://mc.manuscriptcentral.com/engcom" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ ScholarOne</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/ga-hpo-transferability-shm" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>ga-hpo-transferability-shm</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\HP1_ga_hyperparameter_transferability_across_datasets</td>
 </tr>
@@ -953,8 +1080,13 @@
 <td class="col-num">23</td>
 <td class="col-track col-track--f">WT1</td>
 <td class="col-title">Which Peaks Belong to the Structure? Setup Consistency as a Test for Global Modes, Applied to an Offshore Wind Turbine Foundation Before and After Tower Installation</td>
-<td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> Journal of Civil Structural Health Monitoring (JCSHM)<small>Springer · WoS SCIE / Scopus Q1 · EiC: Prof. Farhad Ansari · Subscription route · JCSHM now has VS2 under review: wait for its decision or choose another journal</small></td>
-<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · PACKAGE READY (06/10/2026)</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submission package ready 06/10/2026 → not yet submitted</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · PACKAGE READY (06/10/2026)</span></div>
+<div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Journal of Civil Structural Health Monitoring (JCSHM)</div>
+<small class="journal-meta">Springer · WoS SCIE / Scopus Q1 · EiC: Prof. Farhad Ansari · Subscription route · JCSHM now has VS2 under review: wait for its decision or choose another journal</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submission package ready 06/10/2026 → not yet submitted</small>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/t18-foundation-oma" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>t18-foundation-oma</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\WT1_offshore_wind_turbine_foundation_setup_consistency</td>
 </tr>
@@ -963,8 +1095,13 @@
 <td class="col-num">24</td>
 <td class="col-track col-track--h">CV1</td>
 <td class="col-title">Zero-Shot Bridge Surface Damage Detection and Segmentation Using a Hierarchical GroundingDINO–Segment Anything Model Framework</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ UNDER REVIEW:</span> JSTE – Mien Tay Construction Univ.<small>p-ISSN 3030-4806 · HĐGS list 2025</small></td>
-<td><span class="badge-tag submitted">✓ UNDER REVIEW</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 TCSJ: rejected → JSTE-MTU submitted 01/10/2026 → under review</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag submitted">✓ UNDER REVIEW</span></div>
+<div class="journal-name">JSTE – Mien Tay Construction Univ.</div>
+<small class="journal-meta">p-ISSN 3030-4806 · HĐGS list 2025</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 TCSJ: rejected → JSTE-MTU submitted 01/10/2026 → under review</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://journalmtu.com/index.php/mtu/login" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ Journal site (OJS)</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/surface-damage-groundingdino-sam" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>surface-damage-groundingdino-sam</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CV1_bridge_surface_damage_detection_groundingdino_sam</td>
 </tr>
@@ -973,8 +1110,13 @@
 <td class="col-num">25</td>
 <td class="col-track col-track--h">CV2</td>
 <td class="col-title">A Semi-Automatic Labeling Workflow for Multi-Class Surface Damage Detection Using Vision Foundation Models</td>
-<td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> Journal of Science and Transport Technology (JSTT)<small>JSTT · p-ISSN 1859-4263 · Target for new v2 draft</small></td>
-<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · DRAFT v2 IN PROGRESS</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Rejected (recorded 30/09/2026) → JSTT package 03/10/2026 → draft v2 in progress</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · DRAFT v2 IN PROGRESS</span></div>
+<div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Journal of Science and Transport Technology (JSTT)</div>
+<small class="journal-meta">JSTT · p-ISSN 1859-4263 · Target for new v2 draft</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Rejected (recorded 30/09/2026) → JSTT package 03/10/2026 → draft v2 in progress</small>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/vinhveer/semi-labeling-paper" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>semi-labeling-paper</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CV2_semi_labeling_stabledino_sam_multiclass_surface_damage</td>
 </tr>
@@ -983,8 +1125,13 @@
 <td class="col-num">26</td>
 <td class="col-track col-track--h">CV3</td>
 <td class="col-title">InfaTrackVision: A Non-Contact Vibration Measurement System Using Computer Vision Combined with Deep Learning for Structural Health Monitoring</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ ACCEPTED:</span> Transport &amp; Communications Science J. (TCSJ)<small>UTC / VJOL (MS: 3057)</small></td>
-<td><span class="badge-tag submitted">✓ ACCEPTED</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 TCSJ submitted ≈06/2026 → revised version ≈20/08/2026 → accepted (recorded 30/09/2026)</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag submitted">✓ ACCEPTED</span></div>
+<div class="journal-name">Transport &amp; Communications Science J. (TCSJ)</div>
+<small class="journal-meta">UTC / VJOL (MS: 3057)</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 TCSJ submitted ≈06/2026 → revised version ≈20/08/2026 → accepted (recorded 30/09/2026)</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://tcsj.utc.edu.vn/index.php/tcgtvt/login" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ Journal site (OJS)</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/InfaTrackVision" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>InfaTrackVision</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CV3_infatrackvision_noncontact_vibration_measurement_vision_deep_learning</td>
 </tr>
@@ -993,8 +1140,13 @@
 <td class="col-num">27</td>
 <td class="col-track col-track--g">CW1</td>
 <td class="col-title">Conditional WaveNet Deep Learning Model for Robust Structural Damage Detection Under Varying Temperatures</td>
-<td class="col-journal"><span class="badge-sub-journal">✓ UNDER REVIEW:</span> HCMCOUJS – Adv. Comput. Struct.<small>Diamond OA · ISSN 2815-6218</small></td>
-<td><span class="badge-tag submitted">✓ UNDER REVIEW</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 TCSJ: rejected (recorded 30/09/2026) → HCMCOUJS-ACS submitted 02/10/2026 → under review</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag submitted">✓ UNDER REVIEW</span></div>
+<div class="journal-name">HCMCOUJS – Adv. Comput. Struct.</div>
+<small class="journal-meta">Diamond OA · ISSN 2815-6218</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 TCSJ: rejected (recorded 30/09/2026) → HCMCOUJS-ACS submitted 02/10/2026 → under review</small>
+</td>
+
 <td class="col-portal"><a class="portal-badge" href="https://journalofscience.acs.ou.edu.vn/index.php/acs/login" rel="noopener noreferrer" target="_blank" title="Log in to see the manuscript status">↗ Journal site (OJS)</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/conditional-wavenet-shm" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>conditional-wavenet-shm</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CW1_conditional_wavenet_damage_detection_varying_temperature</td>
 </tr>
@@ -1003,8 +1155,13 @@
 <td class="col-num">28</td>
 <td class="col-track col-track--i">EL1</td>
 <td class="col-title">Two-Sided Bounds for Equivalent Linearization of Hardening Oscillators Under White Noise</td>
-<td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> Acta Mechanica<small>Springer · WoS Q2 · Co-authors: Prof. Nguyen Dong Anh, Prof. Bui Tien Thanh</small></td>
-<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · MANUSCRIPT READY (05/10/2026)</span><small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Manuscript ready 05/10/2026 → not yet submitted</small></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · MANUSCRIPT READY (05/10/2026)</span></div>
+<div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Acta Mechanica</div>
+<small class="journal-meta">Springer · WoS Q2 · Co-authors: Prof. Nguyen Dong Anh, Prof. Bui Tien Thanh</small>
+<small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Manuscript ready 05/10/2026 → not yet submitted</small>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/two-sided-bounds-equivalent-linearization" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>two-sided-bounds-equivalent-linearization</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\EL1_dual_criterion_equivalent_linearization_measured_data</td>
 </tr>
@@ -1013,8 +1170,12 @@
 <td class="col-num">29</td>
 <td class="col-track col-track--i">EL2</td>
 <td class="col-title">Dissipation and Dephasing in the Measured Damping of Nonlinear Structures Under Random Excitation</td>
-<td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> Nonlinear Dynamics<small>Springer · WoS SCIE · JCR Q1 · Co-author: Prof. Bui Tien Thanh · fallback: Probabilistic Engineering Mechanics</small></td>
-<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · FIGURES &amp; TABLES READY, OUTLINE (07/10/2026)</span></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · FIGURES &amp; TABLES READY, OUTLINE (07/10/2026)</span></div>
+<div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Nonlinear Dynamics</div>
+<small class="journal-meta">Springer · WoS SCIE · JCR Q1 · Co-author: Prof. Bui Tien Thanh · fallback: Probabilistic Engineering Mechanics</small>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/dissipation-dephasing-measured-damping" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>dissipation-dephasing-measured-damping</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\EL2_dissipation_dephasing_measured_damping_nonlinear_structures</td>
 </tr>
@@ -1023,8 +1184,12 @@
 <td class="col-num">30</td>
 <td class="col-track col-track--j">ST1</td>
 <td class="col-title">When Does the End Portal Govern the Out-of-Plane Stability of Tied-Arch and Arch-Truss Bridges? A First-Principles and Parametric Study on Two Instrumented Bridges (KW51, Nam Ô)</td>
-<td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> Journal of Constructional Steel Research (JCSR)<small>Elsevier · WoS SCIE · JCR Q1 · IF ~4.3</small></td>
-<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · DRAFT v0 · WAITING FOR CO-AUTHORS' MODELS</span></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · DRAFT v0 · WAITING FOR CO-AUTHORS' MODELS</span></div>
+<div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Journal of Constructional Steel Research (JCSR)</div>
+<small class="journal-meta">Elsevier · WoS SCIE · JCR Q1 · IF ~4.3</small>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/arch-portal-out-of-plane-stability" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>through-arch-portal-stability</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\ST1_kw51_namo_arch_portal_out_of_plane_stability_parametric</td>
 </tr>
@@ -1033,8 +1198,12 @@
 <td class="col-num">31</td>
 <td class="col-track col-track--j">ST2</td>
 <td class="col-title">Hanger Tension as Hidden Lateral Bracing: A Stress-Stiffened Model of the KW51 Network Arch for Model Updating, Temperature Compensation and Hanger Diagnosis</td>
-<td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> Mechanical Systems and Signal Processing / Engineering Structures<small>Elsevier · WoS SCIE · JCR Q1</small></td>
-<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · PLANNED (AFTER ST1)</span></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · PLANNED (AFTER ST1)</span></div>
+<div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Mechanical Systems and Signal Processing / Engineering Structures</div>
+<small class="journal-meta">Elsevier · WoS SCIE · JCR Q1</small>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/kw51-stress-stiffened-hanger-bracing" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>kw51-stress-stiffened-hanger-bracing</a></td>
 <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\ST2_kw51_stress_stiffened_model_hanger_tension_lateral_bracing</td>
@@ -1044,8 +1213,12 @@
 <td class="col-num">32</td>
 <td class="col-track col-track--k">PS1</td>
 <td class="col-title">When Does Cross-Structure Knowledge Transfer Work in Population-Based SHM? An Empirical Study Across 10 Diverse Real-World Structures</td>
-<td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> Mechanical Systems and Signal Processing / SHM<small>Elsevier / SAGE · WoS SCIE Q1 · Cross-structure empirical transferability</small></td>
-<td><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · PROTOCOL v1 (06/10/2026)</span></td>
+<td class="col-journal-status">
+<div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED · PROTOCOL v1 (06/10/2026)</span></div>
+<div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Mechanical Systems and Signal Processing / SHM</div>
+<small class="journal-meta">Elsevier / SAGE · WoS SCIE Q1 · Cross-structure empirical transferability</small>
+</td>
+
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/pbshm-cross-structure-transferability" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>pbshm-cross-structure-transferability</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\PS1_pbshm_datacenter_foundation_model_benchmark</td>
 </tr>
@@ -1053,28 +1226,28 @@
 </table>
 </div>
 </section>
-<section class="audit-section" id="research-directions" aria-labelledby="research-directions-title">
+<section aria-labelledby="research-directions-title" class="audit-section" id="research-directions">
 <h2 id="research-directions-title">Research Directions</h2>
 <p>Programme synthesis · 6 November 2026 · 32 projects across 11 research tracks</p>
 <p>The programme asks how structural health monitoring can recover unmeasured responses, detect and localize damage, and keep operating when sensors fail or operating conditions shift. The directions below group the projects by the engineering questions they address.</p>
 <div class="track-line track-line--c">
-<b>1. Virtual sensing with limited measurements · VS1–VS4, VS8–VS13</b><br>
+<b>1. Virtual sensing with limited measurements · VS1–VS4, VS8–VS13</b><br/>
 VS1 and VS2 estimate quasi-static stress and deck strain on KW51. VS3 asks which lost signals remain recoverable, VS4 studies when sensors should sample under energy constraints, and VS8 relates sensor budget to spectral rank. On Hardanger, VS9 uses dynamic structural condensation and VS11 studies block-Hankel completion and recovery certificates for fixed outage patterns. VS10 develops modal graph sampling in space and time. VS12 tests conformal coverage across retrofit and operational shifts on KW51. VS13 investigates whether a few sensors can recover bending moments along an HDPE fish-cage collar.
 </div>
 <div class="track-line track-line--b">
-<b>2. Damage detection, localization and sensor faults · OC1–OC4, TL1–TL5, FT1, FT3, CW1</b><br>
+<b>2. Damage detection, localization and sensor faults · OC1–OC4, TL1–TL5, FT1, FT3, CW1</b><br/>
 OC1–OC3 develop one-class representations on Z24 and AQUINAS. OC4 examines the trade-off between temperature robustness and damage sensitivity on the Sonkyo blade, while CW1 conditions a WaveNet detector on temperature. TL1–TL3 use HBTA topology for edge transfer, sensor restoration and connection localization. TL4 uses transverse modes on Route 345, and TL5 studies physics-informed detection and ensemble localization on LUMO Tower. FT1 combines physics guidance and graph learning on Hardanger, while FT3 studies persistent sensor quarantine and detector reconfiguration on HBTA.
 </div>
 <div class="track-line track-line--k">
-<b>3. Transfer across structures and datasets · HP1, PS1</b><br>
+<b>3. Transfer across structures and datasets · HP1, PS1</b><br/>
 HP1 compares the contribution of input formulation and hyperparameter optimization in supervised damage classification. PS1 studies when knowledge transfer helps across monitored structures and when differences in topology or measurement distributions lead to negative transfer.
 </div>
 <div class="track-line track-line--j">
-<b>4. Structural dynamics, stability and field identification · WT1, EL1–EL2, ST1–ST2</b><br>
+<b>4. Structural dynamics, stability and field identification · WT1, EL1–EL2, ST1–ST2</b><br/>
 WT1 tests consistency across measurement setups in offshore wind foundation modal identification. EL1 studies two-sided bounds for equivalent linearization, and EL2 examines dissipation and dephasing in measured damping. ST1 investigates when the end portal governs out-of-plane stability on KW51 and Nam Ô. ST2 studies how hanger tension changes lateral restraint and what that means for updating the KW51 model.
 </div>
 <div class="track-line track-line--h">
-<b>5. Vision-based inspection and measurement · CV1–CV3</b><br>
+<b>5. Vision-based inspection and measurement · CV1–CV3</b><br/>
 CV1 uses vision foundation models to detect and segment bridge surface damage. CV2 develops a semi-automatic workflow for labeling multiple damage classes. CV3 uses camera-based, non-contact vibration measurement to extend vision from surface inspection to structural response.
 </div>
 <h3>Connections between studies</h3>
@@ -1083,7 +1256,7 @@ CV1 uses vision foundation models to detect and segment bridge surface damage. C
 <li><b>Hardanger:</b> VS3, VS9 and VS11 examine recoverability and reconstruction under sensor loss. FT1 addresses the downstream task of damage detection.</li>
 <li><b>HBTA:</b> TL2 ranks sensors for restoration, FT3 studies how the detector should operate during persistent faults, and TL3 uses the remaining modal information to localize connection damage.</li>
 </ul>
-<div style="margin-top: 24px;"><a href="#publication-progress" class="nav-jump-btn">↑ Quay lại Bảng theo dõi tiến độ · Back to Publication Tracker</a></div>
+<div style="margin-top: 24px;"><a class="nav-jump-btn" href="#publication-progress">↑ Quay lại Bảng theo dõi tiến độ · Back to Publication Tracker</a></div>
 </section>
 </div>
 <script>
