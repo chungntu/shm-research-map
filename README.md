@@ -1,5 +1,9 @@
 # SHM Research Map
 
+## Điểm đọc cho AI và cộng tác viên
+
+Trong workspace nghiên cứu, bắt đầu với [Hồ sơ chương trình nghiên cứu](HO_SO_NGHIEN_CUU.md). Đây là hồ sơ hệ thống hóa duy nhất. File này ghi câu hỏi, phương pháp, bằng chứng và giới hạn của từng dự án, kèm đường dẫn tới tài liệu kỹ thuật và hướng phát triển tiếp. Hồ sơ này được lưu nội bộ cùng dữ liệu nghiên cứu.
+
 Research programme map and journal publication progress for a set of structural health monitoring (SHM) papers, grouped by research line:
 
 - **VS**: Virtual sensing
@@ -16,4 +20,4 @@ Research programme map and journal publication progress for a set of structural 
 
 View the page: https://chungntu.github.io/shm-research-map/
 
-`index.html` is a copy of the local source file, made by `build_public.py`.
+`index.html` is the current public map. `build_public.py` copies the legacy HTML source only if it is present.
