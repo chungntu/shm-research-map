@@ -7,276 +7,690 @@
 <title>SHM Research Map &amp; Journal Publication Progress (08/11/2026)</title>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
-  :root{
-    --bg:#eef1f5;
-    --surface:#ffffff;
-    --surface-2:#f6f8fa;
-    --ink:#16212c;
-    --ink-soft:#57646f;
-    --line:#ccd4dc;
-    --line-strong:#a9b4bd;
-    --accent-a:#0c726d;   
-    --accent-b:#a84f1c;   
-    --accent-c:#6a4fb0;   
-    --accent-d:#b23a4a;   
-    --accent-e:#4a6078;   
-    --accent-f:#0284c7;   
-    --accent-g:#059669;   
-    --accent-h:#9333ea;   
-    --accent-i:#c2410c;   
-    --accent-j:#2563eb;   
-    --accent-k:#0d9488;   
+  :root,
+  :root[data-theme="dark"] {
+    --bg: #0b0f17;
+    --surface: #131923;
+    --surface-2: #192231;
+    --surface-hover: #1f2a3c;
+    --ink: #f1f5f9;
+    --ink-soft: #94a3b8;
+    --ink-sub: #cbd5e1;
+    --line: #222d3d;
+    --line-strong: #334358;
+    --table-hover: rgba(255, 255, 255, 0.035);
+    --grid-line: rgba(255, 255, 255, 0.022);
+    --link: #38bdf8;
+    --link-hover: #7dd3fc;
 
-    --status-submitted:#1d783a; --status-submitted-bg:#e3f4e8;
-    --status-unsub:#b45309;     --status-unsub-bg:#fef3c7; --status-unsub-border:#d97706;
-    --status-notyet:#b91c1c;    --status-notyet-bg:#fee2e2;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#10161d;
-      --surface:#161e26;
-      --surface-2:#1a232c;
-      --ink:#e7ecf0;
-      --ink-soft:#96a4b0;
-      --line:#2a343d;
-      --line-strong:#3c4a55;
-      --accent-a:#3fc9bf;   
-      --accent-b:#e08a4f;   
-      --accent-c:#a58ce0;   
-      --accent-d:#ef8b98;   
-      --accent-e:#9fb3c8;   
-      --accent-f:#38bdf8;   
-      --accent-g:#34d399;   
-      --accent-h:#c084fc;
-      --accent-i:#fb923c;   
-      --accent-j:#60a5fa;   
-      --accent-k:#2dd4bf;   
+    --accent-a: #2dd4bf;   
+    --accent-b: #fbbf24;   
+    --accent-c: #38bdf8;   
+    --accent-d: #fb7185;   
+    --accent-e: #a5b4fc;   
+    --accent-f: #0ea5e9;   
+    --accent-g: #34d399;   
+    --accent-h: #c084fc;   
+    --accent-i: #fb923c;   
+    --accent-j: #60a5fa;   
+    --accent-k: #14b8a6;   
 
-      --status-submitted:#48bb78; --status-submitted-bg:rgba(72,187,120,.18);
-      --status-unsub:#fbbf24;     --status-unsub-bg:rgba(251,191,36,.18); --status-unsub-border:#f59e0b;
-      --status-notyet:#f87171;    --status-notyet-bg:rgba(248,113,113,.18);
-    }
+    --status-submitted: #4ade80; 
+    --status-submitted-bg: rgba(74, 222, 128, 0.15); 
+    --status-submitted-border: rgba(74, 222, 128, 0.45);
+    
+    --status-unsub: #fbbf24;     
+    --status-unsub-bg: rgba(251, 191, 36, 0.15);     
+    --status-unsub-border: #f59e0b;
+    
+    --status-notyet: #f87171;    
+    --status-notyet-bg: rgba(248, 113, 113, 0.15);    
+    --status-notyet-border: rgba(248, 113, 113, 0.45);
   }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
+
+  :root[data-theme="light"] {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-2: #f1f5f9;
+    --surface-hover: #e2e8f0;
+    --ink: #0f172a;
+    --ink-soft: #475569;
+    --ink-sub: #334155;
+    --line: #e2e8f0;
+    --line-strong: #cbd5e1;
+    --table-hover: rgba(0, 0, 0, 0.025);
+    --grid-line: rgba(0, 0, 0, 0.035);
+    --link: #0284c7;
+    --link-hover: #0369a1;
+
+    --accent-a: #0d9488;   
+    --accent-b: #d97706;   
+    --accent-c: #0284c7;   
+    --accent-d: #e11d48;   
+    --accent-e: #4f46e5;   
+    --accent-f: #0284c7;   
+    --accent-g: #059669;   
+    --accent-h: #7c3aed;   
+    --accent-i: #ea580c;   
+    --accent-j: #2563eb;   
+    --accent-k: #0d9488;   
+
+    --status-submitted: #15803d; 
+    --status-submitted-bg: #dcfce7; 
+    --status-submitted-border: #86efac;
+    
+    --status-unsub: #b45309;     
+    --status-unsub-bg: #fef3c7;     
+    --status-unsub-border: #f59e0b;
+    
+    --status-notyet: #b91c1c;    
+    --status-notyet-bg: #fee2e2;    
+    --status-notyet-border: #fca5a5;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
     background:
-      linear-gradient(var(--line) 1px, transparent 1px) 0 0/32px 32px,
-      linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0/32px 32px,
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0/32px 32px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0/32px 32px,
       var(--bg);
-    background-blend-mode:normal;
-    color:var(--ink);
-    font-family:'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
-  .page{
-    max-width:1480px;
-    margin:0 auto;
-    padding:clamp(20px,4vw,48px) clamp(16px,4vw,40px) 60px;
-  }
-  header{
-    max-width:1200px;
-    margin-bottom:24px;
-  }
-  .eyebrow{
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--accent-a);
-    margin:0 0 10px;
-  }
-  /* Legend */
-  .badge-tag{
-    display:inline-flex;
-    align-items:center;
-    padding:2px 8px;
-    border-radius:6px;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px;
-    font-weight:700;
-    line-height:1.4;
-  }/* Legend */
-  .badge-tag.submitted{background:var(--status-submitted-bg); color:var(--status-submitted); border:1px solid var(--status-submitted);}/* Legend */
-  .badge-tag.revision{background:var(--status-submitted-bg); color:var(--status-submitted); border:1px solid var(--status-submitted);}/* Legend */
-  .badge-tag.idea-badge{background:transparent; color:var(--ink-soft); border:1.5px dashed var(--line-strong);}
-  .badge-idea-journal{display:inline-block; font-size:10px; font-family:'IBM Plex Mono', monospace; font-weight:700; color:var(--ink-soft); margin-right:4px;}
-  .badge-tag.unsub-badge{background:var(--status-unsub-bg); color:var(--status-unsub); border:1.5px solid var(--status-unsub-border);}
-  .badge-tag.notyet-badge{background:var(--status-notyet-bg); color:var(--status-notyet); border:1.5px solid var(--status-notyet);}
-  /* ---- 4-Track Summary (replaces SVG diagram) ---- */
-  .tracks-summary{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:14px 18px;
-    margin-bottom:20px;
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-    box-shadow:0 4px 20px rgba(0,0,0,.04);
-  }/* ---- 4-Track Summary (replaces SVG diagram) ---- */
-  .track-line{
-    font-size:13.5px;
-    line-height:1.55;
-    border-left:6px solid var(--line-strong);
-    padding:4px 0 4px 12px;
-  }/* ---- 4-Track Summary (replaces SVG diagram) ---- */
-  .track-line--a{border-color:var(--accent-a);}/* ---- 4-Track Summary (replaces SVG diagram) ---- */
-  .track-line--b{border-color:var(--accent-b);}/* ---- 4-Track Summary (replaces SVG diagram) ---- */
-  .track-line--c{border-color:var(--accent-c);}/* ---- 4-Track Summary (replaces SVG diagram) ---- */
-  .track-line--d{border-color:var(--accent-d);}
-  .track-line--e{border-color:var(--accent-e);}
-  .track-line--f{border-color:var(--accent-f);}
-  .track-line--g{border-color:var(--accent-g);}
-  .track-line--h{border-color:var(--accent-h);}
-  .track-line--i{border-color:var(--accent-i);}
-  .track-line--j{border-color:var(--accent-j);}
-  .track-line--k{border-color:var(--accent-k);}
-  .col-track--f{color:var(--accent-f);}
-  .col-track--g{color:var(--accent-g);}
-  .col-track--h{color:var(--accent-h);}
-  .col-track--i{color:var(--accent-i);}
-  .col-track--j{color:var(--accent-j);}
-  .col-track--k{color:var(--accent-k);}
 
-  
-  /* ---- Check Status Column ---- */
-  .col-portal{white-space:nowrap; vertical-align:middle;}
-  .portal-badge{
-    display:inline-flex; align-items:center; gap:5px; padding:4px 9px;
-    background:var(--surface-2); border:1px solid var(--line); border-radius:6px;
-    color:var(--ink); text-decoration:none; font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px; font-weight:600; transition:all .15s ease;
+  a {
+    color: var(--link);
+    text-decoration: none;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
   }
-  .portal-badge:hover{
-    background:var(--surface); border-color:var(--accent-a); color:var(--accent-a);
-    box-shadow:0 2px 8px rgba(0,0,0,.06); transform:translateY(-1px);
+  a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
-  .portal-none{color:var(--ink-soft);}
+  a:visited {
+    color: var(--link);
+  }
 
-  /* ---- GitHub Column ---- */
-  .col-github{white-space:nowrap; vertical-align:middle;}
-  .github-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:5px;
-    padding:4px 9px;
-    background:var(--surface-2);
-    border:1px solid var(--line);
-    border-radius:6px;
-    color:var(--ink);
-    text-decoration:none;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11.5px;
-    font-weight:600;
-    transition:all .15s ease;
+  .page {
+    max-width: 1520px;
+    margin: 0 auto;
+    padding: clamp(20px, 4vw, 40px) clamp(16px, 3vw, 36px) 60px;
   }
-  .github-badge:hover{
-    background:var(--surface);
-    border-color:var(--accent-a);
-    color:var(--accent-a);
-    box-shadow:0 2px 8px rgba(0,0,0,.06);
-    transform:translateY(-1px);
+
+  header {
+    margin-bottom: 24px;
   }
-  .github-icon{
-    width:13px;
-    height:13px;
-    fill:currentColor;
-    flex-shrink:0;
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent-a);
+    margin: 0 0 6px;
+  }
+  .page-title {
+    margin: 0;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  /* Navigation & Action Buttons */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .nav-jump-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 15px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 9999px;
+    color: var(--link);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    transition: all 0.2s ease;
+  }
+  .nav-jump-btn:hover {
+    background: var(--surface);
+    border-color: var(--link);
+    color: var(--link-hover);
+    box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  .theme-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 9999px;
+    color: var(--ink);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    transition: all 0.2s ease;
+  }
+  .theme-toggle-btn:hover {
+    background: var(--surface);
+    border-color: var(--link);
+    color: var(--link);
+    transform: translateY(-1px);
+  }
+
+  /* Immediate Action Pipeline Card */
+  .action-pipeline-card {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(14, 165, 233, 0.06) 100%), var(--surface);
+    border: 1.5px solid rgba(245, 158, 11, 0.45);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25), 0 0 20px rgba(245, 158, 11, 0.08);
+  }
+  .action-pipeline-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .action-badge {
+    background: rgba(239, 68, 68, 0.18);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.45);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 6px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  :root[data-theme="light"] .action-badge {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-color: #fca5a5;
+  }
+  .action-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .action-pipeline-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 14px;
+  }
+  .action-item {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 16px;
+    transition: all 0.2s ease;
+  }
+  .action-item:hover {
+    border-color: var(--line-strong);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  }
+  .action-item--priority1 {
+    border-left: 4px solid #f59e0b;
+  }
+  .action-item--priority2 {
+    border-left: 4px solid #0284c7;
+  }
+  .action-item-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .action-item-rank {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+  }
+  .action-item-rank--sky {
+    background: rgba(14, 165, 233, 0.2);
+    color: #38bdf8;
+    border: 1px solid rgba(14, 165, 233, 0.4);
+  }
+  :root[data-theme="light"] .action-item-rank {
+    background: #fef3c7;
+    color: #b45309;
+    border-color: #f59e0b;
+  }
+  :root[data-theme="light"] .action-item-rank--sky {
+    background: #e0f2fe;
+    color: #0369a1;
+    border-color: #0284c7;
+  }
+  .action-item-link {
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .action-item-link--amber {
+    color: #fbbf24;
+  }
+  .action-item-link--amber:hover {
+    color: #fde68a;
+  }
+  .action-item-link--sky {
+    color: #38bdf8;
+  }
+  .action-item-link--sky:hover {
+    color: #bae6fd;
+  }
+  :root[data-theme="light"] .action-item-link--amber {
+    color: #b45309;
+  }
+  :root[data-theme="light"] .action-item-link--sky {
+    color: #0284c7;
+  }
+  .action-item-desc {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .action-item-desc strong {
+    color: var(--ink);
+  }
+
+  /* Badges */
+  .badge-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+  .badge-tag.submitted,
+  .badge-tag.revision {
+    background: var(--status-submitted-bg);
+    color: var(--status-submitted);
+    border: 1px solid var(--status-submitted-border);
+  }
+  .badge-tag.idea-badge {
+    background: rgba(148, 163, 184, 0.08);
+    color: var(--ink-soft);
+    border: 1.5px dashed var(--line-strong);
+  }
+  .badge-idea-journal {
+    display: inline-block;
+    font-size: 10.5px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    color: var(--ink-soft);
+    margin-right: 4px;
+  }
+  .badge-tag.unsub-badge {
+    background: var(--status-unsub-bg);
+    color: var(--status-unsub);
+    border: 1.5px solid var(--status-unsub-border);
+  }
+  .badge-tag.notyet-badge {
+    background: var(--status-notyet-bg);
+    color: var(--status-notyet);
+    border: 1.5px solid var(--status-notyet-border);
+  }
+
+  /* Next Submission Custom Badges */
+  .badge-tag.badge-next-1 {
+    background: rgba(245, 158, 11, 0.18);
+    color: #fbbf24;
+    border: 1.5px solid #f59e0b;
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
+    font-weight: 800;
+    letter-spacing: 0.03em;
+  }
+  .badge-tag.badge-next-2 {
+    background: rgba(14, 165, 233, 0.18);
+    color: #38bdf8;
+    border: 1.5px solid #0284c7;
+    box-shadow: 0 0 12px rgba(14, 165, 233, 0.25);
+    font-weight: 800;
+    letter-spacing: 0.03em;
+  }
+  :root[data-theme="light"] .badge-tag.badge-next-1 {
+    background: #fef3c7;
+    color: #b45309;
+    border: 1.5px solid #d97706;
+    box-shadow: none;
+  }
+  :root[data-theme="light"] .badge-tag.badge-next-2 {
+    background: #e0f2fe;
+    color: #0369a1;
+    border: 1.5px solid #0284c7;
+    box-shadow: none;
+  }
+
+  /* ---- Tracks Summary ---- */
+  .tracks-summary {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  }
+  .track-line {
+    font-size: 13.5px;
+    line-height: 1.6;
+    border-left: 5px solid var(--line-strong);
+    padding: 5px 0 5px 14px;
+    color: var(--ink);
+  }
+  .track-line b {
+    color: var(--ink);
+  }
+  .track-line--a { border-color: var(--accent-a); }
+  .track-line--b { border-color: var(--accent-b); }
+  .track-line--c { border-color: var(--accent-c); }
+  .track-line--d { border-color: var(--accent-d); }
+  .track-line--e { border-color: var(--accent-e); }
+  .track-line--f { border-color: var(--accent-f); }
+  .track-line--g { border-color: var(--accent-g); }
+  .track-line--h { border-color: var(--accent-h); }
+  .track-line--i { border-color: var(--accent-i); }
+  .track-line--j { border-color: var(--accent-j); }
+  .track-line--k { border-color: var(--accent-k); }
+
+  .col-track--a { color: var(--accent-a); }
+  .col-track--b { color: var(--accent-b); }
+  .col-track--c { color: var(--accent-c); }
+  .col-track--d { color: var(--accent-d); }
+  .col-track--e { color: var(--accent-e); }
+  .col-track--f { color: var(--accent-f); }
+  .col-track--g { color: var(--accent-g); }
+  .col-track--h { color: var(--accent-h); }
+  .col-track--i { color: var(--accent-i); }
+  .col-track--j { color: var(--accent-j); }
+  .col-track--k { color: var(--accent-k); }
+
+  /* ---- Check Status & GitHub Columns ---- */
+  .col-portal { white-space: nowrap; vertical-align: middle; }
+  .portal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--ink);
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    font-weight: 600;
+    transition: all .15s ease;
+  }
+  .portal-badge:hover {
+    background: var(--surface);
+    border-color: var(--link);
+    color: var(--link);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  .portal-none { color: var(--ink-soft); font-weight: 700; }
+
+  .col-github { white-space: nowrap; vertical-align: middle; }
+  .github-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--ink);
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    font-weight: 600;
+    transition: all .15s ease;
+  }
+  .github-badge:hover {
+    background: var(--surface);
+    border-color: var(--link);
+    color: var(--link);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+    transform: translateY(-1px);
+    text-decoration: none;
+  }
+  .github-icon {
+    width: 13px;
+    height: 13px;
+    fill: currentColor;
+    flex-shrink: 0;
   }
 
   /* ---- Table Section ---- */
-  .audit-section{
-    margin-top:24px;
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:16px 18px;
-    box-shadow:0 4px 20px rgba(0,0,0,.04);
-  }/* ---- Table Section ---- */
-  .audit-section h2{
-    margin:0 0 8px;
-    font-size:20px;
-    font-weight:700;
-  }/* ---- Table Section ---- */
-  .audit-section p{
-    color:var(--ink-soft);
-    font-size:13.5px;
-    margin:0 0 20px;
-  }/* ---- Table Section ---- */
-  .table-responsive{
-    overflow-x:auto;
-  }/* ---- Table Section ---- */
-  table.audit-table{
-    width:100%;
-    border-collapse:collapse;
-    font-size:13px;
-    text-align:left;
-  }/* ---- Table Section ---- */
-  table.audit-table th{
-    background:var(--surface-2);
-    color:var(--ink);
-    font-weight:700;
-    padding:12px 14px;
-    border-bottom:2px solid var(--line);
-    white-space:nowrap;
-    font-family:'Be Vietnam Pro', sans-serif;
-  }/* ---- Table Section ---- */
-  table.audit-table td{
-    padding:12px 14px;
-    border-bottom:1px solid var(--line);
-    vertical-align:middle;
-  }/* ---- Table Section ---- */
-  table.audit-table tr:hover td{
-    background:rgba(0,0,0,.015);
-  }/* ---- Table Section ---- */
-  table.audit-table tr.is-unsub-row td{
-    border-left:none;
-  }/* ---- Table Section ---- */
-  table.audit-table tr.is-unsub-row td:first-child{
-    border-left:4px solid var(--status-unsub-border);
-  }/* ---- Table Section ---- */
-  table.audit-table tr.is-idea-row td:first-child{
-    border-left:4px dashed var(--line-strong);
+  .audit-section {
+    margin-top: 24px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 22px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
   }
-  table.audit-table tr.is-sub-row td:first-child{
-    border-left:4px solid var(--status-submitted);
-  }/* ---- Table Section ---- */
-  .col-num{font-family:'IBM Plex Mono', monospace; font-weight:700; width:40px; text-align:center;}/* ---- Table Section ---- */
-  .col-track{font-family:'IBM Plex Mono', monospace; font-weight:700; font-size:12px; white-space:nowrap;}/* ---- Table Section ---- */
-  .col-track--a{color:var(--accent-a);}/* ---- Table Section ---- */
-  .col-track--b{color:var(--accent-b);}/* ---- Table Section ---- */
-  .col-track--c{color:var(--accent-c);}/* ---- Table Section ---- */
-  .col-track--d{color:var(--accent-d);}
-  .col-track--e{color:var(--accent-e);}/* ---- Table Section ---- */
-  .col-title{font-weight:600;}/* ---- Table Section ---- */
-  .col-title small{display:block; font-weight:400; color:var(--ink-soft); font-size:11.5px; font-family:'IBM Plex Mono', monospace;}/* ---- Table Section ---- */
-  .col-journal{font-weight:600; max-width:240px; line-height:1.4;}/* ---- Table Section ---- */
-  .col-journal small{display:block; font-weight:400; color:var(--ink-soft); font-size:11px; line-height:1.35; margin-top:2px;}/* ---- Table Section ---- */
-  .badge-sub-journal{display:inline-block; font-size:10px; font-family:'IBM Plex Mono', monospace; font-weight:700; color:var(--status-submitted); margin-right:4px;}/* ---- Table Section ---- */
-  .badge-unsub-journal{display:inline-block; font-size:10px; font-family:'IBM Plex Mono', monospace; font-weight:700; color:var(--status-unsub); margin-right:4px;}/* ---- Table Section ---- */
-  .col-path{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-soft); word-break:break-all;}
-  .timeline{display:block; font-weight:400; color:var(--ink-soft); font-size:11px; line-height:1.35; margin-top:4px; max-width:260px;}
+  .audit-section h2 {
+    margin: 0 0 6px;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .audit-section p {
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin: 0 0 18px;
+  }
+  .table-responsive {
+    overflow-x: auto;
+  }
+  table.audit-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    text-align: left;
+  }
+  table.audit-table th {
+    background: var(--surface-2);
+    color: var(--ink);
+    font-weight: 700;
+    padding: 12px 14px;
+    border-bottom: 2px solid var(--line);
+    white-space: nowrap;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+  }
+  table.audit-table td {
+    padding: 13px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+  }
+  table.audit-table tr:hover td {
+    background: var(--table-hover);
+  }
+  table.audit-table tr:target td {
+    background: rgba(56, 189, 248, 0.12) !important;
+    outline: 1.5px solid rgba(56, 189, 248, 0.6);
+  }
+
+  table.audit-table tr.is-unsub-row td:first-child {
+    border-left: 4px solid var(--status-unsub-border);
+  }
+  table.audit-table tr.is-idea-row td:first-child {
+    border-left: 4px dashed var(--line-strong);
+  }
+  table.audit-table tr.is-sub-row td:first-child {
+    border-left: 4px solid var(--status-submitted);
+  }
+
+  .col-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    width: 44px;
+    text-align: center;
+    color: var(--ink-soft);
+    font-size: 12px;
+  }
+  .col-track {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 800;
+    font-size: 12.5px;
+    white-space: nowrap;
+  }
+  .col-title {
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.45;
+  }
+  .col-title small {
+    display: block;
+    font-weight: 500;
+    color: var(--ink-sub);
+    font-size: 11.5px;
+    font-family: 'IBM Plex Mono', monospace;
+    margin-top: 4px;
+  }
+  .col-journal {
+    font-weight: 600;
+    max-width: 250px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .col-journal small {
+    display: block;
+    font-weight: 400;
+    color: var(--ink-soft);
+    font-size: 11.5px;
+    line-height: 1.4;
+    margin-top: 3px;
+  }
+  .badge-sub-journal {
+    display: inline-block;
+    font-size: 10.5px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    color: var(--status-submitted);
+    margin-right: 4px;
+  }
+  .badge-unsub-journal {
+    display: inline-block;
+    font-size: 10.5px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    color: var(--status-unsub);
+    margin-right: 4px;
+  }
+  .col-path {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #93c5fd;
+    word-break: break-all;
+    background: rgba(15, 23, 42, 0.5);
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(148, 163, 184, 0.15);
+    display: inline-block;
+  }
+  :root[data-theme="light"] .col-path {
+    color: #0369a1;
+    background: rgba(241, 245, 249, 0.9);
+    border: 1px solid #cbd5e1;
+  }
+  .timeline {
+    display: block;
+    font-weight: 400;
+    color: var(--ink-soft);
+    font-size: 11.5px;
+    line-height: 1.4;
+    margin-top: 4px;
+    max-width: 280px;
+  }
 </style>
 </head>
 <body>
 <div class="page">
 <header>
-<p class="eyebrow">Research Programme Map &amp; Publication Progress · SHM</p>
-<p><a href="#research-directions">Explore the research directions</a></p>
+<div class="header-top">
+  <div>
+    <p class="eyebrow">Research Programme Map &amp; Publication Progress · SHM</p>
+    <h1 class="page-title">SHM Research Map &amp; Publication Progress</h1>
+  </div>
+  <div class="header-actions">
+    <a href="#research-directions" class="nav-jump-btn">↓ Khám phá các hướng nghiên cứu</a>
+    <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Day/Night Mode" aria-label="Toggle Theme">
+      <span class="theme-icon">🌙</span> <span class="theme-text">Night</span>
+    </button>
+  </div>
+</div>
 </header>
 <!-- Immediate Action Pipeline Banner -->
-<section style="background:var(--surface); border:2px solid var(--accent-d); border-radius:14px; padding:18px 22px; margin-bottom:24px; box-shadow:0 4px 20px rgba(178,58,74,0.12);">
-  <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
-    <span style="background:var(--accent-d); color:#fff; font-family:'IBM Plex Mono', monospace; font-size:12px; font-weight:800; padding:4px 10px; border-radius:6px; text-transform:uppercase;">🔥 Kế hoạch nộp tiếp theo · 08/11/2026</span>
-    <span style="font-size:14.5px; font-weight:700; color:var(--ink);">Chỉ đạo hành động: Cần làm dứt điểm rồi nộp luôn!</span>
+<section class="action-pipeline-card">
+  <div class="action-pipeline-header">
+    <span class="action-badge">🔥 Kế hoạch nộp tiếp theo · 08/11/2026</span>
+    <span class="action-title">Chỉ đạo hành động: Cần làm dứt điểm rồi nộp luôn!</span>
   </div>
-  <div style="font-size:13.5px; line-height:1.65; color:var(--ink);">
-    <div style="margin-bottom:8px;">
-      <b>1. Ưu tiên số 1 — FT1 (<a href="#paper-ft1" style="color:var(--accent-d); font-weight:700; text-decoration:underline;">FT1 · Hardanger PG-STGNN</a>):</b> Làm dứt điểm bản thảo và kiểm chứng bán tổng hợp để nộp trực tiếp lên <em>Engineering Structures</em> (Elsevier WoS Q1 · Lộ trình miễn phí Subscription).
+  <div class="action-pipeline-body">
+    <div class="action-item action-item--priority1">
+      <div class="action-item-title">
+        <span class="action-item-rank">Ưu tiên số 1</span>
+        <a href="#paper-ft1" class="action-item-link action-item-link--amber">FT1 · Hardanger PG-STGNN ↗</a>
+      </div>
+      <div class="action-item-desc">
+        Làm dứt điểm bản thảo và kiểm chứng bán tổng hợp để nộp trực tiếp lên <strong>Engineering Structures</strong> (Elsevier WoS Q1 · Lộ trình miễn phí Subscription 0 APC).
+      </div>
     </div>
-    <div>
-      <b>2. Ưu tiên số 2 — VS3 (<a href="#paper-vs3" style="color:var(--accent-c); font-weight:700; text-decoration:underline;">VS3 · Hardanger Recoverability Limit</a>):</b> Trọn bộ hồ sơ nộp bài đã hoàn tất 100% (bài chính 26 trang &le; 30 trang, phụ lục 17 trang, biên dịch sạch 0 lỗi), sẵn sàng nộp ngay sau FT1 lên <em>Engineering Structures</em>!
+    <div class="action-item action-item--priority2">
+      <div class="action-item-title">
+        <span class="action-item-rank action-item-rank--sky">Ưu tiên số 2</span>
+        <a href="#paper-vs3" class="action-item-link action-item-link--sky">VS3 · Hardanger Recoverability Limit ↗</a>
+      </div>
+      <div class="action-item-desc">
+        Trọn bộ hồ sơ nộp bài đã hoàn tất 100% (bài chính 26 trang &le; 30 trang, phụ lục 17 trang, biên dịch sạch 0 lỗi), sẵn sàng nộp ngay sau FT1 lên <strong>Engineering Structures</strong>!
+      </div>
     </div>
   </div>
 </section>
@@ -340,7 +754,7 @@
 <td class="col-track col-track--c">VS3</td>
 <td class="col-title">A Priori Error of Virtual Channels under Sensor Loss: A Data-Only Linear MMSE Index Validated Blind on Five Monitored Structures</td>
 <td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> Engineering Structures<small>Elsevier · WoS Q1 · Subscription route (0 APC)</small></td>
-<td><span class="badge-tag unsub-badge" style="background:#e0f2fe; color:#0369a1; border:1.5px solid #0284c7; font-weight:800;">⚡ READY TO SUBMIT · NEXT #2</span><small class="timeline" title="Package status">📅 Trọn bộ hồ sơ 100% hoàn tất (26 trang main + 17 trang supp), biên dịch 0 lỗi, sẵn sàng nộp ngay sau FT1!</small></td>
+<td><span class="badge-tag badge-next-2">⚡ READY TO SUBMIT · NEXT #2</span><small class="timeline" title="Package status">📅 Trọn bộ hồ sơ 100% hoàn tất (26 trang main + 17 trang supp), biên dịch 0 lỗi, sẵn sàng nộp ngay sau FT1!</small></td>
 <td class="col-portal"><a class="portal-badge" href="https://www.editorialmanager.com/engstruct/default.aspx" rel="noopener noreferrer" target="_blank" title="Engineering Structures Editorial Manager">↗ Editorial Manager</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hardanger-recoverability-compressive-sensing" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hardanger-recoverability-compressive-sensing</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS3_hardanger_recoverability_limit_compressive_virtual_sensing</td>
 </tr>
@@ -420,7 +834,7 @@
 <td class="col-track col-track--d">FT1</td>
 <td class="col-title">Physics-Guided Spatio-Temporal Graph Neural Network for One-Class Damage Detection</td>
 <td class="col-journal"><span class="badge-unsub-journal">⚡ TARGET:</span> Engineering Structures<small>Elsevier · WoS Q1 · Subscription route (0 APC)</small></td>
-<td><span class="badge-tag unsub-badge" style="background:#fef3c7; color:#b45309; border:1.5px solid #d97706; font-weight:800;">🔥 NEXT SUBMISSION #1</span><small class="timeline" title="Action plan">⚡ Ưu tiên số 1: Cần làm dứt điểm rồi nộp luôn! Đang hoàn thiện bản thảo và benchmark bán tổng hợp.</small></td>
+<td><span class="badge-tag badge-next-1">🔥 NEXT SUBMISSION #1</span><small class="timeline" title="Action plan">⚡ Ưu tiên số 1: Cần làm dứt điểm rồi nộp luôn! Đang hoàn thiện bản thảo và benchmark bán tổng hợp.</small></td>
 <td class="col-portal"><a class="portal-badge" href="https://www.editorialmanager.com/engstruct/default.aspx" rel="noopener noreferrer" target="_blank" title="Engineering Structures Editorial Manager">↗ Editorial Manager</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hardanger-pgstgnn-one-class" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hardanger-pgstgnn-one-class</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\FT1_hardanger_pgstgnn_physics_guided_one_class_detection</td>
 </tr>
@@ -669,8 +1083,35 @@ CV1 uses vision foundation models to detect and segment bridge surface damage. C
 <li><b>Hardanger:</b> VS3, VS9 and VS11 examine recoverability and reconstruction under sensor loss. FT1 addresses the downstream task of damage detection.</li>
 <li><b>HBTA:</b> TL2 ranks sensors for restoration, FT3 studies how the detector should operate during persistent faults, and TL3 uses the remaining modal information to localize connection damage.</li>
 </ul>
-<p><a href="#publication-progress">Back to the publication tracker</a></p>
+<div style="margin-top: 24px;"><a href="#publication-progress" class="nav-jump-btn">↑ Quay lại Bảng theo dõi tiến độ · Back to Publication Tracker</a></div>
 </section>
 </div>
+<script>
+  (function() {
+    var storedTheme = localStorage.getItem('shm_theme');
+    var root = document.documentElement;
+    var btn = document.getElementById('theme-toggle');
+    
+    function setTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('shm_theme', theme);
+      if (btn) {
+        var isLight = theme === 'light';
+        btn.querySelector('.theme-icon').textContent = isLight ? '☀️' : '🌙';
+        btn.querySelector('.theme-text').textContent = isLight ? 'Day' : 'Night';
+      }
+    }
+
+    var initialTheme = storedTheme || 'dark';
+    setTheme(initialTheme);
+
+    if (btn) {
+      btn.addEventListener('click', function() {
+        var current = root.getAttribute('data-theme') || 'dark';
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+  })();
+</script>
 </body>
 </html>
