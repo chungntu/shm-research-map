@@ -36,6 +36,11 @@
     --accent-k: #14b8a6;
     --accent-l: #a3e635;   
 
+    --status-accepted: #c084fc;
+    --status-accepted-bg: rgba(192, 132, 252, 0.20);
+    --status-accepted-border: #a855f7;
+    --status-accepted-glow: rgba(168, 85, 247, 0.40);
+
     --status-submitted: #4ade80; 
     --status-submitted-bg: rgba(74, 222, 128, 0.15); 
     --status-submitted-border: rgba(74, 222, 128, 0.45);
@@ -76,6 +81,11 @@
     --accent-j: #2563eb;   
     --accent-k: #0d9488;
     --accent-l: #65a30d;   
+
+    --status-accepted: #7e22ce;
+    --status-accepted-bg: #f3e8ff;
+    --status-accepted-border: #a855f7;
+    --status-accepted-glow: rgba(168, 85, 247, 0.20);
 
     --status-submitted: #15803d; 
     --status-submitted-bg: #dcfce7; 
@@ -342,6 +352,14 @@
     line-height: 1.4;
     white-space: nowrap;
   }
+  .badge-tag.accepted {
+    background: var(--status-accepted-bg);
+    color: var(--status-accepted);
+    border: 1.5px solid var(--status-accepted-border);
+    box-shadow: 0 0 10px var(--status-accepted-glow);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
   .badge-tag.submitted,
   .badge-tag.revision {
     background: var(--status-submitted-bg);
@@ -598,6 +616,18 @@
   }
   table.audit-table tr.is-sub-row td:first-child {
     border-left: 4px solid var(--status-submitted);
+  }
+  table.audit-table tr[data-status="accepted"] td:first-child,
+  table.audit-table tr.is-accepted-row td:first-child {
+    border-left: 4px solid var(--status-accepted) !important;
+  }
+  table.audit-table tr[data-status="accepted"],
+  table.audit-table tr.is-accepted-row {
+    background: rgba(192, 132, 252, 0.045);
+  }
+  :root[data-theme="light"] table.audit-table tr[data-status="accepted"],
+  :root[data-theme="light"] table.audit-table tr.is-accepted-row {
+    background: rgba(126, 34, 206, 0.035);
   }
 
   .col-num {
@@ -993,12 +1023,12 @@
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/hbta-topology-informed-sensor-restoration" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>hbta-topology-informed-sensor-restoration</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL2_hbta_topology_sensor_restoration_ranking_loss</td>
 </tr>
 <!-- Paper 06 · TL3 -->
-<tr class="is-sub-row" data-paper="06" data-status="accepted" data-track="b">
+<tr class="is-sub-row is-accepted-row" data-paper="06" data-status="accepted" data-track="b">
 <td class="col-num">16</td>
 <td class="col-track col-track--b">TL3</td>
 <td class="col-title">Graph-Based Structural Damage Localization through Modal Relative Motion</td>
 <td class="col-journal-status">
-<div class="status-badge-wrap"><span class="badge-tag submitted">✓ ACCEPTED · 09/11/2026</span></div>
+<div class="status-badge-wrap"><span class="badge-tag accepted">✓ ACCEPTED · 09/11/2026</span></div>
 <div class="journal-name">Structural Durability &amp; Health Monitoring (SDHM)</div>
 <small class="journal-meta">Tech Science Press · Scopus Q3 (CiteScore 2.1) · Paper ID: 92616 · APC $1,000</small>
 <small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 Submitted 09/09/2026 (MS: 92616) → round-1 reviews (20 days) → R1 revision submitted 30/09/2026 → round-2 reviews → R2 revision submitted 30/10/2026 → supplementary-materials statement 05/11/2026 → 🎉 OFFICIALLY ACCEPTED 09/11/2026 (60 days from submission; APC $1,000 due in 7 days)</small>
@@ -1145,12 +1175,12 @@
 <td class="col-github"><a class="github-badge" href="https://github.com/vinhveer/semi-labeling-paper" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>semi-labeling-paper</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CV2_semi_labeling_stabledino_sam_multiclass_surface_damage</td>
 </tr>
 <!-- Paper 25 · CV3 -->
-<tr class="is-sub-row" data-paper="25" data-status="accepted" data-track="h">
+<tr class="is-sub-row is-accepted-row" data-paper="25" data-status="accepted" data-track="h">
 <td class="col-num">27</td>
 <td class="col-track col-track--h">CV3</td>
 <td class="col-title">InfaTrackVision: A Non-Contact Vibration Measurement System Using Computer Vision Combined with Deep Learning for Structural Health Monitoring</td>
 <td class="col-journal-status">
-<div class="status-badge-wrap"><span class="badge-tag submitted">✓ ACCEPTED</span></div>
+<div class="status-badge-wrap"><span class="badge-tag accepted">✓ ACCEPTED</span></div>
 <div class="journal-name">Transport &amp; Communications Science J. (TCSJ)</div>
 <small class="journal-meta">UTC / VJOL (MS: 3057)</small>
 <small class="timeline" title="Submission timeline; ≈ = date inferred from file or cover-letter dates">📅 TCSJ submitted ≈06/2026 → revised version ≈20/08/2026 → accepted (recorded 30/09/2026)</small>
