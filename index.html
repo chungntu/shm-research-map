@@ -648,6 +648,14 @@
   }
 
   
+  /* Collapsible table groups */
+  tr.table-group-header { cursor: pointer; user-select: none; }
+  tr.table-group-header:hover td { filter: brightness(1.12); }
+  tr.table-group-header:focus-visible { outline: 2px solid var(--line-strong); outline-offset: -2px; }
+  .group-toggle { display: inline-block; width: 14px; font-size: 10px; transition: transform 0.2s ease; }
+  tr.table-group-header.is-collapsed .group-toggle { transform: rotate(-90deg); }
+  tr.is-group-hidden { display: none; }
+
   /* Table Section Group Headers */
   tr.table-group-header td {
     padding: 10px 14px;
@@ -923,6 +931,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 <tr class="table-group-header group-unsubmitted">
 <td colspan="7">
 <div class="group-header-content">
+<span class="group-toggle" aria-hidden="true">▼</span>
 <span class="group-icon">📋</span>
 <span class="group-title">NHÓM 1: CÁC CÔNG TRÌNH SẴN SÀNG NỘP &amp; ĐANG HOÀN THIỆN BẢN THẢO</span>
 <span class="group-count">24 bài</span>
@@ -1182,6 +1191,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 <tr class="table-group-header group-submitted">
 <td colspan="7">
 <div class="group-header-content">
+<span class="group-toggle" aria-hidden="true">▼</span>
 <span class="group-icon">📨</span>
 <span class="group-title">NHÓM 2: CÁC CÔNG TRÌNH ĐANG NỘP &amp; THẨM ĐỊNH (UNDER REVIEW / WITH EDITOR / SUBMITTED)</span>
 <span class="group-count">15 bài</span>
@@ -1402,6 +1412,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 <tr class="table-group-header group-accepted">
 <td colspan="7">
 <div class="group-header-content">
+<span class="group-toggle" aria-hidden="true">▼</span>
 <span class="group-icon">🎉</span>
 <span class="group-title">NHÓM 3: CÁC CÔNG TRÌNH ĐÃ ĐƯỢC CHẤP NHẬN ĐĂNG (ACCEPTED)</span>
 <span class="group-count">3 bài</span>
@@ -1463,8 +1474,8 @@ table.audit-table tr.is-unsub-row td:first-child {
 VS1 and VS2 estimate quasi-static stress and deck strain on KW51. VS3 asks which lost signals remain recoverable, VS4 studies when sensors should sample under energy constraints, and VS8 relates sensor budget to spectral rank. On Hardanger, VS9 uses dynamic structural condensation and VS11 studies block-Hankel completion and recovery certificates for fixed outage patterns. VS10 develops modal graph sampling in space and time. GN2 asks when a masked-node graph network learns the condensation of VS9, and which graph and training it needs. VS12 tests conformal coverage across retrofit and operational shifts on KW51. VS13 investigates whether a few sensors can recover bending moments along an HDPE fish-cage collar, while VS14 establishes a multi-fidelity surrogate optimization framework (active-learning Gaussian Processes and NSGA-II) to assess storm load-carrying capacity and optimize open-ocean dual-ring HDPE fish cages under typhoon sea states.
 </div>
 <div class="track-line track-line--b">
-<b>2. Damage detection, localization and sensor faults · OC1–OC4, TL1–TL5, FT1, FT3, CW1</b><br/>
-OC1–OC3 develop one-class representations on Z24 and AQUINAS. OC4 examines the trade-off between temperature robustness and damage sensitivity on the Sonkyo blade, while CW1 conditions a WaveNet detector on temperature. TL1–TL3 use HBTA topology for edge transfer, sensor restoration and connection localization. TL4 uses transverse modes on Route 345, and TL5 studies physics-informed detection and ensemble localization on LUMO Tower. FT1 uses the wind–traffic crossover to condition one-class reconstruction on Hardanger, while FT3 studies persistent sensor quarantine and detector reconfiguration on HBTA.
+<b>2. Damage detection, localization and sensor faults · OC1–OC4, TL1–TL5, FT1, FT3, CW1, GN1</b><br/>
+OC1–OC3 develop one-class representations on Z24 and AQUINAS. OC4 examines the trade-off between temperature robustness and damage sensitivity on the Sonkyo blade, while CW1 conditions a WaveNet detector on temperature. TL1–TL3 use HBTA topology for edge transfer, sensor restoration and connection localization. TL4 uses transverse modes on Route 345, and TL5 studies physics-informed detection and ensemble localization on LUMO Tower. FT1 uses the wind–traffic crossover to condition one-class reconstruction on Hardanger, while FT3 studies persistent sensor quarantine and detector reconfiguration on HBTA. GN1 detects performance changes of a wind-farm turbine from its neighbours, without a hand-picked reference turbine.
 </div>
 <div class="track-line track-line--k">
 <b>3. Transfer across structures and datasets · HP1, PS1</b><br/>
@@ -1510,7 +1521,7 @@ CS1 explores vibration-based delamination diagnosis in CFRP plates using acceler
 </ul>
 <div style="margin-top: 24px;"><a class="nav-jump-btn" href="#publication-progress">↑ Quay lại Bảng theo dõi tiến độ · Back to Publication Tracker</a></div>
 </section>
-<!-- 15 Research Tracks Summary -->
+<!-- 17 Research Tracks Summary -->
 <section class="tracks-summary">
 <div class="track-line track-line--c"><b>VS</b> — Virtual sensing: build (KW51) · recoverability limit under sensor loss, CS framing (Hardanger · Route 345 · HBTA · LUMO · KW51) · sensor budget from spectral rank (Route 345 · HBTA · LUMO · Bergsøysund) · energy-aware space–time sampling schedules · dynamic structural condensation and block-Hankel recovery under outages (Hardanger) · modal graph sampling · conformal coverage across retrofit (KW51) · bending-moment sensing &amp; surrogate optimization (HDPE fish cages).</div>
 <div class="track-line track-line--d"><b>FT</b> — Integration &amp; fault tolerance (Hardanger suspension bridge) · persistent sensor quarantine &amp; reconfiguration for one-class detection (HBTA).</div>
@@ -1526,6 +1537,8 @@ CS1 explores vibration-based delamination diagnosis in CFRP plates using acceler
 <div class="track-line track-line--l"><b>PV</b> — Pavement engineering &amp; climate-resilient green road infrastructure: nationwide Weighted Mean Annual Pavement Temperature (WMAPT) under global warming (127 stations across Vietnam, 1991–2024 · LTPP InfoPave) · spatial pavement temperature variation (Khánh Hòa case study) · climate-adapted asphalt design for rutting and fatigue mitigation.</div>
 <div class="track-line track-line--m"><b>MO</b> — Multi-objective optimization and progressive-collapse prevention for shared-grid mooring systems in multi-cage fish-farm arrays under extreme storms (research outline initiated).</div>
 <div class="track-line track-line--n"><b>MS</b> — Physics-guided neural ODEs for early warning of parametric roll resonance in container ships (complete manuscript; submission pending).</div>
+<div class="track-line track-line--c"><b>GN</b> — Graph networks and learned models for structural monitoring: masked-node condensation on the Hardanger Bridge (GN2) · performance-change detection in a wind farm from neighbouring turbines (GN1).</div>
+<div class="track-line track-line--j"><b>WL</b> — Wind loading inferred from measured structural response: modal distribution of wind load from Hardanger Bridge accelerations (WL1).</div>
 <div class="track-line track-line--o"><b>CS</b> — Vibration-based diagnosis of CFRP composite-plate delamination using accelerometers and one-class learning (early-stage idea).</div>
 </section>
 </div>
@@ -1554,6 +1567,58 @@ CS1 explores vibration-based delamination diagnosis in CFRP plates using acceler
         setTheme(current === 'dark' ? 'light' : 'dark');
       });
     }
+  })();
+</script>
+<script>
+  (function() {
+    var KEY = 'shm_collapsed_groups';
+    var headers = Array.prototype.slice.call(document.querySelectorAll('tr.table-group-header'));
+    function rowsOf(h) {
+      var out = [], r = h.nextElementSibling;
+      while (r && !r.classList.contains('table-group-header')) { out.push(r); r = r.nextElementSibling; }
+      return out;
+    }
+    function keyOf(h) {
+      return ['group-unsubmitted', 'group-submitted', 'group-accepted'].filter(function(c) {
+        return h.classList.contains(c); })[0] || '';
+    }
+    function saved() { try { return JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { return []; } }
+    function save() {
+      try {
+        localStorage.setItem(KEY, JSON.stringify(headers.filter(function(h) {
+          return h.classList.contains('is-collapsed'); }).map(keyOf)));
+      } catch (e) {}
+    }
+    function setCollapsed(h, collapsed) {
+      h.classList.toggle('is-collapsed', collapsed);
+      h.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+      rowsOf(h).forEach(function(r) { r.classList.toggle('is-group-hidden', collapsed); });
+    }
+    var initial = saved();
+    headers.forEach(function(h) {
+      h.setAttribute('tabindex', '0');
+      h.setAttribute('role', 'button');
+      h.setAttribute('title', 'Bấm để thu gọn / mở rộng nhóm');
+      setCollapsed(h, initial.indexOf(keyOf(h)) !== -1);
+      h.addEventListener('click', function() { setCollapsed(h, !h.classList.contains('is-collapsed')); save(); });
+      h.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); h.click(); }
+      });
+    });
+    // Opening a link to a row inside a collapsed group expands that group first.
+    function reveal(id) {
+      var row = id && document.getElementById(id);
+      if (!row || !row.classList.contains('is-group-hidden')) return;
+      var h = row.previousElementSibling;
+      while (h && !h.classList.contains('table-group-header')) h = h.previousElementSibling;
+      if (h) { setCollapsed(h, false); save(); }
+    }
+    document.addEventListener('click', function(e) {
+      var a = e.target.closest && e.target.closest('a[href^="#paper-"]');
+      if (a) reveal(a.getAttribute('href').slice(1));
+    }, true);
+    window.addEventListener('hashchange', function() { reveal(location.hash.slice(1)); });
+    if (location.hash) { reveal(location.hash.slice(1)); var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
   })();
 </script>
 </body>
