@@ -540,25 +540,39 @@
   .col-track--o { color: var(--accent-o); }
   .col-track--p { color: var(--accent-p); }
 
+  .track-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
   .code-secondary {
     display: inline-block;
-    margin-left: 6px;
+    margin-left: 0;
     padding: 1px 6px;
-    font-size: 10.5px;
+    font-size: 9.5px;
     font-weight: 700;
     border-radius: 999px;
     border: 1px solid currentColor;
-    vertical-align: middle;
-    line-height: 1.35;
+    line-height: 1.3;
     cursor: pointer;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
   }
   .code-secondary--hdpe { color: var(--accent-p); background: rgba(34, 211, 238, 0.12); }
   .code-secondary--rail { color: var(--accent-i); background: rgba(251, 146, 60, 0.12); }
   .code-secondary--wind { color: var(--accent-f); background: rgba(14, 165, 233, 0.12); }
+  .code-secondary--vs { color: var(--accent-e); background: rgba(165, 180, 252, 0.12); }
+  .code-secondary--physics { color: var(--accent-g); background: rgba(52, 211, 153, 0.12); }
+  .code-secondary--oneclass { color: var(--accent-a); background: rgba(45, 212, 191, 0.12); }
+  .code-secondary--loss { color: var(--accent-d); background: rgba(251, 113, 133, 0.12); }
   :root[data-theme="light"] .code-secondary--hdpe { background: rgba(8, 145, 178, 0.10); }
   :root[data-theme="light"] .code-secondary--rail { background: rgba(194, 65, 12, 0.10); }
   :root[data-theme="light"] .code-secondary--wind { background: rgba(2, 132, 199, 0.10); }
+  :root[data-theme="light"] .code-secondary--vs { background: rgba(79, 70, 229, 0.10); }
+  :root[data-theme="light"] .code-secondary--physics { background: rgba(5, 150, 105, 0.10); }
+  :root[data-theme="light"] .code-secondary--oneclass { background: rgba(13, 148, 136, 0.10); }
+  :root[data-theme="light"] .code-secondary--loss { background: rgba(225, 29, 72, 0.10); }
 
   .cluster-filter-bar {
     display: flex;
@@ -578,13 +592,13 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 5px 12px;
+    padding: 5px 11px;
     border-radius: 999px;
     border: 1px solid var(--line-strong);
     background: var(--surface-2);
     color: var(--ink-sub);
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 11.5px;
+    font-size: 11px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.15s ease;
@@ -612,6 +626,26 @@
     background: rgba(14, 165, 233, 0.18);
     border-color: var(--accent-f);
     color: var(--accent-f);
+  }
+  .cluster-filter-btn[data-filter="Virtual Sensing"].is-active {
+    background: rgba(165, 180, 252, 0.18);
+    border-color: var(--accent-e);
+    color: var(--accent-e);
+  }
+  .cluster-filter-btn[data-filter="Physics-ML"].is-active {
+    background: rgba(52, 211, 153, 0.18);
+    border-color: var(--accent-g);
+    color: var(--accent-g);
+  }
+  .cluster-filter-btn[data-filter="One-Class"].is-active {
+    background: rgba(45, 212, 191, 0.18);
+    border-color: var(--accent-a);
+    color: var(--accent-a);
+  }
+  .cluster-filter-btn[data-filter="Sensor-Loss"].is-active {
+    background: rgba(251, 113, 133, 0.18);
+    border-color: var(--accent-d);
+    color: var(--accent-d);
   }
   table.audit-table tr.is-filter-hidden {
     display: none;
@@ -829,6 +863,8 @@ table.audit-table tr.is-unsub-row td:first-child {
     font-weight: 800;
     font-size: 12.5px;
     white-space: nowrap;
+    vertical-align: top;
+    width: 1%;
   }
   .col-title {
     font-weight: 600;
@@ -989,13 +1025,17 @@ table.audit-table tr.is-unsub-row td:first-child {
 <!-- ===== Detailed Submission Audit Table ===== -->
 <section class="audit-section" id="publication-progress">
 <h2>Progress Tracker &amp; Target Journals for 43 Papers &amp; Research Studies</h2>
-<p>Detailed overview of submission status, classified by unique Primary Code (tied to repository folder) plus optional semantic Secondary Code (e.g. <code>HDPE</code>, <code>RAIL</code>, <code>WIND</code>) for cross-track clusters, target journal, manuscript ID, and project folder location.</p>
-<div class="cluster-filter-bar" role="group" aria-label="Filter by secondary domain code">
-<span class="cluster-filter-label">Nhóm mã phụ:</span>
+<p>Detailed overview of submission status, classified by unique Primary Code (tied to repository folder) plus up to two optional semantic labels stacked vertically (maximum 3 labels per study: e.g. <code>Virtual Sensing</code>, <code>Physics-ML</code>, <code>One-Class</code>, <code>Sensor-Loss</code>, <code>HDPE</code>, <code>RAIL</code>, <code>WIND</code>), target journal, manuscript ID, and project folder location.</p>
+<div class="cluster-filter-bar" role="group" aria-label="Filter by secondary semantic labels">
+<span class="cluster-filter-label">Nhóm nhãn:</span>
 <button type="button" class="cluster-filter-btn is-active" data-filter="ALL">Tất cả (43)</button>
-<button type="button" class="cluster-filter-btn" data-filter="HDPE">HDPE · Lồng nuôi biển (4)</button>
-<button type="button" class="cluster-filter-btn" data-filter="RAIL">RAIL · Đường sắt (6)</button>
-<button type="button" class="cluster-filter-btn" data-filter="WIND">WIND · Điện gió (4)</button>
+<button type="button" class="cluster-filter-btn" data-filter="Virtual Sensing">Virtual Sensing (13)</button>
+<button type="button" class="cluster-filter-btn" data-filter="One-Class">One-Class (8)</button>
+<button type="button" class="cluster-filter-btn" data-filter="Physics-ML">Physics-ML (7)</button>
+<button type="button" class="cluster-filter-btn" data-filter="Sensor-Loss">Sensor-Loss (7)</button>
+<button type="button" class="cluster-filter-btn" data-filter="RAIL">RAIL (6)</button>
+<button type="button" class="cluster-filter-btn" data-filter="HDPE">HDPE (4)</button>
+<button type="button" class="cluster-filter-btn" data-filter="WIND">WIND (4)</button>
 </div>
 <div class="table-responsive">
 <table class="audit-table">
@@ -1021,9 +1061,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 </div>
 </td>
 </tr>
-<tr class="is-unsub-row" data-paper="36" data-status="unsubmitted" data-track="c" data-secondary="HDPE" id="paper-vs14">
+<tr class="is-unsub-row" data-paper="36" data-status="unsubmitted" data-track="c" id="paper-vs14" data-secondary="HDPE|Physics-ML">
 <td class="col-num">1</td>
-<td class="col-track col-track--c">VS14<span class="code-secondary code-secondary--hdpe" data-filter-tag="HDPE" title="Mã phụ: Nhóm kết cấu nuôi biển &amp; lồng cá HDPE">HDPE</span></td>
+<td class="col-track col-track--c"><div class="track-stack"><span>VS14</span><span class="code-secondary code-secondary--hdpe" data-filter-tag="HDPE" title="Nhóm kết cấu nuôi biển &amp; lồng cá HDPE">HDPE</span><span class="code-secondary code-secondary--physics" data-filter-tag="Physics-ML" title="Học máy dẫn đường vật lý / mô hình thay thế">Physics-ML</span></div></td>
 <td class="col-title">Multi-Fidelity Surrogate-Based Design Optimization and Storm Load-Carrying Capacity Assessment for Dual-Ring HDPE Fish Cages</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1034,8 +1074,8 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><a class="portal-badge" href="https://www.editorialmanager.com/oe/default.aspx" rel="noopener noreferrer" target="_blank" title="Ocean Engineering Editorial Manager">↗ Editorial Manager</a></td>
 <td class="col-github">—</td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS14_hdpe_cage_surrogate_design_optimization</td>
 </tr>
-<tr class="is-unsub-row" data-paper="37" data-status="unsubmitted" data-track="c" data-secondary="WIND" id="paper-vs15">
-<td class="col-num">2</td><td class="col-track col-track--c">VS15<span class="code-secondary code-secondary--wind" data-filter-tag="WIND" title="Mã phụ: Cụm năng lượng điện gió">WIND</span></td>
+<tr class="is-unsub-row" data-paper="37" data-status="unsubmitted" data-track="c" id="paper-vs15" data-secondary="WIND|Virtual Sensing">
+<td class="col-num">2</td><td class="col-track col-track--c"><div class="track-stack"><span>VS15</span><span class="code-secondary code-secondary--wind" data-filter-tag="WIND" title="Cụm công trình &amp; năng lượng gió">WIND</span><span class="code-secondary code-secondary--vs" data-filter-tag="Virtual Sensing" title="Ước lượng đại lượng không đo trực tiếp / Digital twin">Virtual Sensing</span></div></td>
 <td class="col-title">Physics-Guided Virtual Sensing of Mooring Tensions and Zero-Shot Line-Failure Detection for a 15 MW Floating Wind Turbine from Topside Measurements</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ READY TO SUBMIT</span></div>
@@ -1046,9 +1086,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><a class="portal-badge" href="https://www.editorialmanager.com/oe/default.aspx" rel="noopener noreferrer" target="_blank" title="Ocean Engineering Editorial Manager">↗ Editorial Manager</a></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/vs15-fowt-mooring-virtual-sensing" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>vs15-fowt-mooring-virtual-sensing</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS15_fowt_15mw_mooring_tension_virtual_sensing_break_detection</td>
 </tr>
-<tr class="is-unsub-row" data-paper="20" data-status="unsubmitted" data-track="f" data-secondary="WIND" id="paper-wt1">
+<tr class="is-unsub-row" data-paper="20" data-status="unsubmitted" data-track="f" id="paper-wt1" data-secondary="WIND">
 <td class="col-num">3</td>
-<td class="col-track col-track--f">WT1<span class="code-secondary code-secondary--wind" data-filter-tag="WIND" title="Mã phụ: Cụm năng lượng điện gió">WIND</span></td>
+<td class="col-track col-track--f"><div class="track-stack"><span>WT1</span><span class="code-secondary code-secondary--wind" data-filter-tag="WIND" title="Cụm công trình &amp; năng lượng gió">WIND</span></div></td>
 <td class="col-title">A Geometric Criterion for Sway and Rocking in Inclined Pile Groups, with Field Identification of an Offshore Wind Turbine Foundation</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1059,9 +1099,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/t18-foundation-oma" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>t18-foundation-oma</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\WT1_offshore_wind_turbine_foundation_setup_consistency</td>
 </tr>
-<tr class="is-unsub-row" data-paper="35" data-status="unsubmitted" data-track="c" data-secondary="HDPE" id="paper-vs13">
+<tr class="is-unsub-row" data-paper="35" data-status="unsubmitted" data-track="c" id="paper-vs13" data-secondary="HDPE|Virtual Sensing">
 <td class="col-num">4</td>
-<td class="col-track col-track--c">VS13<span class="code-secondary code-secondary--hdpe" data-filter-tag="HDPE" title="Mã phụ: Nhóm kết cấu nuôi biển &amp; lồng cá HDPE">HDPE</span></td>
+<td class="col-track col-track--c"><div class="track-stack"><span>VS13</span><span class="code-secondary code-secondary--hdpe" data-filter-tag="HDPE" title="Nhóm kết cấu nuôi biển &amp; lồng cá HDPE">HDPE</span><span class="code-secondary code-secondary--vs" data-filter-tag="Virtual Sensing" title="Ước lượng đại lượng không đo trực tiếp / Digital twin">Virtual Sensing</span></div></td>
 <td class="col-title">Observability and Estimation of Bending Moments Along the HDPE Floating Collar of a Gravity Fish Cage from Sparse Accelerometers</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1072,9 +1112,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><a class="portal-badge" href="https://www.editorialmanager.com/oe/default.aspx" rel="noopener noreferrer" target="_blank" title="Ocean Engineering Editorial Manager">↗ Editorial Manager</a></td>
 <td class="col-github">—</td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS13_hdpe_cage_floater_bending_moment_virtual_sensing</td>
 </tr>
-<tr class="is-unsub-row" data-paper="14" data-status="unsubmitted" data-track="c" id="paper-vs3">
+<tr class="is-unsub-row" data-paper="14" data-status="unsubmitted" data-track="c" id="paper-vs3" data-secondary="Virtual Sensing|Sensor-Loss">
 <td class="col-num">5</td>
-<td class="col-track col-track--c">VS3</td>
+<td class="col-track col-track--c"><div class="track-stack"><span>VS3</span><span class="code-secondary code-secondary--vs" data-filter-tag="Virtual Sensing" title="Ước lượng đại lượng không đo trực tiếp / Digital twin">Virtual Sensing</span><span class="code-secondary code-secondary--loss" data-filter-tag="Sensor-Loss" title="Chịu lỗi cảm biến / khôi phục kênh mất tín hiệu">Sensor-Loss</span></div></td>
 <td class="col-title">A Priori Error of Virtual Channels under Sensor Loss: A Data-Only Linear MMSE Index Validated Blind on Five Monitored Structures</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1087,7 +1127,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <tr class="is-unsub-row" data-paper="27" data-status="unsubmitted" data-track="i">
 <td class="col-num">6</td>
-<td class="col-track col-track--i">EL1</td>
+<td class="col-track col-track--i"><div class="track-stack"><span>EL1</span></div></td>
 <td class="col-title">Two-Sided Bounds for Equivalent Linearization of Hardening Oscillators Under White Noise</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1098,15 +1138,15 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/el1-dual-criterion-equivalent-linearization" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>el1-dual-criterion-equivalent-linearization</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\EL1_hardening_oscillators_two_sided_bounds_equivalent_linearization</td>
 </tr>
-<tr class="is-unsub-row" data-paper="38" data-status="unsubmitted" data-track="n">
-<td class="col-num">7</td><td class="col-track col-track--n">MS1</td>
+<tr class="is-unsub-row" data-paper="38" data-status="unsubmitted" data-track="n" data-secondary="Physics-ML">
+<td class="col-num">7</td><td class="col-track col-track--n"><div class="track-stack"><span>MS1</span><span class="code-secondary code-secondary--physics" data-filter-tag="Physics-ML" title="Học máy dẫn đường vật lý / mô hình thay thế">Physics-ML</span></div></td>
 <td class="col-title">Physics-Guided Neural ODEs for Real-Time Early Warning of Parametric Roll Resonance in Container Ships</td>
 <td class="col-journal-status"><div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ MANUSCRIPT COMPLETE · NOT YET SUBMITTED</span></div><div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Ocean Engineering</div><small class="journal-meta">18-page compiled manuscript · Alternative: Applied Ocean Research</small></td>
 <td class="col-portal"><span class="portal-none">—</span></td><td class="col-github"><span class="portal-none">—</span></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\MS1_ship_parametric_roll_early_warning_neural_ode</td>
 </tr>
-<tr class="is-unsub-row" data-paper="13" data-status="unsubmitted" data-track="b" id="paper-tl5">
+<tr class="is-unsub-row" data-paper="13" data-status="unsubmitted" data-track="b" id="paper-tl5" data-secondary="Physics-ML">
 <td class="col-num">8</td>
-<td class="col-track col-track--b">TL5</td>
+<td class="col-track col-track--b"><div class="track-stack"><span>TL5</span><span class="code-secondary code-secondary--physics" data-filter-tag="Physics-ML" title="Học máy dẫn đường vật lý / mô hình thay thế">Physics-ML</span></div></td>
 <td class="col-title">Evaluation Design Outweighs Algorithm Choice in Damage Detection and Localisation: A Year-Long, Intervention-Aware Study on the LUMO Lattice Tower</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1118,7 +1158,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <tr class="is-unsub-row" data-paper="22" data-status="unsubmitted" data-track="h">
 <td class="col-num">9</td>
-<td class="col-track col-track--h">CV2</td>
+<td class="col-track col-track--h"><div class="track-stack"><span>CV2</span></div></td>
 <td class="col-title">A Semi-Automatic Labeling Workflow for Multi-Class Surface Damage Detection Using Vision Foundation Models</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1131,7 +1171,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <tr class="is-unsub-row" data-paper="28" data-status="unsubmitted" data-track="j" data-secondary="RAIL">
 <td class="col-num">10</td>
-<td class="col-track col-track--j">ST1<span class="code-secondary code-secondary--rail" data-filter-tag="RAIL" title="Mã phụ: Cụm hạ tầng &amp; kiểm tra đường sắt">RAIL</span></td>
+<td class="col-track col-track--j"><div class="track-stack"><span>ST1</span><span class="code-secondary code-secondary--rail" data-filter-tag="RAIL" title="Cụm hạ tầng &amp; kiểm tra đường sắt">RAIL</span></div></td>
 <td class="col-title">When Does the End Portal Govern the Out-of-Plane Stability of Tied-Arch and Arch-Truss Bridges? A First-Principles and Parametric Study on Two Instrumented Bridges (KW51, Nam Ô)</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1143,7 +1183,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <tr class="is-unsub-row" data-paper="30" data-status="unsubmitted" data-track="k">
 <td class="col-num">11</td>
-<td class="col-track col-track--k">PS1</td>
+<td class="col-track col-track--k"><div class="track-stack"><span>PS1</span></div></td>
 <td class="col-title">When Does Cross-Structure Knowledge Transfer Work in Population-Based SHM? An Empirical Study Across 10 Diverse Real-World Structures</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1153,9 +1193,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/pbshm-datacenter" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>pbshm-datacenter</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\PS1_pbshm_datacenter_foundation_model_benchmark</td>
 </tr>
-<tr class="is-unsub-row" data-paper="08" data-status="unsubmitted" data-track="a" data-secondary="WIND">
+<tr class="is-unsub-row" data-paper="08" data-status="unsubmitted" data-track="a" data-secondary="WIND|One-Class">
 <td class="col-num">12</td>
-<td class="col-track col-track--a">OC4<span class="code-secondary code-secondary--wind" data-filter-tag="WIND" title="Mã phụ: Cụm năng lượng điện gió">WIND</span></td>
+<td class="col-track col-track--a"><div class="track-stack"><span>OC4</span><span class="code-secondary code-secondary--wind" data-filter-tag="WIND" title="Cụm công trình &amp; năng lượng gió">WIND</span><span class="code-secondary code-secondary--oneclass" data-filter-tag="One-Class" title="Phát hiện bất thường một lớp / không nhãn hư hỏng">One-Class</span></div></td>
 <td class="col-title">Temperature Variability and Multi-Channel Damage Sensitivity in the Sonkyo Wind Turbine Blade</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1167,7 +1207,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <tr class="is-unsub-row" data-paper="29" data-status="unsubmitted" data-track="j" data-secondary="RAIL">
 <td class="col-num">13</td>
-<td class="col-track col-track--j">ST2<span class="code-secondary code-secondary--rail" data-filter-tag="RAIL" title="Mã phụ: Cụm hạ tầng &amp; kiểm tra đường sắt">RAIL</span></td>
+<td class="col-track col-track--j"><div class="track-stack"><span>ST2</span><span class="code-secondary code-secondary--rail" data-filter-tag="RAIL" title="Cụm hạ tầng &amp; kiểm tra đường sắt">RAIL</span></div></td>
 <td class="col-title">Hanger Tension as Hidden Lateral Bracing: A Stress-Stiffened Model of the KW51 Network Arch for Model Updating, Temperature Compensation and Hanger Diagnosis</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1180,7 +1220,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <tr class="is-unsub-row" data-paper="31" data-status="unsubmitted" data-track="i">
 <td class="col-num">14</td>
-<td class="col-track col-track--i">EL2</td>
+<td class="col-track col-track--i"><div class="track-stack"><span>EL2</span></div></td>
 <td class="col-title">Dissipation and Dephasing in the Measured Damping of Nonlinear Structures Under Random Excitation</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1190,9 +1230,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/el2-dissipation-dephasing-measured-damping" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>el2-dissipation-dephasing-measured-damping</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\EL2_dissipation_dephasing_measured_damping_nonlinear_structures</td>
 </tr>
-<tr class="is-unsub-row" data-paper="26" data-status="unsubmitted" data-track="d">
+<tr class="is-unsub-row" data-paper="26" data-status="unsubmitted" data-track="d" data-secondary="One-Class|Sensor-Loss">
 <td class="col-num">15</td>
-<td class="col-track col-track--d">FT3</td>
+<td class="col-track col-track--d"><div class="track-stack"><span>FT3</span><span class="code-secondary code-secondary--oneclass" data-filter-tag="One-Class" title="Phát hiện bất thường một lớp / không nhãn hư hỏng">One-Class</span><span class="code-secondary code-secondary--loss" data-filter-tag="Sensor-Loss" title="Chịu lỗi cảm biến / khôi phục kênh mất tín hiệu">Sensor-Loss</span></div></td>
 <td class="col-title">Persistent Sensor Quarantine and Reconfiguration in One-Class Structural Health Monitoring</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1202,9 +1242,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><span class="portal-none">—</span></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\FT3_hbta_persistent_sensor_quarantine_one_class_reconfiguration</td>
 </tr>
-<tr class="is-unsub-row" data-paper="33" data-status="unsubmitted" data-track="c">
+<tr class="is-unsub-row" data-paper="33" data-status="unsubmitted" data-track="c" data-secondary="Virtual Sensing|Sensor-Loss">
 <td class="col-num">16</td>
-<td class="col-track col-track--c">VS11</td>
+<td class="col-track col-track--c"><div class="track-stack"><span>VS11</span><span class="code-secondary code-secondary--vs" data-filter-tag="Virtual Sensing" title="Ước lượng đại lượng không đo trực tiếp / Digital twin">Virtual Sensing</span><span class="code-secondary code-secondary--loss" data-filter-tag="Sensor-Loss" title="Chịu lỗi cảm biến / khôi phục kênh mất tín hiệu">Sensor-Loss</span></div></td>
 <td class="col-title">Block-Hankel Completion and Deterministic Outage Certificates for Virtual Sensing on the Hardanger Bridge</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1213,9 +1253,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github">—</td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS11_hardanger_block_hankel_completion_deterministic_outage_certificate</td>
 </tr>
-<tr class="is-unsub-row" data-paper="32" data-status="unsubmitted" data-track="c">
+<tr class="is-unsub-row" data-paper="32" data-status="unsubmitted" data-track="c" data-secondary="Virtual Sensing">
 <td class="col-num">17</td>
-<td class="col-track col-track--c">VS10</td>
+<td class="col-track col-track--c"><div class="track-stack"><span>VS10</span><span class="code-secondary code-secondary--vs" data-filter-tag="Virtual Sensing" title="Ước lượng đại lượng không đo trực tiếp / Digital twin">Virtual Sensing</span></div></td>
 <td class="col-title">Modal Graph Sampling for Space–Time Virtual Sensing</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1224,9 +1264,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github">—</td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS10_modal_graph_sampling_theorem_space_time_virtual_sensing</td>
 </tr>
-<tr class="is-unsub-row" data-paper="34" data-status="unsubmitted" data-track="c" data-secondary="RAIL">
+<tr class="is-unsub-row" data-paper="34" data-status="unsubmitted" data-track="c" data-secondary="RAIL|Virtual Sensing">
 <td class="col-num">18</td>
-<td class="col-track col-track--c">VS12<span class="code-secondary code-secondary--rail" data-filter-tag="RAIL" title="Mã phụ: Cụm hạ tầng &amp; kiểm tra đường sắt">RAIL</span></td>
+<td class="col-track col-track--c"><div class="track-stack"><span>VS12</span><span class="code-secondary code-secondary--rail" data-filter-tag="RAIL" title="Cụm hạ tầng &amp; kiểm tra đường sắt">RAIL</span><span class="code-secondary code-secondary--vs" data-filter-tag="Virtual Sensing" title="Ước lượng đại lượng không đo trực tiếp / Digital twin">Virtual Sensing</span></div></td>
 <td class="col-title">Conformal Coverage for KW51 Virtual Sensing Under Retrofit and Operational Shifts</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1235,38 +1275,38 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github">—</td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS12_kw51_conformal_coverage_virtual_sensing_retrofit_shift</td>
 </tr>
-<tr class="is-unsub-row" data-paper="39" data-status="unsubmitted" data-track="m" data-secondary="HDPE" id="paper-mo1">
-<td class="col-num">19</td><td class="col-track col-track--m">MO1<span class="code-secondary code-secondary--hdpe" data-filter-tag="HDPE" title="Mã phụ: Nhóm kết cấu nuôi biển &amp; lồng cá HDPE">HDPE</span></td>
+<tr class="is-unsub-row" data-paper="39" data-status="unsubmitted" data-track="m" id="paper-mo1" data-secondary="HDPE">
+<td class="col-num">19</td><td class="col-track col-track--m"><div class="track-stack"><span>MO1</span><span class="code-secondary code-secondary--hdpe" data-filter-tag="HDPE" title="Nhóm kết cấu nuôi biển &amp; lồng cá HDPE">HDPE</span></div></td>
 <td class="col-title">Multi-Objective Design Optimization and Progressive Collapse Prevention of Shared-Grid Mooring Systems for Multi-Cage Fish Farm Arrays Under Extreme Storm Conditions</td>
 <td class="col-journal-status"><div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ RESEARCH PREPARATION · OUTLINE INITIATED</span></div><div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Marine Structures</div><small class="journal-meta">Alternative target: Ocean Engineering</small></td>
 <td class="col-portal"><span class="portal-none">—</span></td><td class="col-github"><span class="portal-none">—</span></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\MO1_multi_cage_array_mooring_system_optimization</td>
 </tr>
-<tr class="is-unsub-row" data-paper="40" data-status="unsubmitted" data-track="c" data-secondary="HDPE" id="paper-vs17">
-<td class="col-num">20</td><td class="col-track col-track--c">VS17<span class="code-secondary code-secondary--hdpe" data-filter-tag="HDPE" title="Mã phụ: Nhóm kết cấu nuôi biển &amp; lồng cá HDPE">HDPE</span></td>
+<tr class="is-unsub-row" data-paper="40" data-status="unsubmitted" data-track="c" id="paper-vs17" data-secondary="HDPE|Virtual Sensing">
+<td class="col-num">20</td><td class="col-track col-track--c"><div class="track-stack"><span>VS17</span><span class="code-secondary code-secondary--hdpe" data-filter-tag="HDPE" title="Nhóm kết cấu nuôi biển &amp; lồng cá HDPE">HDPE</span><span class="code-secondary code-secondary--vs" data-filter-tag="Virtual Sensing" title="Ước lượng đại lượng không đo trực tiếp / Digital twin">Virtual Sensing</span></div></td>
 <td class="col-title">Biofouling-Aware Digital Twin for HDPE Marine Fish Cages: Effects of Net Fouling on Hydrodynamic Response</td>
 <td class="col-journal-status"><div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ RESEARCH PROPOSAL</span></div><div class="journal-name">Proposed study · journal target not selected</div><small class="journal-meta">Digital twin and biofouling-aware hydrodynamic modelling for HDPE cage systems</small></td>
 <td class="col-portal"><span class="portal-none">—</span></td><td class="col-github"><span class="portal-none">—</span></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS17_hdpe_cage_biofouling_hydrodynamics_digital_twin</td>
 </tr>
-<tr class="is-unsub-row" data-paper="41" data-status="unsubmitted" data-track="o">
-<td class="col-num">21</td><td class="col-track col-track--o">CS1</td>
+<tr class="is-unsub-row" data-paper="41" data-status="unsubmitted" data-track="o" data-secondary="One-Class">
+<td class="col-num">21</td><td class="col-track col-track--o"><div class="track-stack"><span>CS1</span><span class="code-secondary code-secondary--oneclass" data-filter-tag="One-Class" title="Phát hiện bất thường một lớp / không nhãn hư hỏng">One-Class</span></div></td>
 <td class="col-title">Carbon-Fiber-Reinforced Polymer Plate Delamination Diagnosis Using Accelerometers and One-Class AI</td>
 <td class="col-journal-status"><div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ EARLY-STAGE RESEARCH IDEA</span></div><div class="journal-name">Journal target not selected</div><small class="journal-meta">Vibration-based structural health monitoring of composite delamination</small></td>
 <td class="col-portal"><span class="portal-none">—</span></td><td class="col-github"><span class="portal-none">—</span></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CS1_cfrp_composite_delamination_vibration_shm</td>
 </tr>
-<tr class="is-unsub-row" data-paper="42" data-status="unsubmitted" data-track="c" id="paper-gn2">
-<td class="col-num">22</td><td class="col-track col-track--c">GN2</td>
+<tr class="is-unsub-row" data-paper="42" data-status="unsubmitted" data-track="c" id="paper-gn2" data-secondary="Virtual Sensing|Sensor-Loss">
+<td class="col-num">22</td><td class="col-track col-track--c"><div class="track-stack"><span>GN2</span><span class="code-secondary code-secondary--vs" data-filter-tag="Virtual Sensing" title="Ước lượng đại lượng không đo trực tiếp / Digital twin">Virtual Sensing</span><span class="code-secondary code-secondary--loss" data-filter-tag="Sensor-Loss" title="Chịu lỗi cảm biến / khôi phục kênh mất tín hiệu">Sensor-Loss</span></div></td>
 <td class="col-title">When Does a Masked-Node Graph Network Learn Structural Condensation? Graph Choice and Multi-Node Masking on the Hardanger Bridge</td>
 <td class="col-journal-status"><div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ EARLY-STAGE RESEARCH IDEA</span></div><div class="journal-name">Journal target not selected</div><small class="journal-meta">Split from VS9 (FT2) on 14/11/2026 · builds on the FT1 network and the VS9 condensation theory</small></td>
 <td class="col-portal"><span class="portal-none">—</span></td><td class="col-github"><span class="portal-none">—</span></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\GN2_hardanger_masked_node_gnn_learned_condensation</td>
 </tr>
 <tr class="is-unsub-row" data-paper="43" data-status="unsubmitted" data-track="j">
-<td class="col-num">23</td><td class="col-track col-track--j">WL1</td>
+<td class="col-num">23</td><td class="col-track col-track--j"><div class="track-stack"><span>WL1</span></div></td>
 <td class="col-title">What Measured Bridge Accelerations Reveal About the Modal Distribution of Wind Load: Loading Laws and Partial Correlations on the Hardanger Bridge</td>
 <td class="col-journal-status"><div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ EARLY-STAGE RESEARCH IDEA</span></div><div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Journal of Wind Engineering and Industrial Aerodynamics (to confirm)</div><small class="journal-meta">Split from VS9 (FT2) supplement on 14/11/2026 · new series WL (wind loading)</small></td>
 <td class="col-portal"><span class="portal-none">—</span></td><td class="col-github"><span class="portal-none">—</span></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\WL1_hardanger_modal_wind_load_from_acceleration_correlation</td>
 </tr>
-<tr class="is-unsub-row" data-paper="45" data-status="unsubmitted" data-track="h" data-secondary="RAIL" id="paper-cv4">
-<td class="col-num">24</td><td class="col-track col-track--h">CV4<span class="code-secondary code-secondary--rail" data-filter-tag="RAIL" title="Mã phụ: Cụm hạ tầng &amp; kiểm tra đường sắt">RAIL</span></td>
+<tr class="is-unsub-row" data-paper="45" data-status="unsubmitted" data-track="h" id="paper-cv4" data-secondary="RAIL">
+<td class="col-num">24</td><td class="col-track col-track--h"><div class="track-stack"><span>CV4</span><span class="code-secondary code-secondary--rail" data-filter-tag="RAIL" title="Cụm hạ tầng &amp; kiểm tra đường sắt">RAIL</span></div></td>
 <td class="col-title">Non-Intrusive High-Speed Railway Inspection Pod Using Laser-Doppler Synchronization, Inertial-Anchor Rectification, and Real-Time Rail-Defect Detection</td>
 <td class="col-journal-status"><div class="status-badge-wrap"><span class="badge-tag notyet-badge">📝 STEP 2 IN PROGRESS</span></div><div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Measurement</div><small class="journal-meta">Elsevier / IMEKO · WoS Q1 · Double-anonymized · Subscription route (0 APC) · Optical–thermal–GUM closure complete</small></td>
 <td class="col-portal"><span class="portal-none">—</span></td><td class="col-github"><span class="portal-none">—</span></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CV4_zero_intrusion_high_speed_railway_inspection_pod</td>
@@ -1282,8 +1322,8 @@ table.audit-table tr.is-unsub-row td:first-child {
 </td>
 </tr>
 <!-- GN1 -->
-<tr class="is-sub-row" data-paper="44" data-status="submitted" data-track="f" data-secondary="WIND" id="paper-gn1">
-<td class="col-num">25</td><td class="col-track col-track--f">GN1<span class="code-secondary code-secondary--wind" data-filter-tag="WIND" title="Mã phụ: Cụm năng lượng điện gió">WIND</span></td>
+<tr class="is-sub-row" data-paper="44" data-status="submitted" data-track="f" id="paper-gn1" data-secondary="WIND">
+<td class="col-num">25</td><td class="col-track col-track--f"><div class="track-stack"><span>GN1</span><span class="code-secondary code-secondary--wind" data-filter-tag="WIND" title="Cụm công trình &amp; năng lượng gió">WIND</span></div></td>
 <td class="col-title">Placebo Upgrades for Separating Real Gains from Year-to-Year Variation in Wind Turbine Upgrades</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag submitted">✓ SUBMITTED TO JOURNAL</span></div>
@@ -1294,9 +1334,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><a class="portal-badge" href="https://editor.copernicus.org/WES/" rel="noopener noreferrer" target="_blank" title="Copernicus Office Editor">↗ Copernicus Office</a></td><td class="col-github"><a class="github-badge" href="https://github.com/chungntu/GN1_wind_uplift_placebo_calibration" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>GN1_wind_uplift_placebo_calibration</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\GN1_wind_turbine_placebo_upgrades_production_gains</td>
 </tr>
 <!-- Paper 12 · VS9 -->
-<tr class="is-sub-row" data-paper="12" data-status="submitted" data-track="c" id="paper-vs9">
+<tr class="is-sub-row" data-paper="12" data-status="submitted" data-track="c" id="paper-vs9" data-secondary="Virtual Sensing|Sensor-Loss">
 <td class="col-num">26</td>
-<td class="col-track col-track--c">VS9</td>
+<td class="col-track col-track--c"><div class="track-stack"><span>VS9</span><span class="code-secondary code-secondary--vs" data-filter-tag="Virtual Sensing" title="Ước lượng đại lượng không đo trực tiếp / Digital twin">Virtual Sensing</span><span class="code-secondary code-secondary--loss" data-filter-tag="Sensor-Loss" title="Chịu lỗi cảm biến / khôi phục kênh mất tín hiệu">Sensor-Loss</span></div></td>
 <td class="col-title">Virtual Sensing of Offline Bridge Sensors by Load-Weighted Dynamic Condensation</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag submitted">✓ SUBMITTED TO JOURNAL</span></div>
@@ -1310,7 +1350,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 <!-- Paper 36 · PV1 -->
 <tr class="is-sub-row" data-paper="36" data-status="submitted" data-track="l" id="paper-pv1">
 <td class="col-num">27</td>
-<td class="col-track col-track--l">PV1</td>
+<td class="col-track col-track--l"><div class="track-stack"><span>PV1</span></div></td>
 <td class="col-title">Weighted Mean Annual Pavement Temperature in Vietnam from Reanalysis Air Temperature: Grid-Cell Screening, Input Sensitivity and Trend</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag submitted">✓ SUBMITTED TO JOURNAL</span></div>
@@ -1323,9 +1363,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\PV1_vietnam_wmapt_ltpp_infopave_pavement_temperature</td>
 </tr>
 <!-- Paper 09 · FT1 -->
-<tr class="is-sub-row" data-paper="09" data-status="submitted" data-track="d" id="paper-ft1">
+<tr class="is-sub-row" data-paper="09" data-status="submitted" data-track="d" id="paper-ft1" data-secondary="Physics-ML|One-Class">
 <td class="col-num">28</td>
-<td class="col-track col-track--d">FT1</td>
+<td class="col-track col-track--d"><div class="track-stack"><span>FT1</span><span class="code-secondary code-secondary--physics" data-filter-tag="Physics-ML" title="Học máy dẫn đường vật lý / mô hình thay thế">Physics-ML</span><span class="code-secondary code-secondary--oneclass" data-filter-tag="One-Class" title="Phát hiện bất thường một lớp / không nhãn hư hỏng">One-Class</span></div></td>
 <td class="col-title">Wind–Traffic Crossover Conditioning for One-Class Damage Detection and Localization on the Hardanger Suspension Bridge</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag submitted">✓ SUBMITTED TO JOURNAL</span></div>
@@ -1339,7 +1379,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 <!-- Paper 10 · TL4 -->
 <tr class="is-sub-row" data-paper="10" data-status="submitted" data-track="b">
 <td class="col-num">29</td>
-<td class="col-track col-track--b">TL4</td>
+<td class="col-track col-track--b"><div class="track-stack"><span>TL4</span></div></td>
 <td class="col-title">Load-path basis for localising diaphragm bolt removal from transverse vibration</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag submitted">⏳ SUBMISSION STAGE</span></div>
@@ -1351,9 +1391,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/route345-transverse-mode-localisation" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>route345-transverse-mode-localisation</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\TL4_route345_transverse_mode_diaphragm_bolt_damage_localization</td>
 </tr>
 <!-- Paper 24 · VS8 -->
-<tr class="is-sub-row" data-paper="24" data-status="submitted" data-track="c">
+<tr class="is-sub-row" data-paper="24" data-status="submitted" data-track="c" data-secondary="Virtual Sensing">
 <td class="col-num">30</td>
-<td class="col-track col-track--c">VS8</td>
+<td class="col-track col-track--c"><div class="track-stack"><span>VS8</span><span class="code-secondary code-secondary--vs" data-filter-tag="Virtual Sensing" title="Ước lượng đại lượng không đo trực tiếp / Digital twin">Virtual Sensing</span></div></td>
 <td class="col-title">Spectral Rank for Spatial Compression in Structural Virtual Sensing</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag with-editor">⏳ ASSISTANT EDITOR ASSIGNED</span></div>
@@ -1365,9 +1405,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/spectral-rank-sensor-count-virtual-sensing" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>spectral-rank-sensor-count-virtual-sensing</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS8_multistructure_sensor_budget_spectral_rank_virtual_sensing</td>
 </tr>
 <!-- Paper 11 · VS2 -->
-<tr class="is-sub-row" data-paper="11" data-status="submitted" data-track="c" data-secondary="RAIL">
+<tr class="is-sub-row" data-paper="11" data-status="submitted" data-track="c" data-secondary="RAIL|Virtual Sensing">
 <td class="col-num">31</td>
-<td class="col-track col-track--c">VS2<span class="code-secondary code-secondary--rail" data-filter-tag="RAIL" title="Mã phụ: Cụm hạ tầng &amp; kiểm tra đường sắt">RAIL</span></td>
+<td class="col-track col-track--c"><div class="track-stack"><span>VS2</span><span class="code-secondary code-secondary--rail" data-filter-tag="RAIL" title="Cụm hạ tầng &amp; kiểm tra đường sắt">RAIL</span><span class="code-secondary code-secondary--vs" data-filter-tag="Virtual Sensing" title="Ước lượng đại lượng không đo trực tiếp / Digital twin">Virtual Sensing</span></div></td>
 <td class="col-title">Physics-Guided Virtual Sensing of Railway Bridge Deck Strains Under Uncertain Boundary Conditions</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag submitted">✓ UNDER REVIEW</span></div>
@@ -1379,9 +1419,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/kw51-deck-girder-virtual-sensing" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>kw51-deck-girder-virtual-sensing</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS2_kw51_deck_girder_strain_virtual_sensing_without_bearing</td>
 </tr>
 <!-- Paper 05 · TL2 -->
-<tr class="is-sub-row" data-paper="05" data-status="submitted" data-track="b">
+<tr class="is-sub-row" data-paper="05" data-status="submitted" data-track="b" data-secondary="Sensor-Loss">
 <td class="col-num">32</td>
-<td class="col-track col-track--b">TL2</td>
+<td class="col-track col-track--b"><div class="track-stack"><span>TL2</span><span class="code-secondary code-secondary--loss" data-filter-tag="Sensor-Loss" title="Chịu lỗi cảm biến / khôi phục kênh mất tín hiệu">Sensor-Loss</span></div></td>
 <td class="col-title">Topology-Informed Sensor Restoration after Sensor Loss in Structural Health Monitoring</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag with-editor">⏳ AWAITING REVIEWER ASSIGNMENT</span></div>
@@ -1395,7 +1435,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 <!-- Paper 19 · HP1 -->
 <tr class="is-sub-row" data-paper="19" data-status="submitted" data-track="e">
 <td class="col-num">33</td>
-<td class="col-track col-track--e">HP1</td>
+<td class="col-track col-track--e"><div class="track-stack"><span>HP1</span></div></td>
 <td class="col-title">Relative Importance of Input Formulation and Hyperparameter Optimisation in Vibration-Based Structural Health Monitoring</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag with-editor">⏳ AWAITING REFEREE SELECTION</span></div>
@@ -1407,9 +1447,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/ga-hpo-transferability-shm" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>ga-hpo-transferability-shm</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\HP1_ga_hyperparameter_transferability_across_datasets</td>
 </tr>
 <!-- Paper 16 · VS4 -->
-<tr class="is-sub-row" data-paper="16" data-status="submitted" data-track="c">
+<tr class="is-sub-row" data-paper="16" data-status="submitted" data-track="c" data-secondary="Virtual Sensing|Sensor-Loss">
 <td class="col-num">34</td>
-<td class="col-track col-track--c">VS4</td>
+<td class="col-track col-track--c"><div class="track-stack"><span>VS4</span><span class="code-secondary code-secondary--vs" data-filter-tag="Virtual Sensing" title="Ước lượng đại lượng không đo trực tiếp / Digital twin">Virtual Sensing</span><span class="code-secondary code-secondary--loss" data-filter-tag="Sensor-Loss" title="Chịu lỗi cảm biến / khôi phục kênh mất tín hiệu">Sensor-Loss</span></div></td>
 <td class="col-title">Energy-Aware Space–Time Sampling Schedules for Virtual Sensing with Failed and Battery-Limited Wireless Sensors</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag submitted">✓ UNDER REVIEW</span></div>
@@ -1423,7 +1463,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 <!-- Paper 23 · CW1 -->
 <tr class="is-sub-row" data-paper="23" data-status="submitted" data-track="g">
 <td class="col-num">35</td>
-<td class="col-track col-track--g">CW1</td>
+<td class="col-track col-track--g"><div class="track-stack"><span>CW1</span></div></td>
 <td class="col-title">Conditional WaveNet Deep Learning Model for Robust Structural Damage Detection Under Varying Temperatures</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag submitted">✓ UNDER REVIEW</span></div>
@@ -1437,7 +1477,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 <!-- Paper 21 · CV1 -->
 <tr class="is-sub-row" data-paper="21" data-status="submitted" data-track="h">
 <td class="col-num">36</td>
-<td class="col-track col-track--h">CV1</td>
+<td class="col-track col-track--h"><div class="track-stack"><span>CV1</span></div></td>
 <td class="col-title">Zero-Shot Bridge Surface Damage Detection and Segmentation Using a Hierarchical GroundingDINO–Segment Anything Model Framework</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag submitted">✓ UNDER REVIEW</span></div>
@@ -1449,9 +1489,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/paper-sam-grdino" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>paper-sam-grdino</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CV1_bridge_surface_damage_detection_groundingdino_sam</td>
 </tr>
 <!-- Paper 07 · VS1 -->
-<tr class="is-sub-row" data-paper="07" data-status="submitted" data-track="c" data-secondary="RAIL">
+<tr class="is-sub-row" data-paper="07" data-status="submitted" data-track="c" data-secondary="RAIL|Virtual Sensing">
 <td class="col-num">37</td>
-<td class="col-track col-track--c">VS1<span class="code-secondary code-secondary--rail" data-filter-tag="RAIL" title="Mã phụ: Cụm hạ tầng &amp; kiểm tra đường sắt">RAIL</span></td>
+<td class="col-track col-track--c"><div class="track-stack"><span>VS1</span><span class="code-secondary code-secondary--rail" data-filter-tag="RAIL" title="Cụm hạ tầng &amp; kiểm tra đường sắt">RAIL</span><span class="code-secondary code-secondary--vs" data-filter-tag="Virtual Sensing" title="Ước lượng đại lượng không đo trực tiếp / Digital twin">Virtual Sensing</span></div></td>
 <td class="col-title">Physics-Guided Residual Learning for Quasi-Static Stress Virtual Sensing on Railway Bridge KW51</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag with-editor">⏳ WITH EDITOR</span></div>
@@ -1463,9 +1503,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/kw51-piml-virtual-sensing" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>kw51-piml-virtual-sensing</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS1_kw51_piml_quasi_static_stress_virtual_sensing</td>
 </tr>
 <!-- Paper 02 · OC2 -->
-<tr class="is-sub-row" data-paper="02" data-status="submitted" data-track="a">
+<tr class="is-sub-row" data-paper="02" data-status="submitted" data-track="a" data-secondary="Physics-ML|One-Class">
 <td class="col-num">38</td>
-<td class="col-track col-track--a">OC2</td>
+<td class="col-track col-track--a"><div class="track-stack"><span>OC2</span><span class="code-secondary code-secondary--physics" data-filter-tag="Physics-ML" title="Học máy dẫn đường vật lý / mô hình thay thế">Physics-ML</span><span class="code-secondary code-secondary--oneclass" data-filter-tag="One-Class" title="Phát hiện bất thường một lớp / không nhãn hư hỏng">One-Class</span></div></td>
 <td class="col-title">Decoupling Health Scores from Environmental and Operational Variability with Unsupervised Feature Attention</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag with-editor">⏳ AE BEING SELECTED</span></div>
@@ -1477,9 +1517,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/PIAE-AQUINAS" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>PIAE-AQUINAS</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC2_aquinas_piae_eov_decoupling_feature_attention</td>
 </tr>
 <!-- Paper 03 · OC3 -->
-<tr class="is-sub-row" data-paper="03" data-status="submitted" data-track="a">
+<tr class="is-sub-row" data-paper="03" data-status="submitted" data-track="a" data-secondary="Physics-ML|One-Class">
 <td class="col-num">39</td>
-<td class="col-track col-track--a">OC3</td>
+<td class="col-track col-track--a"><div class="track-stack"><span>OC3</span><span class="code-secondary code-secondary--physics" data-filter-tag="Physics-ML" title="Học máy dẫn đường vật lý / mô hình thay thế">Physics-ML</span><span class="code-secondary code-secondary--oneclass" data-filter-tag="One-Class" title="Phát hiện bất thường một lớp / không nhãn hư hỏng">One-Class</span></div></td>
 <td class="col-title">Vector-Quantised Physics-Informed Autoencoders for Label-Free Structural Damage Detection</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag with-editor">⏳ AE BEING SELECTED</span></div>
@@ -1491,9 +1531,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/VQ-PIAE-A" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>VQ-PIAE-A</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\OC3_z24_aquinas_vq_piae_vector_quantized_detection</td>
 </tr>
 <!-- Paper 04 · TL1 -->
-<tr class="is-sub-row" data-paper="04" data-status="submitted" data-track="b">
+<tr class="is-sub-row" data-paper="04" data-status="submitted" data-track="b" data-secondary="One-Class">
 <td class="col-num">40</td>
-<td class="col-track col-track--b">TL1</td>
+<td class="col-track col-track--b"><div class="track-stack"><span>TL1</span><span class="code-secondary code-secondary--oneclass" data-filter-tag="One-Class" title="Phát hiện bất thường một lớp / không nhãn hư hỏng">One-Class</span></div></td>
 <td class="col-title">Topology-Guided Edge-Transfer Analysis for One-Class Structural Damage Detection</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag with-editor">⏳ WITH EDITOR</span></div>
@@ -1515,9 +1555,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 </td>
 </tr>
 <!-- Paper 01 · OC1 -->
-<tr class="is-sub-row is-accepted-row" data-paper="01" data-status="accepted" data-track="a">
+<tr class="is-sub-row is-accepted-row" data-paper="01" data-status="accepted" data-track="a" data-secondary="Physics-ML|One-Class">
 <td class="col-num">41</td>
-<td class="col-track col-track--a">OC1</td>
+<td class="col-track col-track--a"><div class="track-stack"><span>OC1</span><span class="code-secondary code-secondary--physics" data-filter-tag="Physics-ML" title="Học máy dẫn đường vật lý / mô hình thay thế">Physics-ML</span><span class="code-secondary code-secondary--oneclass" data-filter-tag="One-Class" title="Phát hiện bất thường một lớp / không nhãn hư hỏng">One-Class</span></div></td>
 <td class="col-title">Physics-Informed Autoencoders with Unsupervised Feature Attention for Label-Free Structural Damage Detection</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag accepted">✓ ACCEPTED · 10/11/2026</span></div>
@@ -1531,7 +1571,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 <!-- Paper 06 · TL3 -->
 <tr class="is-sub-row is-accepted-row" data-paper="06" data-status="accepted" data-track="b">
 <td class="col-num">42</td>
-<td class="col-track col-track--b">TL3</td>
+<td class="col-track col-track--b"><div class="track-stack"><span>TL3</span></div></td>
 <td class="col-title">Graph-Based Structural Damage Localization through Modal Relative Motion</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag accepted">✓ ACCEPTED · 09/11/2026</span></div>
@@ -1545,7 +1585,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 <!-- Paper 25 · CV3 -->
 <tr class="is-sub-row is-accepted-row" data-paper="25" data-status="accepted" data-track="h">
 <td class="col-num">43</td>
-<td class="col-track col-track--h">CV3</td>
+<td class="col-track col-track--h"><div class="track-stack"><span>CV3</span></div></td>
 <td class="col-title">InfaTrackVision: A Non-Contact Vibration Measurement System Using Computer Vision Combined with Deep Learning for Structural Health Monitoring</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag accepted">✓ ACCEPTED</span></div>
@@ -1563,8 +1603,8 @@ table.audit-table tr.is-unsub-row td:first-child {
 <section aria-labelledby="research-directions-title" class="audit-section" id="research-directions">
 <h2 id="research-directions-title"><button class="directions-toggle" type="button" aria-expanded="true" aria-controls="research-directions-content" title="Bấm để thu gọn / mở rộng hướng nghiên cứu"><span class="group-toggle" aria-hidden="true">▼</span>Research Directions</button></h2>
 <div id="research-directions-content">
-<p>Programme synthesis · 18 November 2026 · 43 projects across 17 research tracks plus 3 semantic cross-track groups (<code>HDPE</code>, <code>RAIL</code>, <code>WIND</code>)</p>
-<p>The programme asks how structural health monitoring and ocean infrastructure engineering can recover unmeasured responses, detect and localize damage, and remain resilient when sensors fail or harsh operating conditions intervene. Every paper keeps a unique primary code tied to its physical folder, while cross-cutting studies may carry one short, meaningful semantic secondary code (such as <code>HDPE</code>, <code>RAIL</code>, or <code>WIND</code>; not every paper needs a second code) so domain clusters stay visible without altering folder paths or sequence counters.</p>
+<p>Programme synthesis · 18 November 2026 · 43 projects across 17 research tracks plus 7 semantic cross-track labels (<code>Virtual Sensing</code>, <code>One-Class</code>, <code>Physics-ML</code>, <code>Sensor-Loss</code>, <code>RAIL</code>, <code>HDPE</code>, <code>WIND</code>)</p>
+<p>The programme asks how structural health monitoring and ocean infrastructure engineering can recover unmeasured responses, detect and localize damage, and remain resilient when sensors fail or harsh operating conditions intervene. Every paper keeps a unique primary code tied to its physical folder, while cross-cutting studies carry up to two optional semantic labels stacked vertically below the primary code (at most 3 labels total per paper) without renaming folders or consuming sequence counters.</p>
 <div class="track-line track-line--c">
 <b>1. Virtual sensing with limited measurements · VS1–VS4, VS8–VS12, VS15 (WIND), GN2 · linked VS13–VS14 (HDPE)</b><br/>
 VS1 (RAIL) and VS2 (RAIL) estimate quasi-static stress and deck strain on KW51, while VS12 (RAIL) tests conformal coverage across retrofit and operational shifts. VS3 asks which lost signals remain recoverable, VS4 studies when sensors should sample under energy constraints, and VS8 relates sensor budget to spectral rank. On Hardanger, VS9 uses dynamic structural condensation, VS11 studies block-Hankel completion and recovery certificates for fixed outage patterns, and GN2 asks when a masked-node graph network learns the condensation of VS9. VS10 develops modal graph sampling in space and time. VS15 (WIND) extends physics-guided virtual sensing to 15 MW floating wind turbine moorings. VS13 (HDPE) and VS17 (HDPE) apply virtual sensing and inverse digital twins to marine fish cages under the dedicated <b>HDPE</b> cluster below.
@@ -1620,9 +1660,13 @@ CS1 explores vibration-based delamination diagnosis in CFRP plates using acceler
 <div style="margin-top: 24px;"><a class="nav-jump-btn" href="#publication-progress">↑ Quay lại Bảng theo dõi tiến độ · Back to Publication Tracker</a></div>
 <!-- Semantic Secondary Clusters + 17 Primary Tracks Summary -->
 <section class="tracks-summary">
-<div class="track-line track-line--p"><b>HDPE</b> (semantic cluster tag) — Marine fish-cage structures &amp; aquaculture engineering: collar bending observability &amp; virtual sensing (<b>VS13 · HDPE</b>) · multi-fidelity surrogate storm optimization of dual-ring HDPE cages (<b>VS14 · HDPE</b>) · time-dependent biofouling digital twin (<b>VS17 · HDPE</b>) · shared-grid multi-cage mooring collapse prevention (<b>MO1 · HDPE</b>).</div>
-<div class="track-line track-line--i"><b>RAIL</b> (semantic cluster tag) — Railway infrastructure &amp; high-speed corridors: KW51 stress/strain virtual sensing &amp; conformal coverage (<b>VS1, VS2, VS12 · RAIL</b>) · tied-arch &amp; truss-arch stability &amp; hanger tension bracing on KW51 and Nam Ô (<b>ST1, ST2 · RAIL</b>) · non-intrusive 350 km/h inspection pod (<b>CV4 · RAIL</b>).</div>
-<div class="track-line track-line--f"><b>WIND</b> (semantic cluster tag) — Wind turbine structures &amp; offshore energy: 15 MW floating wind mooring virtual sensing &amp; zero-shot line-break detection (<b>VS15 · WIND</b>) · offshore foundation OMA setup consistency (<b>WT1 · WIND</b>) · Sonkyo blade thermal sensitivity (<b>OC4 · WIND</b>) · wind-farm placebo upgrade verification (<b>GN1 · WIND</b>).</div>
+<div class="track-line track-line--e"><b>Virtual Sensing</b> (semantic label · 13) — Unmeasured response recovery, state estimation, and digital twins across bridges, fish cages, and floating wind (<b>VS1–VS4, VS8–VS13, VS15, VS17, GN2</b>; excludes design-optimization study VS14).</div>
+<div class="track-line track-line--a"><b>One-Class</b> (semantic label · 8) — Label-free and unsupervised damage/anomaly detection under changing environmental or operational conditions (<b>OC1–OC4, FT1, FT3, TL1, CS1</b>).</div>
+<div class="track-line track-line--g"><b>Physics-ML</b> (semantic label · 7) — Physics-informed/guided machine learning, Kriging surrogates, and Neural ODEs (<b>VS14, MS1, TL5, FT1, OC1–OC3</b>; domain-constrained VS papers prioritize RAIL/HDPE/WIND + Virtual Sensing within the 3-label cap).</div>
+<div class="track-line track-line--d"><b>Sensor-Loss</b> (semantic label · 7) — Outage tolerance, recovery certificates, sensor quarantine, and masked-node condensation (<b>VS3, VS4, VS9, VS11, GN2, TL2, FT3</b>).</div>
+<div class="track-line track-line--p"><b>HDPE</b> (semantic label · 4) — Marine fish-cage structures &amp; aquaculture engineering: collar bending observability &amp; virtual sensing (<b>VS13 · HDPE · Virtual Sensing</b>) · multi-fidelity surrogate storm optimization of dual-ring HDPE cages (<b>VS14 · HDPE · Physics-ML</b>) · time-dependent biofouling digital twin (<b>VS17 · HDPE · Virtual Sensing</b>) · shared-grid multi-cage mooring collapse prevention (<b>MO1 · HDPE</b>).</div>
+<div class="track-line track-line--i"><b>RAIL</b> (semantic label · 6) — Railway infrastructure &amp; high-speed corridors: KW51 stress/strain virtual sensing &amp; conformal coverage (<b>VS1, VS2, VS12 · RAIL · Virtual Sensing</b>) · tied-arch &amp; truss-arch stability &amp; hanger tension bracing on KW51 and Nam Ô (<b>ST1, ST2 · RAIL</b>) · non-intrusive 350 km/h inspection pod (<b>CV4 · RAIL</b>).</div>
+<div class="track-line track-line--f"><b>WIND</b> (semantic label · 4) — Wind turbine structures &amp; offshore energy: 15 MW floating wind mooring virtual sensing &amp; zero-shot line-break detection (<b>VS15 · WIND · Virtual Sensing</b>) · offshore foundation OMA setup consistency (<b>WT1 · WIND</b>) · Sonkyo blade thermal sensitivity (<b>OC4 · WIND · One-Class</b>) · wind-farm placebo upgrade verification (<b>GN1 · WIND</b>).</div>
 <div class="track-line track-line--c"><b>VS</b> — Virtual sensing: build (KW51) · recoverability limit under sensor loss, CS framing (Hardanger · Route 345 · HBTA · LUMO · KW51) · sensor budget from spectral rank (Route 345 · HBTA · LUMO · Bergsøysund) · energy-aware space–time sampling schedules · dynamic structural condensation and block-Hankel recovery under outages (Hardanger) · modal graph sampling · conformal coverage across retrofit (KW51) · HDPE cage bending sensing (<b>VS13 · HDPE</b>) · offshore 15 MW FOWT mooring sensing (<b>VS15 · WIND</b>) · time-dependent biofouling digital twin (<b>VS17 · HDPE</b>).</div>
 <div class="track-line track-line--d"><b>FT</b> — Integration &amp; fault tolerance (Hardanger suspension bridge, FT1) · persistent sensor quarantine &amp; reconfiguration for one-class detection (HBTA, FT3).</div>
 <div class="track-line track-line--b"><b>TL</b> — Topology, sensor localisation &amp; restoration (HBTA · Route 345 · LUMO Tower).</div>
@@ -1774,7 +1818,7 @@ CS1 explores vibration-based delamination diagnosis in CFRP plates using acceler
       });
 
       rows.forEach(function(row) {
-        var sec = (row.getAttribute('data-secondary') || '').split(/\s+/);
+        var sec = (row.getAttribute('data-secondary') || '').split('|');
         var visible = (active === 'ALL') || (sec.indexOf(active) !== -1);
         row.classList.toggle('is-filter-hidden', !visible);
       });
