@@ -19,9 +19,15 @@ Research programme map and journal publication progress for a set of structural 
 - **PS**: Population-based SHM and cross-structure knowledge transfer
 - **GN**: Graph neural networks for structural monitoring
 - **WL**: Wind loading inferred from measured structural response
-- **AQ**: Aquaculture structures and HDPE marine fish cages (`AQ1` / `VS13`, `AQ2` / `VS14`, `AQ3` / `VS17`, `AQ4` / `MO1`)
+- **MO**: Multi-cage fish-farm mooring optimization
+- **MS**: Maritime ship roll dynamics and early warning
+- **PV**: Pavement engineering and green transportation infrastructure
+- **CS**: Composite plate damage diagnosis
 
-Optional secondary codes (`Primary · Secondary`) are used only for cross-track studies whose scope naturally bridges two lines (not every paper needs two codes); physical folder names always keep the primary code unchanged.
+Optional semantic secondary codes (`Primary · TAG`, with no trailing serial number; not needed for every paper) group cross-track domain clusters cleanly without renaming existing folders or consuming sequence numbers:
+- **HDPE**: Aquaculture structures and HDPE marine fish cages (`VS13`, `VS14`, `VS17`, `MO1`)
+- **RAIL**: Railway bridge SHM and high-speed track inspection (`VS1`, `VS2`, `VS12`, `ST1`, `ST2`, `CV4`)
+- **WIND**: Offshore and onshore wind turbine structures and monitoring (`VS15`, `WT1`, `OC4`, `GN1`)
 
 View the page: https://chungntu.github.io/shm-research-map/
 
