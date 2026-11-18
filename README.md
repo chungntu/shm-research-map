@@ -19,6 +19,9 @@ Research programme map and journal publication progress for a set of structural 
 - **PS**: Population-based SHM and cross-structure knowledge transfer
 - **GN**: Graph neural networks for structural monitoring
 - **WL**: Wind loading inferred from measured structural response
+- **AQ**: Aquaculture structures and HDPE marine fish cages (`AQ1` / `VS13`, `AQ2` / `VS14`, `AQ3` / `VS17`, `AQ4` / `MO1`)
+
+Optional secondary codes (`Primary · Secondary`) are used only for cross-track studies whose scope naturally bridges two lines (not every paper needs two codes); physical folder names always keep the primary code unchanged.
 
 View the page: https://chungntu.github.io/shm-research-map/
 

@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SHM Research Map &amp; Journal Publication Progress (17/11/2026)</title>
+<title>SHM Research Map &amp; Journal Publication Progress (18/11/2026)</title>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=IBM+Plex+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
   :root,
@@ -38,6 +38,7 @@
     --accent-m: #f472b6;
     --accent-n: #c4b5fd;
     --accent-o: #fb923c;
+    --accent-p: #22d3ee;
 
     --status-accepted: #c084fc;
     --status-accepted-bg: rgba(192, 132, 252, 0.20);
@@ -87,6 +88,7 @@
     --accent-m: #db2777;
     --accent-n: #6d28d9;
     --accent-o: #c2410c;
+    --accent-p: #0891b2;
 
     --status-accepted: #7e22ce;
     --status-accepted-bg: #f3e8ff;
@@ -519,6 +521,7 @@
   .track-line--m { border-color: var(--accent-m); }
   .track-line--n { border-color: var(--accent-n); }
   .track-line--o { border-color: var(--accent-o); }
+  .track-line--p { border-color: var(--accent-p); }
 
   .col-track--a { color: var(--accent-a); }
   .col-track--b { color: var(--accent-b); }
@@ -530,11 +533,30 @@
   .col-track--h { color: var(--accent-h); }
   .col-track--i { color: var(--accent-i); }
   .col-track--j { color: var(--accent-j); }
-    .col-track--k { color: var(--accent-k); }
+  .col-track--k { color: var(--accent-k); }
   .col-track--l { color: var(--accent-l); }
   .col-track--m { color: var(--accent-m); }
   .col-track--n { color: var(--accent-n); }
   .col-track--o { color: var(--accent-o); }
+  .col-track--p { color: var(--accent-p); }
+
+  .code-secondary {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 6px;
+    font-size: 10.5px;
+    font-weight: 700;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+  .code-secondary--p { color: var(--accent-p); background: rgba(34, 211, 238, 0.12); }
+  .code-secondary--d { color: var(--accent-d); background: rgba(251, 113, 133, 0.12); }
+  .code-secondary--c { color: var(--accent-c); background: rgba(56, 189, 248, 0.12); }
+  :root[data-theme="light"] .code-secondary--p { background: rgba(8, 145, 178, 0.10); }
+  :root[data-theme="light"] .code-secondary--d { background: rgba(225, 29, 72, 0.10); }
+  :root[data-theme="light"] .code-secondary--c { background: rgba(2, 132, 199, 0.10); }
 
   /* ---- Check Status & GitHub Columns ---- */
   .col-portal { white-space: nowrap; vertical-align: middle; }
@@ -907,8 +929,8 @@ table.audit-table tr.is-unsub-row td:first-child {
 </section>
 <!-- ===== Detailed Submission Audit Table ===== -->
 <section class="audit-section" id="publication-progress">
-<h2>Progress Tracker &amp; Target Journals for 42 Papers &amp; Research Studies</h2>
-<p>Detailed overview of submission status, classified by Research Track, submitted / target journal, manuscript ID, and project folder location.</p>
+<h2>Progress Tracker &amp; Target Journals for 43 Papers &amp; Research Studies</h2>
+<p>Detailed overview of submission status, classified by Primary Research Track plus optional Secondary Codes (<code>Primary [Secondary]</code>) for cross-track studies, target journal, manuscript ID, and project folder location.</p>
 <div class="table-responsive">
 <table class="audit-table">
 <thead>
@@ -929,13 +951,13 @@ table.audit-table tr.is-unsub-row td:first-child {
 <span class="group-toggle" aria-hidden="true">▼</span>
 <span class="group-icon">📋</span>
 <span class="group-title">NHÓM 1: CÁC CÔNG TRÌNH SẴN SÀNG NỘP &amp; ĐANG HOÀN THIỆN BẢN THẢO</span>
-<span class="group-count">23 bài</span>
+<span class="group-count">24 bài</span>
 </div>
 </td>
 </tr>
-<tr class="is-unsub-row" data-paper="36" data-status="unsubmitted" data-track="c" id="paper-vs14">
+<tr class="is-unsub-row" data-paper="36" data-status="unsubmitted" data-track="c" data-secondary-track="p" id="paper-vs14">
 <td class="col-num">1</td>
-<td class="col-track col-track--c">VS14</td>
+<td class="col-track col-track--c">VS14<span class="code-secondary code-secondary--p" title="Secondary code: Aquaculture structures &amp; HDPE fish cages (AQ)">AQ2</span></td>
 <td class="col-title">Multi-Fidelity Surrogate-Based Design Optimization and Storm Load-Carrying Capacity Assessment for Dual-Ring HDPE Fish Cages</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -946,8 +968,8 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><a class="portal-badge" href="https://www.editorialmanager.com/oe/default.aspx" rel="noopener noreferrer" target="_blank" title="Ocean Engineering Editorial Manager">↗ Editorial Manager</a></td>
 <td class="col-github">—</td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS14_hdpe_cage_surrogate_design_optimization</td>
 </tr>
-<tr class="is-unsub-row" data-paper="37" data-status="unsubmitted" data-track="c" id="paper-vs15">
-<td class="col-num">2</td><td class="col-track col-track--c">VS15</td>
+<tr class="is-unsub-row" data-paper="37" data-status="unsubmitted" data-track="c" data-secondary-track="d" id="paper-vs15">
+<td class="col-num">2</td><td class="col-track col-track--c">VS15<span class="code-secondary code-secondary--d" title="Secondary code: Integration &amp; zero-shot line-failure isolation (FT)">FT4</span></td>
 <td class="col-title">Physics-Guided Virtual Sensing of Mooring Tensions and Zero-Shot Line-Failure Detection for a 15 MW Floating Wind Turbine from Topside Measurements</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ READY TO SUBMIT</span></div>
@@ -971,9 +993,9 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github"><a class="github-badge" href="https://github.com/chungntu/t18-foundation-oma" rel="noopener noreferrer" target="_blank"><svg class="github-icon" viewbox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>t18-foundation-oma</a></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\WT1_offshore_wind_turbine_foundation_setup_consistency</td>
 </tr>
-<tr class="is-unsub-row" data-paper="35" data-status="unsubmitted" data-track="c">
+<tr class="is-unsub-row" data-paper="35" data-status="unsubmitted" data-track="c" data-secondary-track="p" id="paper-vs13">
 <td class="col-num">4</td>
-<td class="col-track col-track--c">VS13</td>
+<td class="col-track col-track--c">VS13<span class="code-secondary code-secondary--p" title="Secondary code: Aquaculture structures &amp; HDPE fish cages (AQ)">AQ1</span></td>
 <td class="col-title">Observability and Estimation of Bending Moments Along the HDPE Floating Collar of a Gravity Fish Cage from Sparse Accelerometers</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ NOT YET SUBMITTED</span></div>
@@ -1147,14 +1169,14 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-portal"><span class="portal-none">—</span></td>
 <td class="col-github">—</td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS12_kw51_conformal_coverage_virtual_sensing_retrofit_shift</td>
 </tr>
-<tr class="is-unsub-row" data-paper="39" data-status="unsubmitted" data-track="m">
-<td class="col-num">19</td><td class="col-track col-track--m">MO1</td>
+<tr class="is-unsub-row" data-paper="39" data-status="unsubmitted" data-track="m" data-secondary-track="p" id="paper-mo1">
+<td class="col-num">19</td><td class="col-track col-track--m">MO1<span class="code-secondary code-secondary--p" title="Secondary code: Aquaculture structures &amp; HDPE fish cages (AQ)">AQ4</span></td>
 <td class="col-title">Multi-Objective Design Optimization and Progressive Collapse Prevention of Shared-Grid Mooring Systems for Multi-Cage Fish Farm Arrays Under Extreme Storm Conditions</td>
 <td class="col-journal-status"><div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ RESEARCH PREPARATION · OUTLINE INITIATED</span></div><div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Marine Structures</div><small class="journal-meta">Alternative target: Ocean Engineering</small></td>
 <td class="col-portal"><span class="portal-none">—</span></td><td class="col-github"><span class="portal-none">—</span></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\MO1_multi_cage_array_mooring_system_optimization</td>
 </tr>
-<tr class="is-unsub-row" data-paper="40" data-status="unsubmitted" data-track="c">
-<td class="col-num">20</td><td class="col-track col-track--c">VS17</td>
+<tr class="is-unsub-row" data-paper="40" data-status="unsubmitted" data-track="c" data-secondary-track="p" id="paper-vs17">
+<td class="col-num">20</td><td class="col-track col-track--c">VS17<span class="code-secondary code-secondary--p" title="Secondary code: Aquaculture structures &amp; HDPE fish cages (AQ)">AQ3</span></td>
 <td class="col-title">Biofouling-Aware Digital Twin for HDPE Marine Fish Cages: Effects of Net Fouling on Hydrodynamic Response</td>
 <td class="col-journal-status"><div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ RESEARCH PROPOSAL</span></div><div class="journal-name">Proposed study · journal target not selected</div><small class="journal-meta">Digital twin and biofouling-aware hydrodynamic modelling for HDPE cage systems</small></td>
 <td class="col-portal"><span class="portal-none">—</span></td><td class="col-github"><span class="portal-none">—</span></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\VS17_hdpe_cage_biofouling_hydrodynamics_digital_twin</td>
@@ -1165,8 +1187,8 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-journal-status"><div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ EARLY-STAGE RESEARCH IDEA</span></div><div class="journal-name">Journal target not selected</div><small class="journal-meta">Vibration-based structural health monitoring of composite delamination</small></td>
 <td class="col-portal"><span class="portal-none">—</span></td><td class="col-github"><span class="portal-none">—</span></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CS1_cfrp_composite_delamination_vibration_shm</td>
 </tr>
-<tr class="is-unsub-row" data-paper="42" data-status="unsubmitted" data-track="c">
-<td class="col-num">22</td><td class="col-track col-track--c">GN2</td>
+<tr class="is-unsub-row" data-paper="42" data-status="unsubmitted" data-track="c" data-secondary-track="c" id="paper-gn2">
+<td class="col-num">22</td><td class="col-track col-track--c">GN2<span class="code-secondary code-secondary--c" title="Secondary code: Structural-condensation virtual sensing (VS)">VS18</span></td>
 <td class="col-title">When Does a Masked-Node Graph Network Learn Structural Condensation? Graph Choice and Multi-Node Masking on the Hardanger Bridge</td>
 <td class="col-journal-status"><div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ EARLY-STAGE RESEARCH IDEA</span></div><div class="journal-name">Journal target not selected</div><small class="journal-meta">Split from VS9 (FT2) on 14/11/2026 · builds on the FT1 network and the VS9 condensation theory</small></td>
 <td class="col-portal"><span class="portal-none">—</span></td><td class="col-github"><span class="portal-none">—</span></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\GN2_hardanger_masked_node_gnn_learned_condensation</td>
@@ -1176,6 +1198,12 @@ table.audit-table tr.is-unsub-row td:first-child {
 <td class="col-title">What Measured Bridge Accelerations Reveal About the Modal Distribution of Wind Load: Loading Laws and Partial Correlations on the Hardanger Bridge</td>
 <td class="col-journal-status"><div class="status-badge-wrap"><span class="badge-tag notyet-badge">⚡ EARLY-STAGE RESEARCH IDEA</span></div><div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Journal of Wind Engineering and Industrial Aerodynamics (to confirm)</div><small class="journal-meta">Split from VS9 (FT2) supplement on 14/11/2026 · new series WL (wind loading)</small></td>
 <td class="col-portal"><span class="portal-none">—</span></td><td class="col-github"><span class="portal-none">—</span></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\WL1_hardanger_modal_wind_load_from_acceleration_correlation</td>
+</tr>
+<tr class="is-unsub-row" data-paper="44" data-status="unsubmitted" data-track="h" id="paper-cv4">
+<td class="col-num">24</td><td class="col-track col-track--h">CV4</td>
+<td class="col-title">Non-Intrusive High-Speed Railway Inspection Pod Using Laser-Doppler Synchronization, Inertial-Anchor Rectification, and Real-Time Rail-Defect Detection</td>
+<td class="col-journal-status"><div class="status-badge-wrap"><span class="badge-tag notyet-badge">📝 STEP 2 IN PROGRESS</span></div><div class="journal-name"><span class="badge-unsub-journal">⚡ TARGET:</span> Measurement</div><small class="journal-meta">Elsevier / IMEKO · WoS Q1 · Double-anonymized · Subscription route (0 APC) · Optical–thermal–GUM closure complete</small></td>
+<td class="col-portal"><span class="portal-none">—</span></td><td class="col-github"><span class="portal-none">—</span></td><td class="col-path">E:\03 RESEARCH PAPERS\02 WRITING\CV4_zero_intrusion_high_speed_railway_inspection_pod</td>
 </tr>
 <tr class="table-group-header group-submitted">
 <td colspan="7">
@@ -1189,7 +1217,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- GN1 -->
 <tr class="is-sub-row" data-paper="44" data-status="submitted" data-track="f" id="paper-gn1">
-<td class="col-num">24</td><td class="col-track col-track--f">GN1</td>
+<td class="col-num">25</td><td class="col-track col-track--f">GN1</td>
 <td class="col-title">Placebo Upgrades for Separating Real Gains from Year-to-Year Variation in Wind Turbine Upgrades</td>
 <td class="col-journal-status">
 <div class="status-badge-wrap"><span class="badge-tag submitted">✓ SUBMITTED TO JOURNAL</span></div>
@@ -1201,7 +1229,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 12 · VS9 -->
 <tr class="is-sub-row" data-paper="12" data-status="submitted" data-track="c" id="paper-vs9">
-<td class="col-num">25</td>
+<td class="col-num">26</td>
 <td class="col-track col-track--c">VS9</td>
 <td class="col-title">Virtual Sensing of Offline Bridge Sensors by Load-Weighted Dynamic Condensation</td>
 <td class="col-journal-status">
@@ -1215,7 +1243,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 36 · PV1 -->
 <tr class="is-sub-row" data-paper="36" data-status="submitted" data-track="l" id="paper-pv1">
-<td class="col-num">26</td>
+<td class="col-num">27</td>
 <td class="col-track col-track--l">PV1</td>
 <td class="col-title">Weighted Mean Annual Pavement Temperature in Vietnam from Reanalysis Air Temperature: Grid-Cell Screening, Input Sensitivity and Trend</td>
 <td class="col-journal-status">
@@ -1230,7 +1258,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 09 · FT1 -->
 <tr class="is-sub-row" data-paper="09" data-status="submitted" data-track="d" id="paper-ft1">
-<td class="col-num">27</td>
+<td class="col-num">28</td>
 <td class="col-track col-track--d">FT1</td>
 <td class="col-title">Wind–Traffic Crossover Conditioning for One-Class Damage Detection and Localization on the Hardanger Suspension Bridge</td>
 <td class="col-journal-status">
@@ -1244,7 +1272,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 10 · TL4 -->
 <tr class="is-sub-row" data-paper="10" data-status="submitted" data-track="b">
-<td class="col-num">28</td>
+<td class="col-num">29</td>
 <td class="col-track col-track--b">TL4</td>
 <td class="col-title">Load-path basis for localising diaphragm bolt removal from transverse vibration</td>
 <td class="col-journal-status">
@@ -1258,7 +1286,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 24 · VS8 -->
 <tr class="is-sub-row" data-paper="24" data-status="submitted" data-track="c">
-<td class="col-num">29</td>
+<td class="col-num">30</td>
 <td class="col-track col-track--c">VS8</td>
 <td class="col-title">Spectral Rank for Spatial Compression in Structural Virtual Sensing</td>
 <td class="col-journal-status">
@@ -1272,7 +1300,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 11 · VS2 -->
 <tr class="is-sub-row" data-paper="11" data-status="submitted" data-track="c">
-<td class="col-num">30</td>
+<td class="col-num">31</td>
 <td class="col-track col-track--c">VS2</td>
 <td class="col-title">Physics-Guided Virtual Sensing of Railway Bridge Deck Strains Under Uncertain Boundary Conditions</td>
 <td class="col-journal-status">
@@ -1286,7 +1314,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 05 · TL2 -->
 <tr class="is-sub-row" data-paper="05" data-status="submitted" data-track="b">
-<td class="col-num">31</td>
+<td class="col-num">32</td>
 <td class="col-track col-track--b">TL2</td>
 <td class="col-title">Topology-Informed Sensor Restoration after Sensor Loss in Structural Health Monitoring</td>
 <td class="col-journal-status">
@@ -1300,7 +1328,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 19 · HP1 -->
 <tr class="is-sub-row" data-paper="19" data-status="submitted" data-track="e">
-<td class="col-num">32</td>
+<td class="col-num">33</td>
 <td class="col-track col-track--e">HP1</td>
 <td class="col-title">Relative Importance of Input Formulation and Hyperparameter Optimisation in Vibration-Based Structural Health Monitoring</td>
 <td class="col-journal-status">
@@ -1314,7 +1342,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 16 · VS4 -->
 <tr class="is-sub-row" data-paper="16" data-status="submitted" data-track="c">
-<td class="col-num">33</td>
+<td class="col-num">34</td>
 <td class="col-track col-track--c">VS4</td>
 <td class="col-title">Energy-Aware Space–Time Sampling Schedules for Virtual Sensing with Failed and Battery-Limited Wireless Sensors</td>
 <td class="col-journal-status">
@@ -1328,7 +1356,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 23 · CW1 -->
 <tr class="is-sub-row" data-paper="23" data-status="submitted" data-track="g">
-<td class="col-num">34</td>
+<td class="col-num">35</td>
 <td class="col-track col-track--g">CW1</td>
 <td class="col-title">Conditional WaveNet Deep Learning Model for Robust Structural Damage Detection Under Varying Temperatures</td>
 <td class="col-journal-status">
@@ -1342,7 +1370,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 21 · CV1 -->
 <tr class="is-sub-row" data-paper="21" data-status="submitted" data-track="h">
-<td class="col-num">35</td>
+<td class="col-num">36</td>
 <td class="col-track col-track--h">CV1</td>
 <td class="col-title">Zero-Shot Bridge Surface Damage Detection and Segmentation Using a Hierarchical GroundingDINO–Segment Anything Model Framework</td>
 <td class="col-journal-status">
@@ -1356,7 +1384,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 07 · VS1 -->
 <tr class="is-sub-row" data-paper="07" data-status="submitted" data-track="c">
-<td class="col-num">36</td>
+<td class="col-num">37</td>
 <td class="col-track col-track--c">VS1</td>
 <td class="col-title">Physics-Guided Residual Learning for Quasi-Static Stress Virtual Sensing on Railway Bridge KW51</td>
 <td class="col-journal-status">
@@ -1370,7 +1398,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 02 · OC2 -->
 <tr class="is-sub-row" data-paper="02" data-status="submitted" data-track="a">
-<td class="col-num">37</td>
+<td class="col-num">38</td>
 <td class="col-track col-track--a">OC2</td>
 <td class="col-title">Decoupling Health Scores from Environmental and Operational Variability with Unsupervised Feature Attention</td>
 <td class="col-journal-status">
@@ -1384,7 +1412,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 03 · OC3 -->
 <tr class="is-sub-row" data-paper="03" data-status="submitted" data-track="a">
-<td class="col-num">38</td>
+<td class="col-num">39</td>
 <td class="col-track col-track--a">OC3</td>
 <td class="col-title">Vector-Quantised Physics-Informed Autoencoders for Label-Free Structural Damage Detection</td>
 <td class="col-journal-status">
@@ -1398,7 +1426,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 04 · TL1 -->
 <tr class="is-sub-row" data-paper="04" data-status="submitted" data-track="b">
-<td class="col-num">39</td>
+<td class="col-num">40</td>
 <td class="col-track col-track--b">TL1</td>
 <td class="col-title">Topology-Guided Edge-Transfer Analysis for One-Class Structural Damage Detection</td>
 <td class="col-journal-status">
@@ -1422,7 +1450,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 01 · OC1 -->
 <tr class="is-sub-row is-accepted-row" data-paper="01" data-status="accepted" data-track="a">
-<td class="col-num">40</td>
+<td class="col-num">41</td>
 <td class="col-track col-track--a">OC1</td>
 <td class="col-title">Physics-Informed Autoencoders with Unsupervised Feature Attention for Label-Free Structural Damage Detection</td>
 <td class="col-journal-status">
@@ -1436,7 +1464,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 06 · TL3 -->
 <tr class="is-sub-row is-accepted-row" data-paper="06" data-status="accepted" data-track="b">
-<td class="col-num">41</td>
+<td class="col-num">42</td>
 <td class="col-track col-track--b">TL3</td>
 <td class="col-title">Graph-Based Structural Damage Localization through Modal Relative Motion</td>
 <td class="col-journal-status">
@@ -1450,7 +1478,7 @@ table.audit-table tr.is-unsub-row td:first-child {
 </tr>
 <!-- Paper 25 · CV3 -->
 <tr class="is-sub-row is-accepted-row" data-paper="25" data-status="accepted" data-track="h">
-<td class="col-num">42</td>
+<td class="col-num">43</td>
 <td class="col-track col-track--h">CV3</td>
 <td class="col-title">InfaTrackVision: A Non-Contact Vibration Measurement System Using Computer Vision Combined with Deep Learning for Structural Health Monitoring</td>
 <td class="col-journal-status">
@@ -1469,11 +1497,11 @@ table.audit-table tr.is-unsub-row td:first-child {
 <section aria-labelledby="research-directions-title" class="audit-section" id="research-directions">
 <h2 id="research-directions-title"><button class="directions-toggle" type="button" aria-expanded="true" aria-controls="research-directions-content" title="Bấm để thu gọn / mở rộng hướng nghiên cứu"><span class="group-toggle" aria-hidden="true">▼</span>Research Directions</button></h2>
 <div id="research-directions-content">
-<p>Programme synthesis · 11 November 2026 · 39 projects across 15 research tracks</p>
-<p>The programme asks how structural health monitoring can recover unmeasured responses, detect and localize damage, and keep operating when sensors fail or operating conditions shift. The directions below group the projects by the engineering questions they address.</p>
+<p>Programme synthesis · 18 November 2026 · 43 projects across 18 research tracks (with optional secondary codes for cross-track studies)</p>
+<p>The programme asks how structural health monitoring and ocean infrastructure engineering can recover unmeasured responses, detect and localize damage, and remain resilient when sensors fail or harsh operating conditions intervene. Every paper keeps a unique primary code tied to its physical folder, while cross-cutting studies may carry one optional secondary code (for example <code>VS13 · AQ1</code>) so papers can belong to cohesive thematic clusters without renaming repositories.</p>
 <div class="track-line track-line--c">
-<b>1. Virtual sensing with limited measurements · VS1–VS4, VS8–VS14, GN2</b><br/>
-VS1 and VS2 estimate quasi-static stress and deck strain on KW51. VS3 asks which lost signals remain recoverable, VS4 studies when sensors should sample under energy constraints, and VS8 relates sensor budget to spectral rank. On Hardanger, VS9 uses dynamic structural condensation and VS11 studies block-Hankel completion and recovery certificates for fixed outage patterns. VS10 develops modal graph sampling in space and time. GN2 asks when a masked-node graph network learns the condensation of VS9, and which graph and training it needs. VS12 tests conformal coverage across retrofit and operational shifts on KW51. VS13 investigates whether a few sensors can recover bending moments along an HDPE fish-cage collar, while VS14 establishes a multi-fidelity surrogate optimization framework (active-learning Gaussian Processes and NSGA-II) to assess storm load-carrying capacity and optimize open-ocean dual-ring HDPE fish cages under typhoon sea states.
+<b>1. Virtual sensing with limited measurements · VS1–VS4, VS8–VS12, VS15 (FT4), GN2 (VS18) · linked AQ1–AQ3 (VS13, VS14, VS17)</b><br/>
+VS1 and VS2 estimate quasi-static stress and deck strain on KW51. VS3 asks which lost signals remain recoverable, VS4 studies when sensors should sample under energy constraints, and VS8 relates sensor budget to spectral rank. On Hardanger, VS9 uses dynamic structural condensation and VS11 studies block-Hankel completion and recovery certificates for fixed outage patterns. VS10 develops modal graph sampling in space and time. GN2 (secondary code VS18) asks when a masked-node graph network learns the condensation of VS9, and which graph and training it needs. VS12 tests conformal coverage across retrofit and operational shifts on KW51. VS13 (AQ1) and VS17 (AQ3) extend collar virtual sensing and inverse digital twins to marine fish cages under the dedicated Aquaculture track (<b>AQ</b>) below.
 </div>
 <div class="track-line track-line--b">
 <b>2. Damage detection, localization and sensor faults · OC1–OC4, TL1–TL5, FT1, FT3, CW1, GN1</b><br/>
@@ -1488,28 +1516,28 @@ HP1 compares the contribution of input formulation and hyperparameter optimizati
 WT1 tests consistency across measurement setups in offshore wind foundation modal identification. EL1 studies two-sided bounds for equivalent linearization, and EL2 examines dissipation and dephasing in measured damping. ST1 investigates when the end portal governs out-of-plane stability on KW51 and Nam Ô. ST2 studies how hanger tension changes lateral restraint and what that means for updating the KW51 model. WL1 asks what measured accelerations of the Hardanger Bridge reveal about the modal distribution of the wind load.
 </div>
 <div class="track-line track-line--h">
-<b>5. Vision-based inspection and measurement · CV1–CV3</b><br/>
-CV1 uses vision foundation models to detect and segment bridge surface damage. CV2 develops a semi-automatic workflow for labeling multiple damage classes. CV3 uses camera-based, non-contact vibration measurement to extend vision from surface inspection to structural response.
+<b>5. Vision-based inspection and measurement · CV1–CV4</b><br/>
+CV1 uses vision foundation models to detect and segment bridge surface damage. CV2 develops a semi-automatic workflow for labeling multiple damage classes. CV3 uses camera-based, non-contact vibration measurement to extend vision from surface inspection to structural response. CV4 co-designs a non-intrusive high-speed railway inspection pod integrating laser-Doppler synchronization, inertial-anchor rectification, and hybrid rail-defect detection.
 </div>
 <div class="track-line track-line--l">
 <b>6. Pavement engineering, climate resilience &amp; green transportation · PV1</b><br/>
 PV1 establishes the first comprehensive 34-year (1991–2024) nationwide analysis of Weighted Mean Annual Pavement Temperature (WMAPT) across 127 monitoring stations in Vietnam using LTPP InfoPave reanalysis data. It identifies a +0.83°C warming trend, quantifies the spatial divergence in pavement design temperatures between coastal and inland zones (Khánh Hòa case study), and proposes climate-resilient asphalt pavement design guidelines to mitigate rutting and fatigue failures under rising temperatures.
 </div>
 <div class="track-line track-line--c">
-<b>7. Offshore wind and mooring virtual sensing · VS15</b><br/>
-VS15 estimates mooring-line tensions of a 15 MW floating wind turbine from topside measurements only and detects and identifies line failures without damaged training data. A closed-form catenary compliance proves the span–tension map invertible, a catenary prior with a learned dynamic residual (PGRE) stays accurate outside the training distribution, and a force-envelope detector found all four line failures in authentic OpenFAST data with no false alarm. The manuscript and submission dossier are complete; submission to Ocean Engineering is planned.
+<b>7. Offshore wind and mooring virtual sensing · VS15 (FT4)</b><br/>
+VS15 (dual-coded FT4 for zero-shot fault isolation) estimates mooring-line tensions of a 15 MW floating wind turbine from topside measurements only and detects and identifies line failures without damaged training data. A closed-form catenary compliance proves the span–tension map invertible, a catenary prior with a learned dynamic residual (PGRE) stays accurate outside the training distribution, and a force-envelope detector found all four line failures in authentic OpenFAST data with no false alarm. The manuscript and submission dossier are complete; submission to Ocean Engineering is planned.
 </div>
 <div class="track-line track-line--m">
-<b>8. Multi-cage mooring-system design · MO1</b><br/>
-MO1 is developing a multi-objective design study of shared-grid mooring systems for multi-cage fish-farm arrays, with progressive-collapse prevention under extreme storm conditions. The project is at the research-preparation and outline stage.
+<b>8. Multi-cage mooring-system design · MO1 (AQ4)</b><br/>
+MO1 (linked into the AQ aquaculture track as AQ4) is a multi-objective design study of shared-grid mooring systems for multi-cage fish-farm arrays, with progressive-collapse prevention under extreme storm conditions ($21.5\%$ mooring CapEx saving while maintaining $SF_{\text{damaged}} \ge 1.40$). The 15-page manuscript draft is compiled and under refinement for Marine Structures.
 </div>
 <div class="track-line track-line--n">
 <b>9. Ship roll early warning · MS1</b><br/>
 MS1 uses physics-guided neural ODEs for real-time early warning of parametric roll resonance in container ships. The manuscript is complete and compiled; journal submission is pending.
 </div>
-<div class="track-line track-line--c">
-<b>10. Biofouling-aware aquaculture digital twins · VS17</b><br/>
-VS17 proposes a digital-twin model for HDPE marine fish cages that accounts for biofouling effects on net hydrodynamics and cage response.
+<div class="track-line track-line--p">
+<b>10. Aquaculture structures &amp; HDPE marine fish cages · AQ1–AQ4 (VS13, VS14, VS17, MO1)</b><br/>
+The dedicated <b>AQ</b> group brings together the HDPE fish-cage research line into one coherent structural–aquaculture programme: <b>VS13 (AQ1)</b> establishes analytical observability and virtual sensing of bending moments along floating HDPE collars from sparse accelerometers; <b>VS14 (AQ2)</b> develops a multi-fidelity Gaussian-process surrogate and NSGA-II storm design framework for dual-ring HDPE cages under typhoon conditions; <b>VS17 (AQ3)</b> develops a time-dependent digital twin that inversely identifies net biofouling thickness from surface drift for predictive net-cleaning schedules; and <b>MO1 (AQ4)</b> extends optimization and progressive-collapse safety to shared-grid multi-cage fish-farm moorings.
 </div>
 <div class="track-line track-line--o">
 <b>11. Composite damage diagnosis · CS1</b><br/>
@@ -1518,27 +1546,29 @@ CS1 explores vibration-based delamination diagnosis in CFRP plates using acceler
 <h3>Connections between studies</h3>
 <ul>
 <li><b>KW51:</b> VS1 and VS2 estimate structural responses. VS12 asks how well prediction intervals hold after retrofit and under changing operating conditions.</li>
-<li><b>Hardanger:</b> VS3, VS9 and VS11 examine recoverability and reconstruction under sensor loss. FT1 addresses the downstream task of damage detection.</li>
+<li><b>Hardanger:</b> VS3, VS9 and VS11 examine recoverability and reconstruction under sensor loss, while GN2 (VS18) learns structural condensation using masked-node graph networks. FT1 addresses the downstream task of damage detection.</li>
 <li><b>HBTA:</b> TL2 ranks sensors for restoration, FT3 studies how the detector should operate during persistent faults, and TL3 uses the remaining modal information to localize connection damage.</li>
+<li><b>Aquaculture / HDPE fish cages (AQ):</b> VS13 (AQ1) monitors collar bending, VS14 (AQ2) optimizes dual-ring storm sizing, VS17 (AQ3) tracks time-varying net biofouling drag, and MO1 (AQ4) protects multi-cage array moorings against progressive collapse.</li>
 </ul>
 <div style="margin-top: 24px;"><a class="nav-jump-btn" href="#publication-progress">↑ Quay lại Bảng theo dõi tiến độ · Back to Publication Tracker</a></div>
-<!-- 17 Research Tracks Summary -->
+<!-- 18 Research Tracks Summary -->
 <section class="tracks-summary">
-<div class="track-line track-line--c"><b>VS</b> — Virtual sensing: build (KW51) · recoverability limit under sensor loss, CS framing (Hardanger · Route 345 · HBTA · LUMO · KW51) · sensor budget from spectral rank (Route 345 · HBTA · LUMO · Bergsøysund) · energy-aware space–time sampling schedules · dynamic structural condensation and block-Hankel recovery under outages (Hardanger) · modal graph sampling · conformal coverage across retrofit (KW51) · bending-moment sensing &amp; surrogate optimization (HDPE fish cages).</div>
-<div class="track-line track-line--d"><b>FT</b> — Integration &amp; fault tolerance (Hardanger suspension bridge) · persistent sensor quarantine &amp; reconfiguration for one-class detection (HBTA).</div>
+<div class="track-line track-line--p"><b>AQ</b> — Aquaculture structures &amp; HDPE marine fish cages (cross-track group uniting VS13, VS14, VS17, plus array companion MO1): observability &amp; collar bending-moment virtual sensing (<b>AQ1 / VS13</b>) · multi-fidelity surrogate storm design optimization of dual-ring HDPE cages (<b>AQ2 / VS14</b>) · time-dependent biofouling digital twin &amp; predictive cleaning triggers (<b>AQ3 / VS17</b>) · progressive-collapse-safe multi-cage shared-grid mooring optimization (<b>AQ4 / MO1</b>).</div>
+<div class="track-line track-line--c"><b>VS</b> — Virtual sensing: build (KW51) · recoverability limit under sensor loss, CS framing (Hardanger · Route 345 · HBTA · LUMO · KW51) · sensor budget from spectral rank (Route 345 · HBTA · LUMO · Bergsøysund) · energy-aware space–time sampling schedules · dynamic structural condensation and block-Hankel recovery under outages (Hardanger) · modal graph sampling · conformal coverage across retrofit (KW51) · HDPE cage bending sensing (<b>VS13 / AQ1</b>) · offshore 15 MW FOWT mooring sensing (<b>VS15 / FT4</b>) · masked-node GNN condensation (<b>VS18 / GN2</b>).</div>
+<div class="track-line track-line--d"><b>FT</b> — Integration &amp; fault tolerance (Hardanger suspension bridge, FT1) · persistent sensor quarantine &amp; reconfiguration for one-class detection (HBTA, FT3) · zero-shot mooring-line break isolation via symmetry collapse (<b>FT4 / VS15</b>).</div>
 <div class="track-line track-line--b"><b>TL</b> — Topology, sensor localisation &amp; restoration (HBTA · Route 345 · LUMO Tower).</div>
 <div class="track-line track-line--a"><b>OC</b> — Robust one-class detection against EOV (Z24 · AQUINAS · Sonkyo wind blade).</div>
 <div class="track-line track-line--e"><b>HP</b> — Input formulation, hyperparameter optimisation and transferability for supervised damage classification (Z24 · QUGS grandstand).</div>
 <div class="track-line track-line--f"><b>WT</b> — Offshore wind turbine foundation OMA: setup consistency to separate global modes from setup artefacts (Dong Hai 1 · Foundation T18, before &amp; after tower installation).</div>
 <div class="track-line track-line--g"><b>CW</b> — Temperature-conditioned deep learning on raw vibration for damage detection under thermal variability (Conditional WaveNet · C-shaped steel beam).</div>
-<div class="track-line track-line--h"><b>CV</b> — Vision foundation models for structural surface damage: zero-shot detection &amp; segmentation (GroundingDINO–SAM) · semi-automatic multi-class labelling workflow · camera-based non-contact vibration measurement with deep learning (InfaTrackVision).</div>
+<div class="track-line track-line--h"><b>CV</b> — Vision foundation models &amp; inspection systems: zero-shot detection &amp; segmentation (GroundingDINO–SAM, CV1) · semi-automatic multi-class labelling workflow (CV2) · camera-based non-contact vibration measurement (InfaTrackVision, CV3) · non-intrusive 350 km/h railway inspection pod (CV4).</div>
 <div class="track-line track-line--i"><b>EL</b> — Equivalent linearization of nonlinear random vibration checked on measured data: two-sided bounds for hardening oscillators (Acta Mechanica package) · orthogonality law &amp; dissipation decomposition on measured benchmarks (Silverbox · F-16 GVT · Gap-tooth beam · Hawk).</div>
 <div class="track-line track-line--j"><b>ST</b> — Structural stability &amp; out-of-plane buckling of through-arch bridges: three sources of lateral restraint (portal columns, braced block, hanger/U-frame restraint) · when the portal governs · EN 1993-2 Annex D conservatism · stress-stiffened model updating revision (Nam Ô 75 m railway through-truss · KW51 115 m network arch · 38-axle D19E train).</div>
 <div class="track-line track-line--k"><b>PS</b> — Population-based SHM &amp; cross-structure knowledge transfer: empirical transferability landscape across 10 diverse measured structures (Z24 · Aquinas OLD/NEW · Bautzen · Hell · KW51 · Route 345 · LUMO · QUGS · Sonkyo) · irreducible element (IE) graph kernel distance vs data distribution shift (MMD/Wasserstein) · mapping the boundaries of negative transfer.</div>
 <div class="track-line track-line--l"><b>PV</b> — Pavement engineering &amp; climate-resilient green road infrastructure: nationwide Weighted Mean Annual Pavement Temperature (WMAPT) under global warming (127 stations across Vietnam, 1991–2024 · LTPP InfoPave) · spatial pavement temperature variation (Khánh Hòa case study) · climate-adapted asphalt design for rutting and fatigue mitigation.</div>
-<div class="track-line track-line--m"><b>MO</b> — Multi-objective optimization and progressive-collapse prevention for shared-grid mooring systems in multi-cage fish-farm arrays under extreme storms (research outline initiated).</div>
+<div class="track-line track-line--m"><b>MO</b> — Multi-objective optimization and progressive-collapse prevention for shared-grid mooring systems in multi-cage fish-farm arrays under extreme storms (<b>MO1 / AQ4</b>).</div>
 <div class="track-line track-line--n"><b>MS</b> — Physics-guided neural ODEs for early warning of parametric roll resonance in container ships (complete manuscript; submission pending).</div>
-<div class="track-line track-line--c"><b>GN</b> — Graph networks and learned models for structural monitoring: masked-node condensation on the Hardanger Bridge (GN2) · placebo upgrades for judging wind turbine upgrade gains against year-to-year variation (GN1).</div>
+<div class="track-line track-line--c"><b>GN</b> — Graph networks and learned models for structural monitoring: masked-node condensation on the Hardanger Bridge (<b>GN2 / VS18</b>) · placebo upgrades for judging wind turbine upgrade gains against year-to-year variation (GN1).</div>
 <div class="track-line track-line--j"><b>WL</b> — Wind loading inferred from measured structural response: modal distribution of wind load from Hardanger Bridge accelerations (WL1).</div>
 <div class="track-line track-line--o"><b>CS</b> — Vibration-based diagnosis of CFRP composite-plate delamination using accelerometers and one-class learning (early-stage idea).</div>
 </section>
