@@ -655,6 +655,10 @@
   .group-toggle { display: inline-block; width: 14px; font-size: 10px; transition: transform 0.2s ease; }
   tr.table-group-header.is-collapsed .group-toggle { transform: rotate(-90deg); }
   tr.is-group-hidden { display: none; }
+  .directions-toggle { display: flex; align-items: center; gap: 8px; width: 100%; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+  .directions-toggle:hover { filter: brightness(1.12); }
+  .directions-toggle:focus-visible { outline: 2px solid var(--line-strong); outline-offset: 4px; }
+  .directions-toggle[aria-expanded="false"] .group-toggle { transform: rotate(-90deg); }
 
   /* Table Section Group Headers */
   tr.table-group-header td {
@@ -1472,7 +1476,8 @@ table.audit-table tr.is-unsub-row td:first-child {
 </div>
 </section>
 <section aria-labelledby="research-directions-title" class="audit-section" id="research-directions">
-<h2 id="research-directions-title">Research Directions</h2>
+<h2 id="research-directions-title"><button class="directions-toggle" type="button" aria-expanded="true" aria-controls="research-directions-content" title="Bấm để thu gọn / mở rộng hướng nghiên cứu"><span class="group-toggle" aria-hidden="true">▼</span>Research Directions</button></h2>
+<div id="research-directions-content">
 <p>Programme synthesis · 11 November 2026 · 39 projects across 15 research tracks</p>
 <p>The programme asks how structural health monitoring can recover unmeasured responses, detect and localize damage, and keep operating when sensors fail or operating conditions shift. The directions below group the projects by the engineering questions they address.</p>
 <div class="track-line track-line--c">
@@ -1526,6 +1531,7 @@ CS1 explores vibration-based delamination diagnosis in CFRP plates using acceler
 <li><b>HBTA:</b> TL2 ranks sensors for restoration, FT3 studies how the detector should operate during persistent faults, and TL3 uses the remaining modal information to localize connection damage.</li>
 </ul>
 <div style="margin-top: 24px;"><a class="nav-jump-btn" href="#publication-progress">↑ Quay lại Bảng theo dõi tiến độ · Back to Publication Tracker</a></div>
+</div>
 </section>
 <!-- 17 Research Tracks Summary -->
 <section class="tracks-summary">
@@ -1625,6 +1631,28 @@ CS1 explores vibration-based delamination diagnosis in CFRP plates using acceler
     }, true);
     window.addEventListener('hashchange', function() { reveal(location.hash.slice(1)); });
     if (location.hash) { reveal(location.hash.slice(1)); var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
+  })();
+</script>
+<script>
+  (function() {
+    var button = document.querySelector('.directions-toggle');
+    var content = document.getElementById('research-directions-content');
+    var key = 'shm_research_directions_collapsed';
+    function setCollapsed(collapsed) {
+      button.setAttribute('aria-expanded', String(!collapsed));
+      content.hidden = collapsed;
+      try { localStorage.setItem(key, String(collapsed)); } catch (e) {}
+    }
+    try { setCollapsed(localStorage.getItem(key) === 'true'); } catch (e) {}
+    button.addEventListener('click', function() { setCollapsed(!content.hidden); });
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('a[href="#research-directions"]')) setCollapsed(false);
+    });
+    function revealHash() {
+      if (location.hash === '#research-directions') setCollapsed(false);
+    }
+    window.addEventListener('hashchange', revealHash);
+    revealHash();
   })();
 </script>
 </body>
