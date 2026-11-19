@@ -17,7 +17,7 @@ Research programme map and journal publication progress for a set of structural 
 - **EL**: Equivalent linearization of nonlinear random vibration checked on measured data
 - **ST**: Structural stability and out-of-plane buckling of through-arch bridges
 - **PS**: Population-based SHM and cross-structure knowledge transfer
-- **GN**: Graph neural networks for structural monitoring
+- **GN** *(legacy, frozen at `GN1`)*: Wind-turbine upgrade validation and placebo calibration (`GN1`; historical prefix retained from an earlier graph-network branch, while the Hardanger masked-node GNN idea moved to `VS18`)
 - **WL**: Wind loading inferred from measured structural response
 - **MO**: Multi-cage fish-farm mooring optimization
 - **MS**: Maritime ship roll dynamics and early warning
@@ -28,10 +28,10 @@ Optional semantic secondary labels (`up to 2 per paper, maximum 3 total labels i
 - **HDPE**: Aquaculture structures and HDPE marine fish cages (`VS13`, `VS14`, `VS17`, `MO1`)
 - **Rail**: Railway bridge SHM and high-speed track inspection (`VS1`, `VS2`, `VS12`, `ST1`, `ST2`, `CV4`)
 - **Wind**: Offshore and onshore wind turbine structures and monitoring (`VS15`, `WT1`, `OC4`, `GN1`)
-- **Virtual Sensing**: Response recovery, state estimation, and digital twins (`VS1`–`VS4`, `VS8`–`VS13`, `VS15`, `VS17`, `GN2`)
+- **Virtual Sensing**: Response recovery, state estimation, and digital twins (`VS1`–`VS4`, `VS8`–`VS13`, `VS15`, `VS17`, `VS18`)
 - **Physics-ML**: Physics-guided/informed neural networks, residuals, Neural ODEs, and surrogates (`VS14`, `MS1`, `TL5`, `FT1`, `OC1`–`OC3`)
 - **One-Class**: Unsupervised or label-free anomaly and damage detection (`OC1`–`OC4`, `FT1`, `FT3`, `TL1`, `CS1`)
-- **Sensor Loss**: Tolerating, isolating, or recovering failed/offline sensors (`VS3`, `VS4`, `VS9`, `VS11`, `GN2`, `TL2`, `FT3`)
+- **Sensor Loss**: Tolerating, isolating, or recovering failed/offline sensors (`VS3`, `VS4`, `VS9`, `VS11`, `VS18`, `TL2`, `FT3`)
 
 View the page: https://chungntu.github.io/shm-research-map/
 
